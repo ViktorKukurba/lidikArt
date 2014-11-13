@@ -1,0 +1,14 @@
+<h2>Доброчинний внесок</h2>
+<p class="lead">Підтримка для виконання статутних зобовязань організації.</p>
+<form action="https://api.privatbank.ua/p24api/ishop" method="POST" accept-charset="UTF-8">
+    <input type="text" name="amt" value="1"/>
+    <input type="hidden" name="ccy" value="UAH" />
+    <input type="hidden" name="merchant" value="{{pbMerchant}}" />
+    <input type="hidden" name="order" value="{{pbOrder}}" />
+    <input type="hidden" name="details" value="{{pbDetails}}" />
+    <input type="hidden" name="ext_details" value="{{pbExt_details}}" />
+    <input type="hidden" name="pay_way" value="privat24" />
+    <input type="hidden" name="return_url" value="{{return_url}}" />
+    <input type="hidden" name="server_url" value="" />
+    <input type="submit" class="btn btn-lg btn-success" value="Долучитися" />
+</form>
