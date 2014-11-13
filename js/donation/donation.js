@@ -11,13 +11,20 @@ angular.module('fredra.donation', ['ngRoute'])
         document.querySelector('ul.nav li.active').className = '';
         document.querySelector('ul.nav a[href="#/donation"]').parentNode.className = 'active';
         $scope.pbOrder = generateCode.getCode();
-        pbRequestData.setCallback(function(pdConfig){
-            console.log('TEST', pdConfig);
-            $scope.pbMerchant = pdConfig.merchant;
-            $scope.pbDetails = pdConfig.details;
-            $scope.return_url = pdConfig.return_url;
-            $scope.pbExt_details = pdConfig.ext_details;
-        });
+        if (pbRequestData.isInit()) {
+            var config = pbRequestData.getPbConfig();
+            $scope.pbMerchant = config.merchant;
+            $scope.pbDetails = config.details;
+            $scope.return_url = config.return_url;
+            $scope.pbExt_details = config.ext_details;
+        } else {
+            pbRequestData.setCallback(function(pdConfig){
+                $scope.pbMerchant = pdConfig.merchant;
+                $scope.pbDetails = pdConfig.details;
+                $scope.return_url = pdConfig.return_url;
+                $scope.pbExt_details = pdConfig.ext_details;
+            });
+        }
 
     }]).factory('generateCode', function() {
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -45,7 +52,9 @@ angular.module('fredra.donation', ['ngRoute'])
             });
 
         return {
-            init: init,
+            isInit: function() {
+                return init
+            },
             getPbConfig: function() {
                 return pbConfig;
             },
