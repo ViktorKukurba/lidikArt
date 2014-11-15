@@ -82,3 +82,37 @@ form>*{
     display: block;
     margin: 10px auto;
 }
+
+.nav-justified>li>a {
+    margin: 10px;
+    height: 65px;
+}
+
+.privatbank-logo {
+    background-image: url(https://privatbank.ua/img/logo.png?v=2828);
+    background-size: 100% 100%;
+    display: inline-block;
+    height:75%;
+    width: 100%;
+    /*height: 40px !important;*/
+}
+
+.easypayua-logo {
+    background-image: url(https://easypay.ua/content/images/logo.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    height:100%;
+    width: 80%;
+}
+
+.moneyua-logo {
+    background-image: url(http://money.ua/i/slmoneyua.gif);
+    background-size: 100% 100%;
+    display: inline-block;
+    height:100%;
+    width: 100%;
+}
+
+#donation-selection li.active a{
+    background-color: #D9DADB;
+}

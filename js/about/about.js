@@ -8,6 +8,4 @@ angular.module('fredra.about', ['ngRoute'])
         });
     }])
     .controller('aboutController', ['$scope','$http', function() {
-        document.querySelector('ul.nav li.active').className = '';
-        document.querySelector('ul.nav a[href="#/about"]').parentNode.className = 'active';
     }]);

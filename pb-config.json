@@ -1,6 +1,7 @@
 {
     "merchant" : "PLEASE_SET_VALUE",
-    "details" : "Платіж на виконання статутних зобовязань організації",
+    "details" : "Платіж на виконання статутних зобовязань організації.",
     "return_url" : "http://fredra61.esy.es",
-    "ext_details": ""
+    "ext_details": "",
+    "defaultAmount": "10"
 }
