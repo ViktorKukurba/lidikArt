@@ -23,28 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="38" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.89586526" vertical-offset="0" max-vertical-offset="870">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fb-integration.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fb-integration.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="41" selection-start="2640" selection-end="2640" vertical-scroll-proportion="-43.26923" vertical-offset="0" max-vertical-offset="1215">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="angular-facebook.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/angular-facebook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="374" column="27" selection-start="10469" selection-end="10477" vertical-scroll-proportion="-8.5" vertical-offset="5389" max-vertical-offset="8490">
+            <state line="374" column="27" selection-start="10469" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="5610" max-vertical-offset="8490">
               <folding />
             </state>
           </provider>
@@ -53,7 +35,7 @@
       <file leaf-file-name="about.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/about/about.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="26" selection-start="420" selection-end="420" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="795">
+            <state line="12" column="26" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -62,7 +44,30 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/about/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="50" selection-start="338" selection-end="338" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
+            <state line="4" column="0" selection-start="288" selection-end="319" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/donation/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="5" selection-start="866" selection-end="866" vertical-scroll-proportion="0.33987916" vertical-offset="0" max-vertical-offset="810">
+              <folding>
+                <marker date="1416133316000" expanded="true" signature="1023:1984" placeholder="..." />
+                <marker date="1416133316000" expanded="true" signature="1259:1973" placeholder="..." />
+                <marker date="1416133316000" expanded="true" signature="2108:2136" placeholder="..." />
+                <marker date="1416133316000" expanded="true" signature="2265:2295" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="donation.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/donation/donation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="20" selection-start="813" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
@@ -71,7 +76,7 @@
       <file leaf-file-name="pb-service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/pb-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="23" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+            <state line="24" column="23" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -80,7 +85,7 @@
       <file leaf-file-name="pb-config.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pb-config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="70" selection-start="109" selection-end="109" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="180">
+            <state line="2" column="70" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="180">
               <folding />
             </state>
           </provider>
@@ -89,7 +94,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="20" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="1050">
+            <state line="30" column="20" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
@@ -98,7 +103,7 @@
       <file leaf-file-name="facebook-service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/facebook-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="12" selection-start="496" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+            <state line="30" column="12" selection-start="496" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -107,7 +112,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="0" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="1920">
+            <state line="135" column="26" selection-start="2651" selection-end="2651" vertical-scroll-proportion="0.0" vertical-offset="1459" max-vertical-offset="2205">
               <folding />
             </state>
           </provider>
@@ -131,22 +136,22 @@
         <option value="$PROJECT_DIR$/js/fb-integration.js" />
         <option value="$PROJECT_DIR$/js/angular-facebook.js" />
         <option value="$PROJECT_DIR$/js/services/facebook-service.js" />
-        <option value="$PROJECT_DIR$/js/donation/index.html" />
         <option value="$PROJECT_DIR$/js/about/about.js" />
-        <option value="$PROJECT_DIR$/js/donation/donation.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/about/index.html" />
         <option value="$PROJECT_DIR$/js/contacts/index.html" />
         <option value="$PROJECT_DIR$/js/contacts/contacts.js" />
-        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/donation/donation.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/about/index.html" />
+        <option value="$PROJECT_DIR$/js/donation/index.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -327,14 +332,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="810" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="806" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -342,11 +347,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -368,6 +373,76 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="121" selection-start="1862" selection-end="1862" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb-integration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="41" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="374" column="27" selection-start="10469" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="5610" max-vertical-offset="8490">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/about/about.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="26" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="50" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/pb-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="23" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pb-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="70" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="20" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/facebook-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="12" selection-start="496" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="22" selection-start="2570" selection-end="2570" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="2070">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
           <folding />
         </state>
@@ -377,26 +452,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding>
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="1023:1984" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="1259:1973" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="2108:2136" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="2265:2295" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/contacts/contacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/contacts/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/donation/donation.js">
@@ -429,42 +500,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pb-config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="70" selection-start="109" selection-end="109" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="180">
+        <state line="2" column="70" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="180">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/donation/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="372" selection-end="505" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="780">
-          <folding>
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416096974000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/angular-facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="374" column="27" selection-start="10469" selection-end="10477" vertical-scroll-proportion="-8.5" vertical-offset="5389" max-vertical-offset="8490">
+        <state line="374" column="27" selection-start="10469" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="5610" max-vertical-offset="8490">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/about/about.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="26" selection-start="420" selection-end="420" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="795">
+        <state line="12" column="26" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fb-integration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="41" selection-start="2640" selection-end="2640" vertical-scroll-proportion="-43.26923" vertical-offset="0" max-vertical-offset="1215">
+        <state line="75" column="41" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1215">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="20" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/contacts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="27" selection-start="327" selection-end="327" vertical-scroll-proportion="0.06891271" vertical-offset="0" max-vertical-offset="653" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="24" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="900" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/services/pb-service.js">
@@ -481,52 +557,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/donation/donation.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="956" selection-end="956" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="20" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="1050">
+        <state line="39" column="121" selection-start="1862" selection-end="1862" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/about/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="50" selection-start="338" selection-end="338" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
+        <state line="4" column="0" selection-start="288" selection-end="319" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/contacts/index.html">
+    <entry file="file://$PROJECT_DIR$/js/donation/donation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="27" selection-start="327" selection-end="327" vertical-scroll-proportion="0.06891271" vertical-offset="0" max-vertical-offset="653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="24" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="900">
+        <state line="20" column="20" selection-start="813" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="0" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="1920">
+        <state line="135" column="26" selection-start="2651" selection-end="2651" vertical-scroll-proportion="0.0" vertical-offset="1459" max-vertical-offset="2205">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/donation/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="38" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.89586526" vertical-offset="0" max-vertical-offset="870">
-          <folding />
+        <state line="15" column="5" selection-start="866" selection-end="866" vertical-scroll-proportion="0.33987916" vertical-offset="0" max-vertical-offset="810">
+          <folding>
+            <marker date="1416133316000" expanded="true" signature="1023:1984" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="1259:1973" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="2108:2136" placeholder="..." />
+            <marker date="1416133316000" expanded="true" signature="2265:2295" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
