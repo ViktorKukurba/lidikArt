@@ -116,3 +116,27 @@ form>*{
 #donation-selection li.active a{
     background-color: #D9DADB;
 }
+
+#map_canvas {
+    width: 100%;
+    height: 400px;
+}
+
+.facebook-link {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-image: url(http://i2.mirror.co.uk/incoming/article676858.ece/alternates/s298/Topic%20-%20Facebook);
+    margin: 10px;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a.facebook-link:hover {
+    text-decoration: none;
+}
+
+.fb-like-component {
+    min-height: 40px;
+    min-width: 100px;
+}

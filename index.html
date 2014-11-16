@@ -17,9 +17,15 @@ $merchant = "TESTFREDRA1";
     <script src="js/donation/donation.js"></script>
     <script src="js/about/about.js"></script>
     <script src="js/contacts/contacts.js"></script>
-    <title>Fredra61</title>
+    <script src="js/services/pb-service.js"></script>
+    <script src="js/services/facebook-service.js"></script>
+    <script src="js/angular-facebook.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <title>Fredra.61</title>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -27,13 +33,12 @@ $merchant = "TESTFREDRA1";
 <div class="container">
     <div class="header">
         <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#/donation">Підтримати</a></li>
-                <li role="presentation"><a href="#/about">Про нас</a></li>
-                <li role="presentation"><a href="#/contacts">Контакти</a></li>
+            <ul class="nav nav-pills pull-right" ng-controller="NavigationCtrl">
+                <li role="presentation" ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab"><a href="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a></li>
             </ul>
         </nav>
-        <h3 class="text-muted">Fredra61</h3>
+        <h2 class="text-muted">Fredra.61 <a href="https://www.facebook.com/Fredra.61" class="facebook-link">&nbsp</a></h2>
+
     </div>
 
     <div class="jumbotron">
@@ -41,7 +46,7 @@ $merchant = "TESTFREDRA1";
     </div>
 
     <footer class="footer">
-        <p>&copy; Fredra61 2014</p>
+        <p>&copy; Fredra.61 2014</p>
     </footer>
 
 </div> <!-- /container -->
