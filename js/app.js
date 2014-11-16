@@ -26,9 +26,9 @@
           tabViewHandler($scope, $location, tabs, function() {
             $('.jumbotron').addClass('animated fadeIn');
             setTimeout(function() {
-              $('.jumbotron').removeClass('animated fadeIn');
-              Facebook.parseXFBML(document.querySelector('.jumbotron'));
-            }, 700);
+                  $('.jumbotron').removeClass('animated fadeIn');
+                 Facebook.parseXFBML(document.querySelector('.fb-like-component'));
+              }, 700);
           });
       }]);
 
@@ -42,7 +42,7 @@
         }
       };
 
-      var selectedTab;
+      var selectedTab = cb? 0: undefined;
 
       $scope.tabs.forEach(function(item, index) {
         if ($location.path().indexOf(item.link.replace('#', '')) > -1) {
@@ -52,7 +52,6 @@
 
       if (!angular.isUndefined(selectedTab)){
         $scope.setSelectedTab($scope.tabs[selectedTab])
-        //$scope.selectedTab = $scope.tabs[selectedTab];
       }
 
       $scope.tabClass = function(tab) {
