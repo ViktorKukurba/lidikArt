@@ -1,0 +1,15 @@
+<div id="moneyua">
+    MONEY.UA
+    <div class="donation-details">{{info}}</div>
+    <label for="donation-amount">Сума в гривнях</label>
+    <form method="POST" action="http://money.ua/prosto/">
+        <input id="donation-amount" type="text" name="amount" value="{{defaultAmount}}"/>
+        <input type="hidden" name="step" value="{{step}}">
+        <input type="hidden" name="okpo" value="{{okpo}}">
+        <input type="hidden" name="acc" value="{{acc}}">
+        <input type="hidden" name="name" value="{{name}}">
+        <input type="hidden" name="mfo" value="{{mfo}}">
+        <input type="hidden" name="info" value="{{info}}">
+        <input type="submit" class="btn btn-lg btn-success" value="Долучитися" />
+    </form>
+</div>
