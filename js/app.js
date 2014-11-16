@@ -5,21 +5,42 @@
         'ngRoute',
         'fredra.about',
         'fredra.donation',
-        'fredra.contacts'
+        'fredra.contacts',
+        'facebook'
     ]).
         config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({redirectTo: '/about'});
-        }]).controller('NavigationCtrl', ['$scope', '$location', function($scope, $location) {
+        }]).config([
+        'FacebookProvider',
+        function(FacebookProvider) {
+          var myAppId = '380038068742752';
+          FacebookProvider.init(myAppId);
+
+        }
+      ]).controller('NavigationCtrl', ['$scope', '$location', 'Facebook', function($scope, $location, Facebook) {
           var tabs = [
             { link : '#/donation', label : 'Підтримка' },
             { link : '#/about', label : 'Про нас' },
             { link : '#/contacts', label : 'Контакти' }
           ];
-          tabViewHandler($scope, $location, tabs);
+          tabViewHandler($scope, $location, tabs, function() {
+            $('.jumbotron').addClass('animated fadeIn');
+            setTimeout(function() {
+              $('.jumbotron').removeClass('animated fadeIn');
+              Facebook.parseXFBML(document.querySelector('.jumbotron'));
+            }, 700);
+          });
       }]);
 
-    function tabViewHandler($scope, $location, tabs) {
+    function tabViewHandler($scope, $location, tabs, cb) {
       $scope.tabs = tabs;
+
+      $scope.setSelectedTab = function(tab) {
+        $scope.selectedTab = tab;
+        if(cb) {
+          cb();
+        }
+      };
 
       var selectedTab;
 
@@ -30,12 +51,9 @@
       });
 
       if (!angular.isUndefined(selectedTab)){
-        $scope.selectedTab = $scope.tabs[selectedTab];
+        $scope.setSelectedTab($scope.tabs[selectedTab])
+        //$scope.selectedTab = $scope.tabs[selectedTab];
       }
-
-      $scope.setSelectedTab = function(tab) {
-        $scope.selectedTab = tab;
-      };
 
       $scope.tabClass = function(tab) {
         if ($scope.selectedTab == tab) {

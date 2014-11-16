@@ -8,12 +8,13 @@ angular.module('fredra.donation', ['ngRoute'])
         });
     }])
     .controller('donationController', ['$scope', '$location', '$routeParams', '$compile', '$templateCache', function($scope, $location, $routeParams, $compile,  $templateCache ) {
-
     var tabs = [
       { link : '#/donation/privatbank', label : 'Приватбанк', name: 'privatbank' },
       { link : '#/donation/moneyua', label : 'Money UA', name: 'moneyua' },
       { link : '#/donation/easypayua', label : 'Easypay UA', name: 'easypayua' }
     ];
+
+
 
     tabViewHandler($scope, $location, tabs);
 
@@ -21,6 +22,7 @@ angular.module('fredra.donation', ['ngRoute'])
     $('#donation-container')
       .html('')
       .append($compile(formTemplate)($scope));
+    //Facebook.parseXFBML(document.querySelector('.jumbotron'));
     }]).controller('privatbankController', ['$scope', 'generateCode', 'pbRequestData', function($scope, generateCode, pbRequestData) {
     $scope.pbOrder = generateCode.getCode();
     if (pbRequestData.isInit()) {

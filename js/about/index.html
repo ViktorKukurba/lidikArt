@@ -1,2 +1,5 @@
 <h2>Молодіжна платформа Fredra.61</h2>
-<p class="lead">Молодіжна громадська організація</p>
+<p class="lead">{{about}}</p>
+<button type="button" class="btn btn-primary btn-large" data-ng-show="!logged" data-ng-disabled="!facebookReady" data-ng-click="IntentLogin()">Login with Facebook</button>
+<div class="description">{{description}}</div>
+<div class="fb-like" data-href="#/about" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>

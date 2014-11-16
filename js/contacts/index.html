@@ -1,2 +1,4 @@
 <h2>Наші контакти</h2>
-<p class="lead">Молодіжна громадська організація</p>
+<button type="button" class="btn btn-primary btn-large" data-ng-show="!logged" data-ng-disabled="!facebookReady" data-ng-click="IntentLogin()">Login with Facebook</button>
+<div class="location">{{location.country}}, {{location.city}} {{location.street}} {{location.zip}}</div>
+<div id="map_canvas"></div>
