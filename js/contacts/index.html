@@ -1,4 +1,13 @@
-<h2>Наші контакти</h2>
-<button type="button" class="btn btn-primary btn-large" data-ng-show="!logged" data-ng-disabled="!facebookReady" data-ng-click="IntentLogin()">Login with Facebook</button>
-<div class="location">{{location.country}}, {{location.city}} {{location.street}} {{location.zip}}</div>
-<div id="map_canvas"></div>
+<div class="contacts-container">
+    <p>{{contact.message}}</p>
+    <p>E-mail: {{contact.email}}</p>
+    <p>Mobile: {{contact.mobile}}</p>
+    <p>Ми в соцальних мережах:
+        <a href="{{contact.fb}}">
+            <img width="84px" src="http://img.ehowcdn.com/615x200/ehow/images/a05/j5/04/create-facebook-website-800x800.jpg">
+        </a>
+        <a href="{{contact.vk}}">
+            <img width="140px" src="http://www.iphones.ru/wp-content/uploads/2011/03/Vkontakte-e1301601305552.png">
+        </a>
+    </p>
+</div>

@@ -1,47 +1,19 @@
 'use strict';
 
-angular.module('fredra.about', ['ui.router'])
-    .config(['$stateProvider', '$urlRouterProvider',
-      function($stateProvider, $urlRouterProvider) {
+angular.module('lidikArt.about', ['ui.router'])
+    .config(['$stateProvider',
+      function($stateProvider) {
         $stateProvider
             .state('about', {
-              templateUrl: 'js/about/index.html',
-              url: '/about',
-              controller: function($scope, fbPageData) {
+                templateUrl: 'js/about/index.html',
+                url: '/about',
+                controller: function ($scope, lidikInfo) {
 
-                // Defining user logged status
-                $scope.logged = false;
-
-                /**
-                 * Watch for Facebook to be ready.
-                 * There's also the event that could be used
-                 */
-                $scope.$watch(
-                    function() {
-                      return fbPageData.isReady();
-                    },
-                    function(newVal) {
-                      if (newVal)
-                        $scope.facebookReady = true;
-                    }
-                );
-
-                if (fbPageData.isLogged()) {
-                  renderFBContent(fbPageData.getPageData());
-                } else {
-                  fbPageData.setCallback(renderFBContent);
+                    // Defining user logged status
+                    lidikInfo.success(function (data) {
+                        $scope.title = data[0].title;
+                        $scope.content = data[0].content;
+                    });
                 }
-
-                $scope.IntentLogin = function() {
-                  fbPageData.intentLogin();
-                };
-                $scope.user = {};
-
-                function renderFBContent(data) {
-                  $scope.logged = true;
-                  $scope.about = data.about;
-                  $scope.description = data.description;
-                }
-              }
             })
       }]);

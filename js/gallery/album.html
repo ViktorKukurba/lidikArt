@@ -1,0 +1,19 @@
+<div id="galleries-navigation">
+    <ul>
+        <li ng-repeat="cat in categories">
+            <a ng-class="selectedCategory(cat)" href="{{cat.link}}">{{cat.label}}</a>
+        </li>
+    </ul>
+</div>
+<div id="category-head">
+    <h4>{{category.description}}</h4>
+</div>
+<div class="album-container">
+
+    <p>
+<a ng-repeat="img in images" class="fancybox-buttons" data-fancybox-group="button" href="{{img.big}}">
+    <img src="{{img.small}}" alt="" />
+    <span>{{img.title}}</span>
+</a>
+    </p>
+</div>

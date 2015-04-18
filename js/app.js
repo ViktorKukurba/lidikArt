@@ -1,15 +1,17 @@
 'use strict';
 // Declare app level module which depends on views, and components
-var fredra = angular.module('fredra', [ 'fredra.about',
-      'fredra.donation',
-      'fredra.contacts',
+var lidikArt = angular.module('lidikArt', [ 'lidikArt.gallery',
+      'lidikArt.about',
+      'lidikArt.contacts',
       'facebook',
-      'ui.router'
+      'ui.router',
+      'ngSanitize',
+      'rawAjaxBusyIndicator'
     ])
     .config(function($stateProvider, $urlRouterProvider) {
 
       // For any unmatched url, send to /route1
-      $urlRouterProvider.otherwise('/donation');
+      $urlRouterProvider.otherwise('/gallery');
 
     })
     .config([
@@ -20,20 +22,33 @@ var fredra = angular.module('fredra', [ 'fredra.about',
 
       }
     ])
-    .controller('NavigationCtrl', ['$scope', '$location', 'Facebook', function($scope, $location, Facebook) {
-      var tabs = [
-        { link: '#/donation', label: 'Підтримка' },
-        { link: '#/about', label: 'Про нас' },
-        { link: '#/contacts', label: 'Контакти' }
-      ];
-      tabViewHandler($scope, $location, tabs, function() {
-        $('.jumbotron').addClass('animated fadeIn');
-        setTimeout(function() {
-          $('.jumbotron').removeClass('animated fadeIn');
-          Facebook.parseXFBML(document.querySelector('.fb-like-component'));
-        }, 700);
-      });
+    .controller('NavigationCtrl', ['$scope', '$location', 'Facebook', 'categoryData', function($scope, $location, Facebook, categoryData) {
+        console.log('test');
+
+        categoryData.success(function(data, status, headers, config) {
+            var tabs = [
+                { link: '#/gallery', label: 'Gallery'},
+                { link: '#/about', label: 'About' },
+                { link: '#/contacts', label: 'Contacts' }
+            ];
+
+
+            tabs[0].subTabs = formatCategories(data);
+            tabViewHandler($scope, $location, tabs);
+            console.log('TEST-1');
+        });
     }]);
+
+function formatCategories(data) {
+    return data.map(function(item) {
+        console.log(item.name);
+        return {
+            link: '#/gallery/' + item.ID,
+            label: item.name,
+            name: item.ID
+        }
+    });
+}
 
 function tabViewHandler($scope, $location, tabs, cb) {
   $scope.tabs = tabs;

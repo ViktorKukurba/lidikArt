@@ -1,6 +1,6 @@
 
 
-fredra.factory('fbPageData', ['Facebook', function(Facebook) {
+lidikArt.factory('fbPageData', ['Facebook', function(Facebook) {
   var pageData,
     callback,
     logged = false;
