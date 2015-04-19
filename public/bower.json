@@ -1,0 +1,22 @@
+{
+  "name": "lidikart",
+  "version": "0.0.0",
+  "homepage": "http://lidikart.com.ua/public/",
+  "authors": [
+    "Viktor Kukurba <victor.kukurba@sethq.com>"
+  ],
+  "description": "LidikArt UI",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.17",
+    "angular": "~1.3.15"
+  }
+}
