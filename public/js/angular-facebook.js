@@ -1,4 +1,4 @@
-(function(window, angular, undefined) {
+define(['angular'], function(angular, undefined) {
   'use strict';
 
   // Module global settings.
@@ -557,4 +557,4 @@
       }
     ]);
 
-})(window, angular);
+});

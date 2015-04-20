@@ -7,6 +7,7 @@ define([
     'facebook',
     'ui.router',
     'ngSanitize',
-    'rawAjaxBusyIndicator'
+    'rawAjaxBusyIndicator',
+    'navigation'
   ]);
 });

@@ -1,7 +1,9 @@
 define([
-  'angular'
+  'angular',
+  'services/category-service'
 ], function(angular) {
   'use strict';
+
   angular.module('lidikArt.gallery', ['ui.router'])
     .config(['$stateProvider', '$urlRouterProvider',
       function ($stateProvider, $urlRouterProvider) {
@@ -19,6 +21,36 @@ define([
                 });
                 tabViewHandler($scope, $location, tabs);
               });
+              function tabViewHandler($scope, $location, tabs, cb) {
+                $scope.tabs = tabs;
+
+                $scope.setSelectedTab = function (tab) {
+                  $scope.selectedTab = tab;
+                  if (cb) {
+                    cb();
+                  }
+                };
+
+                var selectedTab = cb ? 0 : undefined;
+
+                $scope.tabs.forEach(function (item, index) {
+                  if ($location.path().indexOf(item.link.replace('#', '')) > -1) {
+                    selectedTab = index;
+                  }
+                });
+
+                if (!angular.isUndefined(selectedTab)) {
+                  $scope.setSelectedTab($scope.tabs[selectedTab])
+                }
+
+                $scope.tabClass = function (tab) {
+                  if ($scope.selectedTab == tab) {
+                    return "active";
+                  } else {
+                    return "";
+                  }
+                }
+              }
             }
           })
           .state('album', {

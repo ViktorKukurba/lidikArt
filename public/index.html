@@ -98,39 +98,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
     <!----font-Awesome----->
 </head>
-<body ng-app="lidikArt">
+<body>
 <div raw-ajax-busy-indicator="" class="ajax-busy-indicator">
     </div>
 <!-- Header -->
-<div ng-controller="NavigationCtrl">
-<div class="header_bottom">
-    <div class="container">
-        <div class="logo">
-            <h1><a href="index.html">LidikART<span>Fairy art world</span></a></h1>
-        </div>
-        <div class="navigation">
-                <label class="mobile_menu" for="mobile_menu">
-                    <span>Menu</span>
-                </label>
-                <input id="mobile_menu" type="checkbox">
-                <ul class="nav">
-                    <li ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab">
-                        <a href="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a>
-                        <ul class="dropdown2">
-                            <li ng-repeat="subTab in tab.subTabs"><a href="{{subTab.link}}">{{subTab.label}}</a></li>
-                        </ul>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-<div class="reservation_banner">
-    <div class="main_title">{{selectedTab.label}}</div>
-    <div class="divider"></div>
-</div>
-</div>
+<navigation></navigation>
+
 <!-- Ends Header -->
 <!------------ Start Content ---------------->
 <div class="main">
