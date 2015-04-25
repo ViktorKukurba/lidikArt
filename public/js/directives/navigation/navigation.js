@@ -2,15 +2,13 @@ define([
   'angular'
 ], function(angular) {
 
-
   function formatCategories(data) {
     return data.map(function (item) {
-      console.log(item.name);
       return {
         link: '#/gallery/' + item.ID,
         label: item.name,
         name: item.ID
-      }
+      };
     });
   }
 
@@ -56,7 +54,7 @@ define([
               });
 
               if (!angular.isUndefined(selectedTab)) {
-                $scope.setSelectedTab($scope.tabs[selectedTab])
+                $scope.setSelectedTab($scope.tabs[selectedTab]);
               }
 
               $scope.tabClass = function (tab) {
@@ -65,7 +63,7 @@ define([
                 } else {
                   return "";
                 }
-              }
+              };
             });
           }]
       };

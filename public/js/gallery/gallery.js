@@ -40,7 +40,7 @@ define([
                 });
 
                 if (!angular.isUndefined(selectedTab)) {
-                  $scope.setSelectedTab($scope.tabs[selectedTab])
+                  $scope.setSelectedTab($scope.tabs[selectedTab]);
                 }
 
                 $scope.tabClass = function (tab) {
@@ -49,7 +49,7 @@ define([
                   } else {
                     return "";
                   }
-                }
+                };
               }
             }
           })
@@ -68,7 +68,7 @@ define([
                     link: '#/gallery/' + item.ID,
                     label: item.name,
                     name: item.ID
-                  }
+                  };
                 });
                 $scope.selectedCategory = function (cat) {
                   if (cat.name == $scope.category.ID) {
@@ -79,9 +79,8 @@ define([
 
               categoryPosts.getPosts($stateParams.album).success(function (data, status, headers, config) {
                 $scope.images = data.map(function (item) {
-                  console.log(item);
-                  item.small = item.featured_image.attachment_meta.sizes['post-thumb'].url,
-                    item.big = item.featured_image.guid
+                  item.small = item.featured_image.attachment_meta.sizes['post-thumb'].url;
+                  item.big = item.featured_image.guid;
                   return item;
                 });
 

@@ -11,12 +11,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Custom Theme files -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300:700' rel='stylesheet' type='text/css'>
 
@@ -26,228 +25,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </style>
 
-    <script data-main="js/main.js" src="bower_components/requirejs/require.js"></script>
-
-    <!--<script src="fancyapps-fancyBox/lib/jquery-1.10.1.min.js"></script>-->
-    <!--<script src="fancyapps-fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>-->
-    <!--&lt;!&ndash;<script src="js/jquery.min.js" type="text/javascript"></script>&ndash;&gt;-->
-    <!--<script src="js/modernizr.custom.js" type="text/javascript"></script>-->
-    <!--&lt;!&ndash;<script src="js/jquery.openCarousel.js" type="text/javascript"></script>&ndash;&gt;-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>-->
-    <!--<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>-->
-    <!--<script src="js/app.js"></script>-->
-    <!--<script src="js/busyIndicator.js"></script>-->
-    <!--<script src="js/gallery/gallery.js"></script>-->
-    <!--<script src="js/about/about.js"></script>-->
-    <!--<script src="js/contacts/contacts.js"></script>-->
-    <!--<script src="js/services/lidikInfo-service.js"></script>-->
-    <!--<script src="js/services/facebook-service.js"></script>-->
-    <!--<script src="js/services/category-service.js"></script>-->
-    <!--<script src="js/services/contacts-service.js"></script>-->
-    <!--<script src="js/angular-facebook.js"></script>-->
-    <!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
-
-    <!--<script type="text/javascript" src="fancyapps-fancyBox/source/jquery.fancybox.js?v=2.1.5"></script>-->
-    <!--<script type="text/javascript" src="fancyapps-fancyBox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>-->
+    <!--<script data-main="js/main.js" src="bower_components/requirejs/require.js"></script>-->
+    <script data-main="build/main.js" src="bower_components/requirejs/require.js"></script>
 
     <link rel="stylesheet" type="text/css" href="fancyapps-fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 
     <!-- Add Button helper (this is optional) -->
     <link rel="stylesheet" type="text/css" href="fancyapps-fancyBox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
 
-    <!--<script>-->
-        <!--$( function() {-->
-            <!--$( '#cbp-fwslider' ).cbpFWSlider();-->
-
-        <!--} );-->
-    <!--</script>-->
-    <!---- animated-css ---->
-    <!--<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">-->
-    <!--<script src="js/wow.min.js"></script>-->
-    <script>
-        //new WOW().init();
-    </script>
-
-
-
-    <script>
-
-//        $(function() {
-//            var button = $('#loginButton');
-//            var box = $('#loginBox');
-//            var form = $('#loginForm');
-//            button.removeAttr('href');
-//            button.mouseup(function(login) {
-//                box.toggle();
-//                button.toggleClass('active');
-//            });
-//            form.mouseup(function() {
-//                return false;
-//            });
-//            $(this).mouseup(function(login) {
-//                if(!($(login.target).parent('#loginButton').length > 0)) {
-//                    button.removeClass('active');
-//                    box.hide();
-//                }
-//            });
-//        });
-    </script>
     <!----font-Awesome----->
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
     <!----font-Awesome----->
+
+    <link rel="stylesheet" href="build/lidik-art.css">
 </head>
 <body>
-<div raw-ajax-busy-indicator="" class="ajax-busy-indicator">
-    </div>
 <!-- Header -->
 <navigation></navigation>
+
+<div raw-ajax-busy-indicator="" class="ajax-busy-indicator"></div>
 
 <!-- Ends Header -->
 <!------------ Start Content ---------------->
 <div class="main">
     <div class="container" ui-view> </div>
-    <!--<div class="content-bottom wow fadeInLeft" data-wow-delay="0.4s" id="work">-->
-        <!--<div class="container">-->
-            <!--<div class="row">-->
-                <!--<div class="col-md-8">-->
-                    <!--<div class="welcome_desc">-->
-                        <!--<h3>Visitor Experienced</h3>-->
-                        <!--<div class="course_demo">-->
-                            <!--<ul id="flexiselDemo3">-->
-                                <!--<li><img src="images/v1.jpg" class="img-responsive" /><div class="desc">-->
-                                    <!--<h3>Lorem Ipsum</h3>-->
-                                    <!--<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>-->
-                                <!--</div></li>-->
-                                <!--<li><img src="images/v2.jpg" class="img-responsive" /><div class="desc">-->
-                                    <!--<h3>Lorem Ipsum</h3>-->
-                                    <!--<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>-->
-                                <!--</div></li>-->
-                                <!--<li><img src="images/v3.jpg" class="img-responsive" /><div class="desc">-->
-                                    <!--<h3>Lorem Ipsum</h3>-->
-                                    <!--<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>-->
-                                <!--</div></li>-->
-                                <!--<li><img src="images/v4.jpg" class="img-responsive" /><div class="desc">-->
-                                    <!--<h3>Lorem Ipsum</h3>-->
-                                    <!--<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>-->
-                                <!--</div></li>-->
-                                <!--<li><img src="images/v5.jpg" class="img-responsive" /><div class="desc">-->
-                                    <!--<h3>Lorem Ipsum</h3>-->
-                                    <!--<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>-->
-                                <!--</div></li>-->
-                            <!--</ul>-->
-                            <!--<script type="text/javascript">-->
-                                <!--$(window).load(function() {-->
-                                    <!--$("#flexiselDemo3").flexisel({-->
-                                        <!--visibleItems: 4,-->
-                                        <!--animationSpeed: 1000,-->
-                                        <!--autoPlay: true,-->
-                                        <!--autoPlaySpeed: 3000,-->
-                                        <!--pauseOnHover: true,-->
-                                        <!--enableResponsiveBreakpoints: true,-->
-                                        <!--responsiveBreakpoints: {-->
-                                            <!--portrait: {-->
-                                                <!--changePoint:480,-->
-                                                <!--visibleItems: 1-->
-                                            <!--},-->
-                                            <!--landscape: {-->
-                                                <!--changePoint:640,-->
-                                                <!--visibleItems: 2-->
-                                            <!--},-->
-                                            <!--tablet: {-->
-                                                <!--changePoint:768,-->
-                                                <!--visibleItems: 2-->
-                                            <!--}-->
-                                        <!--}-->
-                                    <!--});-->
 
-                                <!--});-->
-                            <!--</script>-->
-                            <!--<script type="text/javascript" src="js/jquery.flexisel.js"></script>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-4 middle_right">-->
-                    <!--<h3>Info</h3>-->
-                    <!--<ul id="general-info">-->
-                        <!--<li><i class="fa fa-clock-o"> </i>Check-in: 14:00; Check-out: 12:00</li>-->
-                        <!--<li><i class="fa fa-globe"> </i>Free Wi-Fi Internet in Rooms</li>-->
-                        <!--<li><i class="fa fa-cutlery"> </i>In Room Dining Available from <br>06:00pm to 10:30pm</li>-->
-                        <!--<li><i class="fa fa-truck"> </i>Local Self Parking: $20-$25 per night</li>-->
-                        <!--<li><i class="fa fa-picture-o"> </i>Walking Distance to Wall Street, Battery Park and Brooklyn Bridge</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="company_logos wow bounceIn" data-wow-delay="0.4s">-->
-        <!--<h3>Our Gallery</h3>-->
-        <!--<div class="ocarousel_slider">-->
-            <!--<div class="ocarousel example_photos" data-ocarousel-perscroll="3">-->
-                <!--<div class="ocarousel_window">-->
-                    <!--<a href="#" title="Hp"> <img src="images/g1.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="Bosch"><img src="images/g2.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="El pso"><img src="images/g3.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="Print X Press"><img src="images/g4.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="Arcelo mittal"><img src="images/g5.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="Goldware IT Services"><img src="images/g6.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="Lucent Technologies"><img src="images/g7.jpg" class="img-responsive" alt="" /></a>-->
-                    <!--<a href="#" title="ge"><img src="images/g8.jpg" class="img-responsive" alt="" /></a>-->
-                <!--</div>-->
-			               <!--<span>           -->
-			                <!--<a href="#" data-ocarousel-link="left" class="prev"><i class="fa fa-angle-left"></i> </a>-->
-			                <!--<a href="#" data-ocarousel-link="right" class="next"> <i class="fa fa-angle-right"></i></a>-->
-			               <!--</span>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 <div class="footer">
     <div class="container">
-        <!--<div class="footer_top">-->
-            <!--<div class="row">-->
-                <!--<div class="col-md-4 footer_grid">-->
-                    <!--<h4>Receive our Newsletter</h4>-->
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>-->
-                    <!--<div class="search">-->
-                        <!--<form>-->
-                            <!--<input type="text" value="">-->
-                            <!--<input type="submit" value="">-->
-                        <!--</form>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-4 footer_grid">-->
-                    <!--<h4>Twitter Feed</h4>-->
-                    <!--<div class="footer-list">-->
-                        <!--<ul>-->
-                            <!--<li class="list_top"><i class="fa fa-twitter twt"></i>-->
-                                <!--<p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span>vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatu</li></p>-->
-                            <!--<li><i class="fa fa-twitter twt"></i>-->
-                                <!--<p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span>vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatu</li></p>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-4 footer_grid">-->
-                    <!--<h4>Our Address</h4>-->
-                    <!--<div class="company_address">-->
-                        <!--<p>500 Lorem Ipsum Dolor Sit,</p>-->
-                        <!--<p>22-56-2-9 Sit Amet, Lorem,</p>-->
-                        <!--<p>USA</p>-->
-                        <!--<p>Phone:(00) 222 666 444</p>-->
-                        <!--<p>Fax: (000) 000 00 00 0</p>-->
-                        <!--<p>Email: <span><a href="mailto:info@mycompany.com">info(at)mycompany.com</a></span></p>-->
-                    <!--</div>-->
-                    <!--<ul class="socials">-->
-                        <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="clearfix"></div>-->
-            <!--</div>-->
-        <!--</div>-->
         <div class="footer_bottom">
             <div class="copy_right">
-                <p>&copy; 2013 All Rights Reseverd Designed by <a href="#">LidikART</a> </p>
+                <p>&copy; 2015 All Rights Reseverd Designed by <a href="#">LidikART</a> </p>
             </div>
             <div class="footer_nav">
                 <ul>

@@ -1,6 +1,5 @@
 define([
-  'angular',
-  'services/category-service'
+  'angular'
 ], function(angular) {
   'use strict';
 //lidikArt.SERVICE_URL = 'http://localhost/lidik/public_html/';
@@ -15,6 +14,6 @@ define([
       getPosts: function (categoryId) {
         return $http.get(url + categoryId);
       }
-    }
+    };
   }]);
 });

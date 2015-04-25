@@ -49,7 +49,7 @@ define([
 
     return {
       isLogged: function () {
-        return logged
+        return logged;
       },
 
       isReady: Facebook.isReady,

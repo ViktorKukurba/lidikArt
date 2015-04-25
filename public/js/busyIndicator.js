@@ -8,10 +8,10 @@ define([
         return {
             link: function (scope, element) {
                 scope.$on("ajax-start", function () {
-                    element.show();
+                    $(element).show();
                 });
                 scope.$on("ajax-stop", function () {
-                    element.hide();
+                    $(element).hide();
                 });
             }
         };

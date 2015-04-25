@@ -1,6 +1,5 @@
 define([
-  'angular',
-  'services/category-service'
+  'angular'
 ], function(angular) {
   'use strict';
   var SERVICE_URL = '../';

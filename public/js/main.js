@@ -18,9 +18,9 @@ require.config({
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
     'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize.min',
     fancybox: '../bower_components/fancybox/source/jquery.fancybox',
-    'fancybox-buttons': '../bower_components/fancybox/source/helpers/fancybox-buttons',
+    'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
     jquery: '../bower_components/jquery/dist/jquery.min',
-    'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery-mousewheel.min',
+    'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',
     wow: '../bower_components/wow/dist/wow.min'
   },
   shim: {
@@ -43,7 +43,7 @@ require.config({
       deps: ['angular']
     },
     busyIndicator: {
-      deps: ['angular']
+      deps: ['angular', 'angular-route']
     }
   }
 });

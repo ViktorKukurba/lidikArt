@@ -1,6 +1,6 @@
 define([
   'angular',
-  'services/category-service'
+  'services/lidikInfo-service'
 ], function(angular) {
   'use strict';
   angular.module('lidikArt.about', ['ui.router'])
@@ -11,13 +11,12 @@ define([
             templateUrl: 'js/about/index.html',
             url: '/about',
             controller: function ($scope, lidikInfo) {
-
               // Defining user logged status
               lidikInfo.success(function (data) {
                 $scope.title = data[0].title;
                 $scope.content = data[0].content;
               });
             }
-          })
+          });
       }]);
 });

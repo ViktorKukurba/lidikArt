@@ -1,6 +1,6 @@
 define([
   'angular',
-  'services/category-service'
+  'services/contacts-service'
 ], function(angular) {
   'use strict';
 
