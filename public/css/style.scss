@@ -1384,7 +1384,7 @@ div#main-reservation-text {
 .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img, .view img {
 	display:inline;
 }
-.view .mask, .view .content, .label-product > span {
+.view .content, .label-product > span {
 	left:180px;
 }
 .reservation_top, .grids, .content-bottom{
@@ -1413,7 +1413,7 @@ div#main-reservation-text {
 }
 }
 @media all and (max-width: 640px) {
- .view .mask, .view .content, .label-product > span {
+  .view .content, .label-product > span {
 	left:110px;
 }
 .main_title, .about h2{

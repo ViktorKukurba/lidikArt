@@ -2,10 +2,10 @@ define([
   'angular'
 ], function(angular) {
 
-  function formatCategories(data) {
+  function formatCategories(data, lang) {
     return data.map(function (item) {
       return {
-        link: '#/gallery/' + item.ID,
+        link: lang + 'gallery/' + item.ID,
         label: item.name,
         name: item.ID
       };
@@ -27,18 +27,20 @@ define([
         templateUrl: 'js/directives/navigation/index.html',
         restrict: 'AE',
         scope: true,
-        controller: ['$scope', '$location', '$compile', 'categoryData',
-          function($scope, $location, $compile, categoryData) {
-            categoryData.success(function (data, status, headers, config) {
+        controller: ['$scope', '$location', '$compile', 'categoryData', '$translate',
+          function($scope, $location, $compile, categoryData, $translate) {
+            categoryData.categories().success(function (data, status, headers, config) {
+
+              var lang = $translate.use() === 'en' ? 'en/' : '';
+
               var tabs = [
-                { link: '#/gallery', label: 'Gallery'},
-                { link: '#/about', label: 'About' },
-                { link: '#/contacts', label: 'Contacts' }
+                { link: lang + 'gallery', label: 'Gallery'},
+                { link: lang + 'about', label: 'About' },
+                { link: lang + 'contacts', label: 'Contacts' }
               ];
 
 
-              tabs[0].subTabs = formatCategories(data);
-              var df = $('#donation-form');
+              tabs[0].subTabs = formatCategories(data, lang);
               $scope.tabs = tabs;
 
               $scope.setSelectedTab = function (tab) {

@@ -1,22 +1,26 @@
 define([
   'angular',
-  'services/category-service'
+  'services/category-service',
+  'angular-translate',
+  'angular-translate-loader-static'
 ], function(angular) {
   'use strict';
 
-  angular.module('lidikArt.gallery', ['ui.router'])
+  angular.module('lidikArt.gallery', ['ui.router', 'pascalprecht.translate'])
     .config(['$stateProvider', '$urlRouterProvider',
       function ($stateProvider, $urlRouterProvider) {
+
         $stateProvider
-          .state('gallery', {
+          .state('app.gallery', {
             templateUrl: 'js/gallery/index.html',
             url: '/gallery',
-            controller: function ($scope, $location, Facebook, $stateParams, categoryData) {
-              categoryData.success(function (data, status, headers, config) {
+            controller: function ($scope, $location, Facebook, $stateParams, categoryData, $translate) {
+
+              var lang = $translate.use() === 'en' ? 'en/' : '';
+
+              categoryData.categories().success(function (data, status, headers, config) {
                 var tabs = data.map(function (item) {
-                  console.log(item);
-                  //item.image = 'http://localhost/lidik/public_html/wp-content/uploads/2014/05/20140312_1258434-990x525.jpg';
-                  item.link = '#/gallery/' + item.ID;
+                  item.link = lang + 'gallery/' + item.ID;
                   return item;
                 });
                 tabViewHandler($scope, $location, tabs);
@@ -53,19 +57,19 @@ define([
               }
             }
           })
-          .state('album', {
+          .state('app.album', {
             templateUrl: 'js/gallery/album.html',
             url: '/gallery/{album}',
-            controller: function ($scope, $stateParams, categoryPosts, categoryData) {
-              categoryData.success(function (data, status, headers, config) {
+            controller: function ($scope, $stateParams, categoryPosts, categoryData, $translate) {
+              var lang = $translate.use() === 'en' ? 'en/' : '';
+              categoryData.categories().success(function (data, status, headers, config) {
+
                 $scope.categories = data.map(function (item) {
-                  console.log(item, $stateParams.album);
                   if (item.ID == $stateParams.album) {
-                    console.log(item);
                     $scope.category = item;
                   }
                   return {
-                    link: '#/gallery/' + item.ID,
+                    link: lang + 'gallery/' + item.ID,
                     label: item.name,
                     name: item.ID
                   };

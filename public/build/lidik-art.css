@@ -243,8 +243,7 @@ input#mobile_menu {
     width: 180px; } }
 @media all and (max-width: 800px) {
   .navigation {
-    float: none;
-    margin-bottom: 10px; } }
+    float: none; } }
 @media only screen and (max-width: 959px) {
   .nav > li > a {
     padding: 10px 12px; } }
@@ -373,7 +372,21 @@ input#mobile_menu {
     transition: none;
     -moz-transition: none;
     -webkit-transition: none;
-    -o-transition: none; } }
+    -o-transition: none; }
+
+  .navigation {
+    margin-top: 0; } }
+.lang {
+  position: absolute;
+  right: 0;
+  padding: 35px; }
+  .lang a {
+    padding-left: 10px;
+    opacity: .5;
+    cursor: pointer; }
+    .lang a.active {
+      opacity: 1; }
+
 /*
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -1762,7 +1775,7 @@ ul.comment-list .desc {
   .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img, .view img {
     display: inline; }
 
-  .view .mask, .view .content, .label-product > span {
+  .view .content, .label-product > span {
     left: 180px; }
 
   .reservation_top, .grids, .content-bottom {
@@ -1789,7 +1802,7 @@ ul.comment-list .desc {
   .category_widget {
     margin: 4em 0 3em; } }
 @media all and (max-width: 640px) {
-  .view .mask, .view .content, .label-product > span {
+  .view .content, .label-product > span {
     left: 110px; }
 
   .main_title, .about h2 {

@@ -8,17 +8,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
     <title>LidikART</title>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Custom Theme files -->
     <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
     <!-- Custom Theme files -->
+    <base href="/public/"></base>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300:700' rel='stylesheet' type='text/css'>
-
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <style type="text/css">
         .fancybox-custom .fancybox-skin {
             box-shadow: 0 0 50px #222;
@@ -40,17 +41,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="build/lidik-art.css">
 </head>
 <body>
-<!-- Header -->
-<navigation></navigation>
 
 <div raw-ajax-busy-indicator="" class="ajax-busy-indicator"></div>
 
-<!-- Ends Header -->
 <!------------ Start Content ---------------->
-<div class="main">
-    <div class="container" ui-view> </div>
+<ui-view></ui-view>
 
-</div>
+
 <div class="footer">
     <div class="container">
         <div class="footer_bottom">
@@ -59,9 +56,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="footer_nav">
                 <ul>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="contacts">Contacts</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

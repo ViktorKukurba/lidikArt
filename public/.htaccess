@@ -1,0 +1,10 @@
+Options -Indexes +ExecCGI
+AddHandler cgi-script .cgi .pl
+# html5 pushstate (history) support:
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) public/index.html
+</ifModule>

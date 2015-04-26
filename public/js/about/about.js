@@ -7,7 +7,7 @@ define([
     .config(['$stateProvider',
       function ($stateProvider) {
         $stateProvider
-          .state('about', {
+          .state('app.about', {
             templateUrl: 'js/about/index.html',
             url: '/about',
             controller: function ($scope, lidikInfo) {

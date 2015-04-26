@@ -1,0 +1,79 @@
+﻿{
+  
+"menu": {
+    
+"label": "Fredra.61",
+    
+"donation": "Donate",
+    
+"about": "About"
+ 
+ },
+  
+"home": {
+    
+"slogan1": "INDEPENDENT",
+    
+"slogan2": "OPEN",
+    
+"slogan3": "FREE",
+    
+"slogan4": "PLACE FOR PEOPLE",
+    
+"supportLink": "Support the project"
+  
+},
+  
+"about": {
+    
+"paragraph1": "Fredra.61 project is an example of dynamic public self-organization, an example of those who strive to shape an atmosphere of their own. Together we’ve created a place like no other and today any citizen can see a new life-style format that is an example of free and open society.",
+    
+
+"paragraph2": "Regardless of our future location, we will be working on the implementation of fresh, useful, and creative ideas for people.",
+    
+
+"paragraph3": "It’s your turn to join! <br/> 79005, Lviv, 6 Fredra str., ap. 1 <br/> fredra.61@gmail.com<br/>+38 (063) 0745298",
+    
+"join": "Join Community:",
+    
+"address": "79005, м, Львів, вул. О.Фредра, буд.6, кв.1"
+  
+},
+  
+"donation": {
+    
+"paragraph1": "Fredra.61 is an independent noncommercial project. The project which gives an opportunity to turn a <a target='_blank' href='http://issuu.com/fredra.61/docs/fdr_evt_alb_fin'>hundred unique events</a> into reality, introduces our city to <a target='_blank' href='https://www.facebook.com/Fredra.61/photos/a.1509155929308793.1073741828.1508541132703606/1655045038053214/?type=1'>thousands of visitors</a> from Ukraine and abroad, and continuously invites proactive people to hold common efficient projects with.",
+  
+  
+"paragraph2": "It’s a project for every single person who believes in a free self-actualization and an independent future. We exist owing to you and believe that together we can do better. We count on your support.",
+    
+"call": "Join us!",
+    
+"description": "Donation to support NGO Fredra.61",
+    
+"thank": {
+      
+"par1": "Thanks, that you are!",
+      
+"par2": "We have a long and interesting way ahead"
+    },
+    
+"placeholder": "Amount, hrn",
+    
+"privatbank": {
+      
+"edrpou": "ЄДРПОУ: 39338828",
+      
+"rr": "Account #: 26004053827521",
+
+"card": "Card number:<p></p>5169 3305 0570 7759 (Максимюк Маркіян)",
+      
+"org": "Holder: ФРЕДРА.61 ГО",
+      
+"mfo": "Bank #: 325321 (Львівська філія, ЗАХІДНЕ ГРУ ПАТ КБ \"ПРИВАТБАНК\", м. Львів)"
+    
+}
+  
+}
+
+}

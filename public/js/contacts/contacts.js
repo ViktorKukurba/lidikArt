@@ -8,7 +8,7 @@ define([
     .config(['$stateProvider', '$urlRouterProvider',
       function ($stateProvider) {
         $stateProvider
-          .state('contacts', {
+          .state('app.contacts', {
             templateUrl: 'js/contacts/index.html',
             url: '/contacts',
             controller: function ($scope, contactsData) {

@@ -244,7 +244,7 @@ input#mobile_menu { display: none; }
 @media all and (max-width: 800px) {
 	.navigation {
 		float: none;
-		margin-bottom: 10px;
+//		margin-bottom: 10px;
 	}
 }
 @media only screen and (max-width: 959px) {
@@ -411,4 +411,24 @@ input#mobile_menu { display: none; }
 			-webkit-transition: none;
 			-o-transition: none;
 		}
+
+	  .navigation {
+		margin-top: 0;
+	  }
 	}
+
+.lang {
+  position: absolute;
+  right: 0;
+  padding: 35px;
+  a {
+	padding-left: 10px;
+	opacity: .5;
+	cursor: pointer;
+
+	&.active {
+	  opacity: 1;
+
+	}
+  }
+}

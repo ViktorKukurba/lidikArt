@@ -17,6 +17,9 @@ require.config({
     'angular-route': '../bower_components/angular-route/angular-route.min',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
     'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize.min',
+    'angular-translate': '../bower_components/angular-translate/angular-translate.min',
+    'angular-translate-loader': '../bower_components/angular-translate-loader-url/angular-translate-loader-url.min',
+    'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
     fancybox: '../bower_components/fancybox/source/jquery.fancybox',
     'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
     jquery: '../bower_components/jquery/dist/jquery.min',
@@ -44,6 +47,15 @@ require.config({
     },
     busyIndicator: {
       deps: ['angular', 'angular-route']
+    },
+    'angular-translate': {
+      deps: ['angular']
+    },
+    'angular-translate-loader': {
+      deps: ['angular-translate']
+    },
+    'angular-translate-loader-static': {
+      deps: ['angular-translate']
     }
   }
 });
@@ -60,13 +72,51 @@ require([
   'angular-sanitize',
   'contacts/contacts',
   'gallery/gallery',
+  'angular-translate',
+  'angular-translate-loader-static',
   'services/facebook-service',
   'directives/navigation/navigation'
 ], function(angular, app) {
-  app.config(function ($stateProvider, $urlRouterProvider) {
+  app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider) {
 
-    // For any unmatched url, send to /route1
-    $urlRouterProvider.otherwise('/gallery');
+    $stateProvider.state('app', {
+      abstract: true,
+      url: '{lang:(?:/[^/]+)?}',
+      templateUrl: 'js/index.html',
+      controller: function($scope, $stateParams, $translate) {
+        var lang = $stateParams.lang === '/en' ? 'en' : 'ua';
+
+        $translate.use(lang);
+        $('[data-value=' + lang + ']').addClass('active');
+
+        $('.lang').delegate('a', 'click', function(e) {
+          var l = $(e.target).data('value');
+          $translate.use(l);
+
+          var href = '' + (l === 'en' ? 'en/' : '');
+          href += location.pathname.replace('/public/', '')
+              .replace('en/', '')
+              .replace('ua/', '');
+
+          location.href = href;
+        });
+      }
+    });
+
+    var lang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
+
+    $translateProvider.preferredLanguage(lang);
+
+    $('[data-value=' + lang + ']').addClass('active');
+
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'languages/',
+      suffix: '.json'
+    });
+    $locationProvider.html5Mode(true);
+
+    $urlRouterProvider.otherwise(lang + '/gallery');
+
 
   })
     .config([

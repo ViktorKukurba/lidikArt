@@ -11,6 +11,7 @@ define([
     'ui.router',
     'ngSanitize',
     'rawAjaxBusyIndicator',
+    'pascalprecht.translate',
     'navigation'
   ]);
 });
