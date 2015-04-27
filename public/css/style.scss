@@ -587,37 +587,7 @@ ul#general-info{
 .ocarousel_indicators {
     width: 100%;
 }
-/*** Footer ***/
-.footer {
-   padding: 0;
-   background:#58453F;
-  text-align: center;
-  .social {
-	float: left;
-	margin-left: 20%;
-	div {
-	  cursor: pointer;
-	  display: inline-block;
-	  width: 49px;
-	  height: 49px;
-	  margin-left: 20px;
-	}
-	.vk {
-	  background: url(../images/social/vk.svg);
-	  background-size: 100%;
-	}
 
-	.facebook {
-	  background: url(../images/social/facebook.svg);
-	  background-size: 100%;
-	}
-
-	.twitter {
-	  background: url(../images/social/twitter.svg);
-	  background-size: 100%;
-	}
-  }
-}
 .search {
 	border-bottom: 2px solid #F94B4B;
 	color: #FFF;

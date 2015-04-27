@@ -1,0 +1,57 @@
+/*** Footer ***/
+.footer {
+  .container {
+    padding: 15px;
+  }
+
+  h3 {
+    color: #F94B4B;
+  }
+
+  .gallery-footer {
+    text-align: left;
+  }
+
+  padding: 0;
+  background:#58453F;
+  text-align: center;
+  ul {
+    list-style:none;
+    padding: 0;
+    text-align: left;
+    color: white;
+  }
+  .social {
+    text-align: center;
+    li {
+      display: inline-block;
+    }
+    div {
+      cursor: pointer;
+      display: inline-block;
+      width: 49px;
+      height: 49px;
+    }
+    .vk {
+      background: url(../images/social/vk.svg);
+      background-size: 100%;
+    }
+
+    .facebook {
+      background: url(../images/social/facebook.svg);
+      background-size: 100%;
+    }
+
+    .twitter {
+      background: url(../images/social/twitter.svg);
+      background-size: 100%;
+    }
+    .instagram {
+      background: url(../images/social/instagram.svg);
+      background-size: 100%;
+    }
+  }
+  .about-footer {
+    text-align: justify;
+  }
+}
