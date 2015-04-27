@@ -6,7 +6,7 @@ define([
     return data.map(function (item) {
       return {
         link: lang + 'gallery/' + item.ID,
-        label: item.name,
+        title: item.name,
         name: item.ID
       };
     });
@@ -29,19 +29,23 @@ define([
         scope: true,
         controller: ['$scope', '$location', '$compile', 'categoryData', '$translate',
           function($scope, $location, $compile, categoryData, $translate) {
-            categoryData.categories().success(function (data, status, headers, config) {
+            //categoryData.categories().success(function (data, status, headers, config) {
+            categoryData.data().then(function(values) {
 
               var lang = $translate.use() === 'en' ? 'en/' : '';
 
-              var tabs = [
-                { link: lang + 'gallery', label: 'Gallery'},
-                { link: lang + 'about', label: 'About' },
-                { link: lang + 'contacts', label: 'Contacts' }
-              ];
+              values.pages.data.sort(function(a, b) {
+                return a.menu_order - b.menu_order;
+              });
 
+              values.pages.data.forEach(function(item) {
+                item.link = lang + item.name;
+                if ('gallery' === item.name) {
+                  item.subTabs = formatCategories(values.categories.data, lang);
+                }
+              });
 
-              tabs[0].subTabs = formatCategories(data, lang);
-              $scope.tabs = tabs;
+              $scope.tabs = values.pages.data;
 
               $scope.setSelectedTab = function (tab) {
                 $scope.selectedTab = tab;

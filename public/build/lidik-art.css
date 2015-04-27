@@ -985,8 +985,27 @@ ul#general-info {
 
 /*** Footer ***/
 .footer {
-  padding: 5em 0;
-  background: #58453F; }
+  padding: 0;
+  background: #58453F;
+  text-align: center; }
+  .footer .social {
+    float: left;
+    margin-left: 20%; }
+    .footer .social div {
+      cursor: pointer;
+      display: inline-block;
+      width: 49px;
+      height: 49px;
+      margin-left: 20px; }
+    .footer .social .vk {
+      background: url(../images/social/vk.svg);
+      background-size: 100%; }
+    .footer .social .facebook {
+      background: url(../images/social/facebook.svg);
+      background-size: 100%; }
+    .footer .social .twitter {
+      background: url(../images/social/twitter.svg);
+      background-size: 100%; }
 
 .search {
   border-bottom: 2px solid #F94B4B;
@@ -1095,10 +1114,11 @@ ul.socials li {
   color: #fff !important; }
 
 .footer_bottom {
-  margin-top: 2em; }
+  margin: 1em 0; }
 
 .footer_nav {
-  float: right; }
+  float: right;
+  margin-top: 1.5em; }
 
 .footer_nav li {
   display: inline; }
@@ -1122,7 +1142,8 @@ ul.socials li {
   color: #F94B4B; }
 
 .copy_right {
-  float: left; }
+  float: left;
+  margin-top: 1.5em; }
 
 .copy_right p {
   font-size: 0.95em;
@@ -1787,7 +1808,7 @@ ul.comment-list .desc {
   .nbs-flexisel-nav-left {
     left: -14px; }
 
-  .reservation, .company_logos, .footer, .staff {
+  .reservation, .company_logos, .staff {
     padding: 3em 0; }
 
   .search input[type="text"] {
