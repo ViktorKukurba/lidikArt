@@ -1975,6 +1975,12 @@ a.active {
   width: 100%;
   z-index: 1000; }
 
+.mail-ico {
+  background: url(../images/icons/mail.svg); }
+
+.phone-ico {
+  background: url(../images/icons/phone.svg); }
+
 /*** Footer ***/
 .footer {
   padding: 0;
@@ -1985,6 +1991,8 @@ a.active {
   .footer h3 {
     color: #F94B4B; }
   .footer .gallery-footer {
+    text-align: left; }
+  .footer .contacts-footer h3 {
     text-align: left; }
   .footer ul {
     list-style: none;
