@@ -1,3 +1,6 @@
+//$liHover: #dcbc86;
+$liHover: #456f7f;
+
 label.mobile_menu span {
 	  margin-left: 10px;
 	  color:#FFF;
@@ -8,6 +11,7 @@ label.mobile_menu span {
 .navigation{
 	float:right;
 	margin-top: -1.4em;
+  margin-right: 7%;
 }
 .nav {
 	/* General Font */
@@ -49,12 +53,12 @@ ul.nav{
 //}
 
 .nav > li > a:hover {
-	background:#dcbc86;
+	background:$liHover;
 }
 
 .nav > li:hover > a {
 	color: #fff;
-	border-color:#D1AC6D;
+	border-color:$liHover;
 	/*background:url(../images/menu-arrow-hover.png) no-repeat 51% 66% #dcbc86;*/
 }
 .nav li > ul li a:hover{
@@ -110,21 +114,21 @@ ul.nav{
 }
 .nav > li > ul li:hover {
 	color:#FFF;
-	background:#dcbc86;
+	background:$liHover;
 	-moz-transition: all 0.5s linear;
 	-webkit-transition: all 0.5s linear;
 	-o-transition: all 0.5s linear;
 	-ms-transition: all 0.5s linear;
 }
 .nav > li:hover > a {
-  background-color: #dcbc86 !important;
+  background-color: $liHover !important;
 }
 .nav ul.dropdown2 {
 	color: #FFF;
 }
 .nav ul li:hover > a {
 	color:#FFF;
-	background:#dcbc86;
+	background:$liHover;
 }
 /* Second and third dropdown level */
 .nav > li > ul li ul {
@@ -141,13 +145,13 @@ ul.nav{
 }
 .nav > li > ul li ul li:hover {
 	color:#FFF;
-	background:#dcbc86;
+	background:$liHover;
 
 }
 input#mobile_menu { display: none; }
 .nav > li > ul li ul li ul {
 	color:#FFF;
-	background:#dcbc86;
+	background:$liHover;
 }
 .nav > li > ul li ul li ul li:hover {
 	color:#0572B8;

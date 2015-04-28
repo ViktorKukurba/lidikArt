@@ -27,6 +27,7 @@ body a{
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 .logo h1 a{
+  text-align: center;
 	color:#F94B4B;
 	text-decoration:none;
 }
@@ -721,21 +722,6 @@ ul.socials li{
 }
 .footer_nav li a:hover{
 	color:#F94B4B;
-}
-.copy_right {
-	float:left;
-  margin-top: 1.5em;
-}
-.copy_right p {
-	font-size:0.95em;
-	color:#FFF;
-}
-.copy_right p a {
-	color:#F94B4B;
-}
-.copy_right p a:hover {
-	color:#FFF;
-	text-decoration:underline;
 }
 /*--reservation--*/
 .reservation_banner{
@@ -1604,8 +1590,23 @@ a.active {
 
 .mail-ico {
   background: url(../images/icons/mail.svg);
+  width: 39px;
+  height: 39px;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .phone-ico {
   background: url(../images/icons/phone.svg);
+  width: 39px;
+  height: 39px;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.main {
+  background-attachment: fixed;
+  background-image: url(http://lidikart.com.ua/wp-content/uploads/2014/05/bground.png);
 }
