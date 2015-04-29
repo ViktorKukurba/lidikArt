@@ -5,7 +5,7 @@ define([
   'use strict';
 
   angular.module('lidikArt.contacts', ['ui.router'])
-    .config(['$stateProvider', '$urlRouterProvider',
+    .config(['$stateProvider',
       function ($stateProvider) {
         $stateProvider
           .state('app.contacts', {

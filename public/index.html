@@ -48,6 +48,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!------------ Start Content ---------------->
 <ui-view></ui-view>
 
+<script>
+    function setFooterColor(color) {
+        $('.footer').css('background', color);
+    }
+    function setMainColor(color) {
+        $('.main').css('background', color);
+    }
+    function setCatColor(color) {
+        $('.product_image h3, .product_image h5, .product_image .mask').css('background', color);
+    }
+</script>
+
 </body>
 </html>
 

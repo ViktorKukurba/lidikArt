@@ -1978,10 +1978,6 @@ a.active {
   background-size: 100%;
   background-repeat: no-repeat; }
 
-.main {
-  background-attachment: fixed;
-  background-image: url(http://lidikart.com.ua/wp-content/uploads/2014/05/bground.png); }
-
 /*** Footer ***/
 .footer {
   padding: 0;
