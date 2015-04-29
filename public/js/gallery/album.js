@@ -56,8 +56,8 @@ define([
                     type: 'inside'
                   },
                   thumbs	: {
-                    width	: 75,
-                    height	: 50
+                    width	: 150,
+                    height	: 100
                   },
                   buttons: {}
                 },

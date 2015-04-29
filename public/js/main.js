@@ -79,6 +79,7 @@ require([
   'angular-sanitize',
   'contacts/contacts',
   'gallery/gallery',
+  'gallery/album',
   'angular-translate',
   'angular-translate-loader-static',
   'services/facebook-service',
