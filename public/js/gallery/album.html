@@ -10,9 +10,17 @@
 </div>
 <div class="album-container">
     <p>
-<a ng-repeat="img in images" class="fancybox-buttons" data-fancybox-group="button" href="{{img.big}}">
-    <img src="{{img.small}}" alt="" />
+<a ng-repeat="img in images"
+   class="fancybox-thumb fancybox-buttons" rel="fancybox-thumb fancybox-buttons"
+   title="{{img.title}}"
+   data-fancybox-group="button"
+   href="{{img.big}}">
+    <img src="{{img.small}}" alt=""/>
+    <!--<h5>{{img.title}}</h5>-->
     <span>{{img.title}}</span>
 </a>
     </p>
 </div>
+
+<!--class="fancybox-button"-->
+<!--rel="fancybox-button"-->

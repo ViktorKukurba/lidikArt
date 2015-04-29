@@ -2,7 +2,9 @@ define([
   'angular',
   'services/category-service',
   'angular-translate',
-  'angular-translate-loader-static'
+  'angular-translate-loader-static',
+  'fancybox-thumbs',
+  'fancybox-buttons'
 ], function(angular) {
   'use strict';
 
@@ -89,12 +91,12 @@ define([
                 });
 
                 setTimeout(function () {
-                  $('.fancybox-buttons').fancybox({
-                    openEffect: 'none',
-                    closeEffect: 'none',
-
-                    prevEffect: 'none',
-                    nextEffect: 'none',
+                  $('.fancybox-thumb').fancybox({
+                    //openEffect: 'none',
+                    //closeEffect: 'none',
+                    //
+                    //prevEffect: 'none',
+                    //nextEffect: 'none',
 
                     closeBtn: false,
 
@@ -102,12 +104,17 @@ define([
                       title: {
                         type: 'inside'
                       },
+                      thumbs	: {
+                        width	: 75,
+                        height	: 50
+                      },
                       buttons: {}
                     },
 
                     beforeShow: function () {
 
-                      this.title = '<div class="fb-like-component">' +
+                      this.title = '<div class="img-title">' + this.title + '</div>' +
+                        '<div class="fb-like-component">' +
                         '<div class="fb-like"' +
                         'data-href="' + this.href + '"' +
                         'data-layout="standard"' +

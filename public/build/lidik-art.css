@@ -2050,19 +2050,21 @@ a.active {
 
 .album-container a {
   margin: 8px;
-  padding: 5px;
   display: inline-block;
-  border: 2px solid #E74C3C;
-  border-radius: 2px; }
+  position: relative; }
   .album-container a > span {
-    max-width: 229px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    word-wrap: break-word; }
-.album-container img {
-  border: 2px solid #E74C3C;
-  border-radius: 2px; }
+    position: absolute;
+    background: #456f7f;
+    margin: 10px;
+    padding: 10px;
+    top: 0;
+    color: white;
+    transition: opacity 1s ease-in-out; }
+.album-container a:hover {
+  transition: all .5s ease-in-out;
+  transform: scale(1.1); }
+  .album-container a:hover > span {
+    opacity: .7; }
 .album-container > p {
   text-align: center; }
 .album-container span {

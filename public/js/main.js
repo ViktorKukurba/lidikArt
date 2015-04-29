@@ -22,6 +22,7 @@ require.config({
     'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
     fancybox: '../bower_components/fancybox/source/jquery.fancybox',
     'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
+    'fancybox-thumbs': '../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs',
     jquery: '../bower_components/jquery/dist/jquery.min',
     'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',
     wow: '../bower_components/wow/dist/wow.min'
@@ -56,6 +57,12 @@ require.config({
     },
     'angular-translate-loader-static': {
       deps: ['angular-translate']
+    },
+    'fancybox-thumbs': {
+      deps: ['fancybox']
+    },
+    'fancybox-buttons': {
+      deps: ['fancybox']
     }
   }
 });
@@ -75,7 +82,8 @@ require([
   'angular-translate',
   'angular-translate-loader-static',
   'services/facebook-service',
-  'directives/navigation/navigation'
+  'directives/navigation/navigation',
+  'footer-controller'
 ], function(angular, app) {
   app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider) {
 
@@ -103,6 +111,8 @@ require([
       }
     });
 
+
+
     var lang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
 
     $translateProvider.preferredLanguage(lang);
@@ -127,5 +137,6 @@ require([
 
       }
     ]);
+
   angular.bootstrap(document, ['lidikArt']);
 });

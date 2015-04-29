@@ -1,3 +1,16 @@
 ﻿{
-  "title" : "fairy art world"
+  "title" : "fairy art world",
+  "pages" : {
+    "gallery" : {
+      "name" : "Gallery"
+    },
+    "contacts": {
+      "name" : "Contacts"
+    },
+    "about" : {
+      "name" : "About"
+    }
+  },
+  "social" : "Join us",
+  "shortInfo" : "LidikART - art project of young ukrainian painter Lidia Matvienko. Inspered of ukrainian national culture, traditions and modern vision."
 }

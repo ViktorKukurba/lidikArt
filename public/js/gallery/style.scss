@@ -5,22 +5,34 @@ $label-color: #456f7f;
 .album-container {
   a {
     margin: 8px;
-    padding: 5px;
+//    padding: 5px;
     display: inline-block;
-    border: 2px solid #E74C3C;
-    border-radius: 2px;
+    position: relative;
+//    border: 2px solid #E74C3C;
+//    border-radius: 2px;
     > span {
-      max-width: 229px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      word-wrap:break-word;
+      position: absolute;
+      background: #456f7f;
+      margin: 10px;
+      padding: 10px;
+      top: 0;
+      color: white;
+      transition: opacity 1s ease-in-out;
+    }
+  }
+
+  a:hover {
+    transition: all .5s ease-in-out;
+
+    transform: scale(1.1);
+    > span {
+      opacity: .7;
     }
   }
 
   img {
-    border: 2px solid #E74C3C;
-    border-radius: 2px;
+//    border: 2px solid #E74C3C;
+//    border-radius: 2px;
   }
 
   > p {
