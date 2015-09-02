@@ -1,6 +1,7 @@
 
 /.idea
 bower_components/
+public/bower_components/
 cgi-bin/
 .sass-cache/
 node_modules/

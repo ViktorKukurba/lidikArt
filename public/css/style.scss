@@ -735,14 +735,16 @@ ul.socials li{
 	padding: 2em 0 3em;
 }
 .main_title {
+  	color: #fff;
+  	text-align: center;
+  	font-family: 'Open Sans Condensed', sans-serif;
 	font-size:3em;
-	text-align: center;
-	font-weight: 700;
+  	font-weight: 700;
+  	text-shadow: 2px 2px 2px black;
 	/*padding-top: 35px;*/
 	text-transform: uppercase;
 	/*padding-bottom: 20px;*/
-	color: #fff;
-	font-family: 'Open Sans Condensed', sans-serif;
+
 }
 .divider {
 	border-bottom: 3px solid #e0e0e0;
@@ -1345,7 +1347,7 @@ ul.comment-list .desc {
 }
 @media all and (max-width: 800px) {
   .logo {
-     float:none;
+//     float:none;
      padding:15px 0 10px;
      text-align:center;	
   }

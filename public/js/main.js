@@ -24,6 +24,7 @@ require.config({
     'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
     'fancybox-thumbs': '../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs',
     jquery: '../bower_components/jquery/dist/jquery.min',
+    'jquery-zoom': '../bower_components/jquery-zoom/jquery.zoom.min',
     'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',
     wow: '../bower_components/wow/dist/wow.min'
   },
@@ -63,6 +64,9 @@ require.config({
     },
     'fancybox-buttons': {
       deps: ['fancybox']
+    },
+    'jquery-zoom': {
+      deps: ['jquery']
     }
   }
 });
@@ -84,7 +88,8 @@ require([
   'angular-translate-loader-static',
   'services/facebook-service',
   'directives/navigation/navigation',
-  'footer-controller'
+  'footer-controller',
+  'jquery-zoom'
 ], function(angular, app) {
   app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider) {
 

@@ -1,3 +1,20 @@
+SecFilterEngine Off
+SecFilterScanPOST Off
+
+SecFilterEngine Off
+SecFilterScanPOST Off
+
+#BEGIN Image Upload HTTP Error Fix
+
+SecFilterEngine Off
+SecFilterScanPOST Off
+
+SecFilterEngine Off
+SecFilterScanPOST Off
+
+#END Image Upload HTTP Error Fix
+
+# BEGIN WordPress
 Options -Indexes +ExecCGI
 AddHandler cgi-script .cgi .pl
 <IfModule mod_rewrite.c>
@@ -9,4 +26,10 @@ AddHandler cgi-script .cgi .pl
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule ^(.*)$ public/index.html?/$1 [L]
+</IfModule>
+<IfModule mod_security.c>
+    <Files async-upload.php>
+        SecFilterEngine Off
+        SecFilterScanPOST Off
+    </Files>
 </IfModule>

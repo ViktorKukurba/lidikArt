@@ -19,11 +19,11 @@
 define('DB_NAME', 'lidikart_base');
 
 /** Имя пользователя MySQL */
-// define('DB_USER', 'lidikart_base');
+//define('DB_USER', 'lidikart_base');
 define('DB_USER', 'root');
 
 /** Пароль к базе данных MySQL */
-// define('DB_PASSWORD', 'lidikart12345');
+//define('DB_PASSWORD', 'lidikart12345');
 define('DB_PASSWORD', 'pmwork1122');
 
 /** Имя сервера MySQL */
@@ -84,8 +84,6 @@ define('WPLANG', 'ru_RU');
  */
 define('WP_DEBUG', false);
 
-define( 'WP_TEMP_DIR' , ABSPATH . 'wp-content/' );
-
 /* Это всё, дальше не редактируем. Успехов! */
 
 /** Абсолютный путь к директории WordPress. */
@@ -94,4 +92,15 @@ if ( !defined('ABSPATH') )
 
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');
+
+define( 'WP_TEMP_DIR' , ABSPATH . 'wp-content/' );
+
+if(is_admin()) {
+    add_filter('filesystem_method', create_function('$a', 'return "direct";' ));
+    define( 'FS_CHMOD_DIR', 0751 );
+}
+
+//define('WP_MEMORY_LIMIT', '64MB');
+
+//define( 'UPLOADS', '/home/lidikart/domains/lidikart.com.ua/public_html/wp-content/uploads' );
 

@@ -13,6 +13,7 @@ define([
             $scope.categories = data.map(function (item) {
               if (item.ID == $stateParams.album) {
                 $scope.category = item;
+                $('.main_title').text(item.name);
               }
               return {
                 link: lang + 'gallery/' + item.ID,
@@ -35,11 +36,10 @@ define([
                 item.small = item.featured_image.attachment_meta.sizes['post-thumb'].url;
                 item.big = item.featured_image.guid;
                 return item;
-              } else {
-                console.log('fea', item);
               }
-
             });
+
+
 
             setTimeout(function () {
               $('.fancybox-thumb').fancybox({
@@ -56,14 +56,13 @@ define([
                     type: 'inside'
                   },
                   thumbs	: {
-                    width	: 150,
-                    height	: 100
+                    width	: 100,
+                    height	: 75
                   },
                   buttons: {}
                 },
 
                 beforeShow: function () {
-
                   this.title = '<div class="img-title">' + this.title + '</div>' +
                     '<div class="fb-like-component">' +
                     '<div class="fb-like"' +
@@ -78,6 +77,17 @@ define([
                 afterShow: function () {
                   FB.XFBML.parse(); // reparse the document
                   $.fancybox.update(); // resize after show (just in case)
+                  var $image =
+                  $('.fancybox-image')
+                      .wrap('<span style="display:inline-block"></span>')
+                      .css('display', 'block')
+                      .parent();
+
+                  $image.zoom({
+                    url: $image.attr('src'),
+                    duration: 200,
+                    magnify: 0.4
+                  });
                 }
 
 //                              afterLoad : function() {

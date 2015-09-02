@@ -201,3 +201,17 @@ $label-color: #456f7f;
   filter: alpha(opacity=100);
   opacity: 1;
 }
+
+.fancybox-nav {
+  display: none;
+}
+
+.fancybox-inner {
+  .zoomImg {
+    cursor: zoom-in;
+  }
+}
+
+#galleries-navigation {
+  display: none;
+}

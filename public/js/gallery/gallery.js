@@ -21,6 +21,7 @@ define([
               var lang = $translate.use() === 'en' ? 'en/' : '';
 
               categoryData.categories().success(function (data, status, headers, config) {
+                console.log(data);
                 var tabs = data.map(function (item) {
                   item.link = lang + 'gallery/' + item.ID;
                   return item;

@@ -562,9 +562,6 @@ class WP_JSON_Posts {
 			'link'            => get_permalink( $post['ID'] ),
 		);
 
-		$custom_fields = get_post_custom($post['ID']);
-        $custom_name = $custom_fields['name'][0];
-
 		$post_fields_extended = array(
 			'slug'           => $post['post_name'],
 			'guid'           => apply_filters( 'get_the_guid', $post['guid'] ),
@@ -573,7 +570,6 @@ class WP_JSON_Posts {
 			'comment_status' => $post['comment_status'],
 			'ping_status'    => $post['ping_status'],
 			'sticky'         => ( $post['post_type'] === 'post' && is_sticky( $post['ID'] ) ),
-			'name' => $custom_name
 		);
 
 		$post_fields_raw = array(

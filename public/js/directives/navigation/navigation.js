@@ -15,20 +15,27 @@ define([
   return angular.module('navigation', [])
     .directive('navigation', function($timeout) {
       return {
-        compile: function compile() {
-          var selected;
-          return {
-            pre: function(scope, element) {
-              var $element = $(element);
-
-            }
-          };
-        },
+        //compile: function compile() {
+        //  var selected;
+        //  return {
+        //    pre: function($scope, element) {
+        //      var $element = $(element);
+        //      $element.on('click', 'a', function(e) {
+        //        console.log(e);
+        //        console.log($scope.tabs);
+        //
+        //      });
+        //
+        //    }
+        //  };
+        //},
         templateUrl: 'js/directives/navigation/index.html',
         restrict: 'AE',
         scope: true,
         controller: ['$scope', '$location', '$compile', 'categoryData', '$translate',
           function($scope, $location, $compile, categoryData, $translate) {
+
+
             //categoryData.categories().success(function (data, status, headers, config) {
             categoryData.data().then(function(values) {
 
@@ -48,7 +55,8 @@ define([
               $scope.tabs = values.pages.data;
 
               $scope.setSelectedTab = function (tab) {
-                $scope.selectedTab = tab;
+                //$scope.selectedTab = tab;
+                $('.main_title').text(tab.title);
               };
 
               var selectedTab = 0;
