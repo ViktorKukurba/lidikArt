@@ -379,7 +379,7 @@ input#mobile_menu {
 
 .nav > li:first-child > a:after {
   color: #444;
-  content: ' ▾'; }
+  content: ' тЦ╛'; }
 
 /*
 Author: W3layout
@@ -2025,9 +2025,7 @@ a.active {
   .footer .copy_right {
     font-size: 0.95em;
     color: #FFF;
-    position: absolute;
-    bottom: 0;
-    right: 15px; }
+    float: right; }
   .footer .copy_right p {
     font-size: 0.95em;
     color: #FFF; }
@@ -2036,6 +2034,8 @@ a.active {
   .footer .copy_right p a:hover {
     color: #FFF;
     text-decoration: underline; }
+  .footer .about-message {
+    min-height: 10em; }
 
 .album-container a {
   margin: 8px;
@@ -2212,6 +2212,28 @@ a.active {
   font-size: 20px;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: bold; }
+  .contacts-container .contact-items {
+    padding: 15px 0; }
+    .contacts-container .contact-items p {
+      vertical-align: middle;
+      height: 2em; }
+      .contacts-container .contact-items p a {
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        height: 2em;
+        position: relative;
+        top: .5em;
+        width: 2em;
+        cursor: pointer; }
+  .contacts-container .fb-contact {
+    background: url(../images/social/contact-fb.svg); }
+  .contacts-container .phone-contact {
+    background: url(../images/icons/contact-phone.svg); }
+  .contacts-container .mail-contact {
+    background: url(../images/icons/contact-mail.svg); }
+  .contacts-container .vk-contact {
+    background: url(../images/social/contact-vk.svg); }
 
 .contacts-container a img {
   border-radius: 2px; }
@@ -2223,6 +2245,8 @@ a.active {
   .about-description a {
     float: left;
     margin: 10px; }
+  .about-description img {
+    max-width: 300px; }
   .about-description p {
     padding: 5px; }
 

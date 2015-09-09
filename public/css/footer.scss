@@ -88,9 +88,7 @@ $footerColor: #456f7f;
   .copy_right {
     font-size: 0.95em;
     color: #FFF;
-    position: absolute;
-    bottom: 0;
-    right: 15px;
+    float: right;
   }
   .copy_right p {
     font-size:0.95em;
@@ -102,5 +100,8 @@ $footerColor: #456f7f;
   .copy_right p a:hover {
     color:#FFF;
     text-decoration:underline;
+  }
+  .about-message {
+    min-height: 10em;
   }
 }
