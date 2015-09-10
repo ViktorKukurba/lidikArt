@@ -4,6 +4,41 @@
   font-size: 20px;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight:bold;
+
+  .contact-items {
+    padding: 15px 0;
+
+    p {
+      vertical-align: middle;
+      height: 2em;
+      a {
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        height: 2em;
+        position: relative;
+        top: .5em;
+        width: 2em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .fb-contact {
+    background: url(../images/social/contact-fb.svg);
+  }
+
+  .phone-contact {
+    background: url(../images/icons/contact-phone.svg);
+  }
+
+  .mail-contact {
+    background: url(../images/icons/contact-mail.svg);
+  }
+
+  .vk-contact {
+    background: url(../images/social/contact-vk.svg);
+  }
 }
 
 .contacts-container a img {
