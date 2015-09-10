@@ -713,7 +713,7 @@ ul.socials li{
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
 	font-size:0.95em;
-	margin: 0px 8px;
+	margin: 0 8px;
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
 	-o-transition: all .5s;
@@ -724,16 +724,36 @@ ul.socials li{
 	color:#F94B4B;
 }
 /*--reservation--*/
-.reservation_banner{
+.reservation_banner {
 	background: url(../images/reservation.jpg)no-repeat center top;
-	background-size: 100% 100%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-position: center;
+	background-size: 100% auto;
+//	-webkit-background-size: cover;
+//	-moz-background-size: cover;
+//	-o-background-size: cover;
+//	background-size: cover;
+//	background-position: center;
 	padding: 2em 0 3em;
+
+  animation-duration: 20s;
+  animation-name: changepos;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-transition-timing-function: cubic-bezier(0.75,0.25,0.5,1); /* Safari and Chrome */
+  transition-timing-function: cubic-bezier(0.5,0.25,0.75,1);
 }
+
+@keyframes changepos {
+  from {
+//	background-size: 100% auto;
+	background-position: top;
+  }
+
+  to {
+//	background-size: 101% auto;
+	background-position: bottom;
+  }
+}
+
 .main_title {
   	color: #fff;
   	text-align: center;
