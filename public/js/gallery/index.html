@@ -1,7 +1,7 @@
 <div class="row grids text-center">
-    <div class="col-md-3 col-xs-6 col-sm-4" ng-repeat="tab in tabs">
+    <div class="col-md-3 col-xs-12 col-sm-4" ng-repeat="sub in subGalleries">
         <div class="view view-tenth">
-            <a href="{{tab.link}}">
+            <a href="{{sub.link}}">
                 <div class="inner_content clearfix">
                     <div class="product_image">
 
@@ -9,10 +9,10 @@
                         <!--<div class="label-product">-->
                             <!--<span class="new">{{tab.name}}</span> </div>-->
 
-                        <div class="la-img" style="background-image: url({{tab.image}})">
-                            <h5>{{tab.name}}</h5>
+                        <div class="la-img" style="background-image: url({{sub.image}})">
+                            <h5>{{sub.name}}</h5>
                             <div class="mask" >
-                                <h3>{{tab.description}}</h3>
+                                <h3>{{sub.description}}</h3>
                                 <!--<div class="info"><i class="fa fa-search-plus"></i> </div>-->
                             </div>
                         </div>
@@ -23,7 +23,6 @@
         <div class="product_container wow bounceIn" data-wow-delay="0.4s">
         </div>
     </div>
-</div>
 </div>
 <div id="gallery-container" ui-view></div>
 

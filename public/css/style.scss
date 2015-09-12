@@ -738,19 +738,21 @@ ul.socials li{
   animation-name: changepos;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  -webkit-transition-timing-function: cubic-bezier(0.75,0.25,0.5,1); /* Safari and Chrome */
-  transition-timing-function: cubic-bezier(0.5,0.25,0.75,1);
+  -webkit-transition-timing-function: linear; /* Safari and Chrome */
+  transition-timing-function: linear;
+//  -webkit-transition-timing-function: cubic-bezier(0.75,0.25,0.5,1); /* Safari and Chrome */
+//  transition-timing-function: cubic-bezier(0.5,0.25,0.75,1);
 }
 
 @keyframes changepos {
   from {
 //	background-size: 100% auto;
-	background-position: top;
+	background-position: center;
   }
 
   to {
 //	background-size: 101% auto;
-	background-position: bottom;
+	background-position: top;
   }
 }
 
@@ -1599,15 +1601,20 @@ a.active {
 /*}*/
 
 .ajax-busy-indicator {
-    background: url("../images/loading.gif") no-repeat scroll center center rgba(237, 237, 239, 0.8);
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+//  background: url("../images/loading.gif") no-repeat scroll center center rgba(237, 237, 239, 0.8);
+  background-color:#F6F6F6;
+//  background-color:#DC554F;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  //    position: fixed;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 500ms;
 }
 
 .mail-ico {
@@ -1628,7 +1635,15 @@ a.active {
   background-repeat: no-repeat;
 }
 
+p.lidikart {
+  color: #F94B4B;
+  display: inline;
+}
+
 .main {
+  position: relative;
+  min-height: 34em;
+//  background-color: #DC554F;
 //  background-attachment: fixed;
 //  background-image: url(http://lidikart.com.ua/wp-content/uploads/2014/05/bground.png);
 }

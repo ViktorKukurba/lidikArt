@@ -8,12 +8,21 @@ define([
         return {
             link: function (scope, element) {
                 scope.$on("ajax-start", function () {
-                    $(element).show();
+                    console.log($(element));
+                    $(element).css('opacity', 1);
+                    setTimeout(function() {
+                        $(element).show();
+                    }, 500);
+
                 });
                 scope.$on("ajax-stop", function () {
-                    $(element).hide();
+                    $(element).css('opacity',0);
+                    setTimeout(function() {
+                        $(element).hide();
+                    },500);
                 });
-            }
+            },
+            templateUrl: 'js/directives/busy-indicator/index.html'
         };
     });
 

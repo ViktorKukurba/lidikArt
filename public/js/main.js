@@ -26,7 +26,8 @@ require.config({
     jquery: '../bower_components/jquery/dist/jquery.min',
     'jquery-zoom': '../bower_components/jquery-zoom/jquery.zoom.min',
     'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',
-    wow: '../bower_components/wow/dist/wow.min'
+    wow: '../bower_components/wow/dist/wow.min',
+    busyIndicator: 'directives/busy-indicator/busyIndicator'
   },
   shim: {
     angular: {

@@ -93,10 +93,13 @@ $label-color: #456f7f;
   }
 
   .product_image {
-//    background-color: ghostwhite;
-    background-image: url("../images/loading.gif");
+//    background-image: url("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/s960x960/10521054_1507150276163919_1905897599154833804_o.jpg");
+    background-image: url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png");
     background-repeat: no-repeat;
-    background-color: gainsboro;
+    background-size: contain;
+    background-color: #DC554F;
+//    background-image: url("../images/loading.gif");
+//    background-color: gainsboro;
     background-position: center;
   }
 }

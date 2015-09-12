@@ -9,10 +9,12 @@
             </label>
             <input id="mobile_menu" type="checkbox">
             <ul class="nav">
-                <li ng-class="tabClass(tab)" ng-click="setSelectedTab(tab)" ng-repeat="tab in tabs" tab="tab">
+                <li data-type="tab" ng-repeat="tab in tabs" data-value="{{tab.ID}}" ng-class="tabClass(tab)"  tab="tab">
                     <a href="{{tab.link}}">{{tab.title}}</a>
                     <ul class="dropdown2">
-                        <li ng-repeat="subTab in tab.subTabs"><a href="{{subTab.link}}">{{subTab.title}}</a></li>
+                        <li data-type="sub-tab" ng-repeat="subTab in tab.subTabs" data-value="{{subTab.name}}" >
+                            <a href="{{subTab.link}}">{{subTab.title}}</a>
+                        </li>
                     </ul>
                 </li>
                 <div class="clearfix"></div>
@@ -23,5 +25,4 @@
 </div>
 <div class="reservation_banner">
     <div class="main_title">{{selectedTab.title}}</div>
-    <div class="divider"></div>
 </div>

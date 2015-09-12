@@ -5,12 +5,14 @@
       "name" : "Gallery"
     },
     "contacts": {
-      "name" : "Contacts"
+      "name" : "Contacts",
+      "social": "in social networks"
     },
     "about" : {
       "name" : "About"
     }
   },
   "social" : "Join us",
-  "shortInfo" : "LidikART - art project of young ukrainian painter Lidia Matvienko. Inspered of ukrainian national culture, traditions and modern vision."
+  "shortInfo" : "LidikART - art project of young ukrainian painter Lidia Matvienko. Inspered of ukrainian national culture, traditions and modern vision.",
+  "loading": "Loading..."
 }

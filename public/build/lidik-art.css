@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,700);
 label.mobile_menu span {
   margin-left: 10px;
   color: #FFF;
@@ -121,7 +122,8 @@ ul.nav {
   background-color: #456f7f !important; }
 
 .nav ul.dropdown2 {
-  color: #FFF; }
+  color: #FFF;
+  z-index: 1002; }
 
 .nav ul li:hover > a {
   color: #FFF;
@@ -250,7 +252,7 @@ input#mobile_menu {
 @media all and (max-width: 800px) {
   .navigation {
     margin-top: 0;
-    margin-right: 10%; } }
+    width: 50%; } }
 @media only screen and (max-width: 800px) {
   .nav {
     display: none; }
@@ -261,7 +263,7 @@ input#mobile_menu {
   label.mobile_menu {
     position: relative;
     display: block;
-    padding: 30px 20px 26px 20px; }
+    padding: 30px 45px 26px 20px; }
 
   .nav {
     padding: 0; }
@@ -298,9 +300,6 @@ input#mobile_menu {
 
   .nav > li:hover > a {
     /*background-color: #CACACA;*/ }
-
-  .nav > li > a {
-    background: url(../images/menu-arrow.png) no-repeat 97% 48%; }
 
   .nav > li:hover > a {
     /*background: url(../images/menu-arrow-hover.png) no-repeat 97% 48% #dcbc86;*/ }
@@ -379,8 +378,20 @@ input#mobile_menu {
 
 .nav > li:first-child > a:after {
   color: #444;
-  content: ' тЦ╛'; }
+  content: ' ▾'; }
 
+.header_bottom {
+  visibility: hidden; }
+
+.lang {
+  visibility: hidden; }
+
+.footer {
+  visibility: hidden; }
+
+@media all and (max-width: 800px) {
+  .lang {
+    padding: 35px 10px; } }
 /*
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -1121,15 +1132,15 @@ ul.socials li {
   animation-name: changepos;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  -webkit-transition-timing-function: cubic-bezier(0.75, 0.25, 0.5, 1);
+  -webkit-transition-timing-function: linear;
   /* Safari and Chrome */
-  transition-timing-function: cubic-bezier(0.5, 0.25, 0.75, 1); }
+  transition-timing-function: linear; }
 
 @keyframes changepos {
   from {
-    background-position: top; }
+    background-position: center; }
   to {
-    background-position: bottom; } }
+    background-position: top; } }
 .main_title {
   color: #fff;
   text-align: center;
@@ -1952,15 +1963,17 @@ a.active {
 /*min-width: 580px;*/
 /*}*/
 .ajax-busy-indicator {
-  background: url("../images/loading.gif") no-repeat scroll center center rgba(237, 237, 239, 0.8);
+  background-color: #F6F6F6;
   bottom: 0;
   height: 100%;
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 1000; }
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 500ms; }
 
 .mail-ico {
   background: url(../images/icons/mail.svg);
@@ -1977,6 +1990,14 @@ a.active {
   display: inline-block;
   background-size: 100%;
   background-repeat: no-repeat; }
+
+p.lidikart {
+  color: #F94B4B;
+  display: inline; }
+
+.main {
+  position: relative;
+  min-height: 34em; }
 
 /*** Footer ***/
 .footer {
@@ -2101,9 +2122,10 @@ a.active {
   width: auto;
   margin: auto; }
 .view-tenth .product_image {
-  background-image: url("../images/loading.gif");
+  background-image: url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png");
   background-repeat: no-repeat;
-  background-color: gainsboro;
+  background-size: contain;
+  background-color: #DC554F;
   background-position: center; }
 
 .view-tenth img {
@@ -2236,11 +2258,19 @@ a.active {
         background-repeat: no-repeat;
         background-size: contain;
         display: inline-block;
-        height: 2em;
+        cursor: pointer;
+        padding-left: 2em;
         position: relative;
-        top: .5em;
-        width: 2em;
-        cursor: pointer; }
+        top: .5em; }
+        .contacts-container .contact-items p a.phone-contact {
+          margin-left: .3em;
+          padding-left: 1.7em; }
+    .contacts-container .contact-items .social-info a {
+      background-size: contain;
+      width: 28px;
+      height: 28px;
+      display: inline-block;
+      vertical-align: middle; }
   .contacts-container .fb-contact {
     background: url(../images/social/contact-fb.svg); }
   .contacts-container .phone-contact {
@@ -2264,5 +2294,131 @@ a.active {
     max-width: 300px; }
   .about-description p {
     padding: 5px; }
+
+/* Loader #1 by Sam Lillicrap
+   http://www.samueljwebdesign.co.uk
+   http://codepen.io/samueljweb/pen/LbGxi
+*/
+.busy-animation h1 {
+  font-family: 'Lato';
+  color: #DC554F;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  text-align: center;
+  width: 155px;
+  margin-top: 20px;
+  -webkit-animation: fade 2s infinite;
+  -moz-animation: fade 2s infinite; }
+
+.busy-animation {
+  width: 180px;
+  padding-top: 180px;
+  margin: auto;
+  vertical-align: middle; }
+
+.stick {
+  width: 30px;
+  height: 3px;
+  background: #DC554F;
+  display: inline-block;
+  margin-left: -8px; }
+
+.stick:nth-child(n) {
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  /* IE 9 */
+  -webkit-transform: rotate(30deg);
+  /* Safari and Chrome */
+  -moz-transform: rotate(30deg);
+  -webkit-animation: fall 2s infinite;
+  -moz-animation: fall 2s infinite; }
+
+.stick:nth-child(2n) {
+  transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-30deg);
+  /* Safari and Chrome */
+  -moz-transform: rotate(-30deg);
+  -webkit-animation: rise 2s infinite;
+  -moz-animation: rise 2s infinite; }
+
+@-webkit-keyframes rise {
+  50% {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg); } }
+@-moz-keyframes rise {
+  50% {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg); } }
+@-o-keyframes rise {
+  50% {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg); } }
+@keyframes rise {
+  50% {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg); } }
+@-webkit-keyframes fall {
+  50% {
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(30deg); } }
+@-moz-keyframes fall {
+  50% {
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg); } }
+@-o-keyframes fall {
+  50% {
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(30deg); } }
+@keyframes fall {
+  50% {
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(30deg); } }
+@-webkit-keyframes fade {
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fade {
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes fade {
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+@keyframes fade {
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=lidik-art.css.map */

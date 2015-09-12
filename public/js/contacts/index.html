@@ -1,18 +1,19 @@
 <div class="contacts-container">
-    <p>{{contact.message}}</p>
+  <p>{{contact.message}}</p>
 
-    <div class="contact-items">
-        <p>E-mail: {{contact.email}}
-            <a class="mail-contact"></a>
-        </p>
+  <div class="contact-items">
+    <p>
+      <a class="mail-contact">E-mail: {{contact.email}}</a>
+    </p>
 
-        <p>Mobile: {{contact.mobile}}
-            <a class="phone-contact"></a>
-        </p>
+    <p>
+      <a class="phone-contact">Mobile: {{contact.mobile}}</a>
+    </p>
 
-        <p class="social-info">Ми в соцальних мережах:
-            <a href="{{contact.fb}}" class="fb-contact"></a>
-            <a href="{{contact.vk}}" class="vk-contact"></a>
-        </p>
+    <div class="social-info">
+      <p class="lidikart">LidikART</p> <span translate="pages.contacts.social"></span>
+      <a href="{{contact.fb}}" class="fb-contact"></a>
+      <a href="{{contact.vk}}" class="vk-contact"></a>
     </div>
+  </div>
 </div>

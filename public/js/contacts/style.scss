@@ -15,11 +15,27 @@
         background-repeat: no-repeat;
         background-size: contain;
         display: inline-block;
-        height: 2em;
+        cursor: pointer;
+//        height: 2em;
+        padding-left: 2em;
         position: relative;
         top: .5em;
-        width: 2em;
-        cursor: pointer;
+//        width: 2em;
+
+        &.phone-contact {
+          margin-left: .3em;
+          padding-left: 1.7em;
+        }
+      }
+    }
+
+    .social-info {
+      a {
+        background-size: contain;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        vertical-align: middle;
       }
     }
   }

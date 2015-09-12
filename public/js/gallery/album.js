@@ -13,7 +13,6 @@ define([
             $scope.categories = data.map(function (item) {
               if (item.ID == $stateParams.album) {
                 $scope.category = item;
-                $('.main_title').text(item.name);
               }
               return {
                 link: lang + 'gallery/' + item.ID,
@@ -21,11 +20,6 @@ define([
                 name: item.ID
               };
             });
-            $scope.selectedCategory = function (cat) {
-              if (cat.name == $scope.category.ID) {
-                return 'active';
-              }
-            };
           });
 
           categoryPosts.getPosts($stateParams.album).success(function (data, status, headers, config) {
