@@ -6,3 +6,5 @@ cgi-bin/
 .sass-cache/
 node_modules/
 wp-content/
+wp-includes/
+wp-admin/

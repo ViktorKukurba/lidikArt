@@ -2240,7 +2240,8 @@ p.lidikart {
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
 
 .view-tenth h3 {
-  color: #fff; }
+  color: #fff;
+  font-size: 8px; }
 
 .view-tenth:hover img {
   -webkit-transform: scale(10);
