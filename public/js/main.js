@@ -103,28 +103,12 @@ require([
 
         $translate.use(lang);
         $('[data-value=' + lang + ']').addClass('active');
-
-        $('.lang').delegate('a', 'click', function(e) {
-          var l = $(e.target).data('value');
-          $translate.use(l);
-
-          var href = '' + (l === 'en' ? 'en/' : '');
-          href += location.pathname.replace('/public/', '')
-              .replace('en/', '')
-              .replace('ua/', '');
-
-          location.href = href;
-        });
       }
     });
-
-
 
     var lang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
 
     $translateProvider.preferredLanguage(lang);
-
-    $('[data-value=' + lang + ']').addClass('active');
 
     $translateProvider.useStaticFilesLoader({
       prefix: 'languages/',

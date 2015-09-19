@@ -7,20 +7,44 @@ define([
       $stateProvider.state('app.album', {
         templateUrl: 'js/gallery/album.html',
         url: '/gallery/{album}',
-        controller: function ($scope, $stateParams, categoryPosts, categoryData, $translate) {
-          var lang = $translate.use() === 'en' ? 'en/' : '';
-          categoryData.categories().success(function (data, status, headers, config) {
-            $scope.categories = data.map(function (item) {
-              if (item.ID == $stateParams.album) {
-                $scope.category = item;
-              }
-              return {
-                link: lang + 'gallery/' + item.ID,
-                label: item.name,
-                name: item.ID
-              };
-            });
-          });
+        controller: function ($scope, $stateParams, categoryPosts, $location) {
+          var clearLocation = function () {
+            var uri = window.location.toString();
+
+            if (uri.indexOf("?") > 0) {
+              var clean_uri = uri.substring(0, uri.indexOf("?"));
+              window.history.replaceState({}, document.title, clean_uri);
+            }
+            $location.search('pic', null);
+          };
+
+          var setQueryParam = function(param, val) {
+            var clean_uri = location.href;
+
+            if (clean_uri.indexOf("?") > 0) {
+              clean_uri = clean_uri.substring(0, clean_uri.indexOf("?"));
+            }
+
+            var obj = {};
+            obj[param] = val;
+            var url = clean_uri + '?' + $.param(obj);
+
+            window.history.replaceState(obj, document.title, url);
+          };
+
+          //var lang = $translate.use() === 'en' ? 'en/' : '';
+          //categoryData.categories().success(function (data, status, headers, config) {
+          //  $scope.categories = data.map(function (item) {
+          //    if (item.ID == $stateParams.album) {
+          //      $scope.category = item;
+          //    }
+          //    return {
+          //      link: lang + 'gallery/' + item.ID,
+          //      label: item.name,
+          //      name: item.ID
+          //    };
+          //  });
+          //});
 
           categoryPosts.getPosts($stateParams.album).success(function (data, status, headers, config) {
             $scope.images = data.filter(function(item){
@@ -32,6 +56,8 @@ define([
                 return item;
               }
             });
+
+            //window.ll = $location;
 
 
 
@@ -57,6 +83,9 @@ define([
                 },
 
                 beforeShow: function () {
+                  var image = this.element.find('img')[0];
+                  setQueryParam('pic', image.id);
+
                   this.title = '<div class="img-title">' + this.title + '</div>' +
                     '<div class="fb-like-component">' +
                     '<div class="fb-like"' +
@@ -82,13 +111,27 @@ define([
                     duration: 200,
                     magnify: 0.4
                   });
+                },
+
+                afterClose : function() {
+                  //console.log($location.search(), 'null');
+                  //$location.url($location.path());
+                  //$location.search('pic', 'test');
+                  clearLocation();
+
                 }
 
 //                              afterLoad : function() {
 //                                  this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
 //                              }
               });
-            }, 100);
+
+              var pictureId = $location.search().pic;
+              if (pictureId) {
+                $('#' + pictureId).click();
+              }
+
+            }, 1e2);
           });
         }
       });

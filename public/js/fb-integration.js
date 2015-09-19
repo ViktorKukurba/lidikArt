@@ -70,7 +70,6 @@ function initializeFB() {
   js.src = "//connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
   js.onload = function() {
-    console.log('TEST');
     initializeFB();
   };
 }(document, 'script', 'facebook-jssdk'));

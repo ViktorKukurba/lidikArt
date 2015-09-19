@@ -13,27 +13,32 @@ define([
   }
 
   return angular.module('navigation', [])
-    .directive('navigation', function($timeout) {
+    .directive('navigation', function($timeout, $location) {
       return {
         compile: function compile() {
           return {
             pre: function($scope, element) {
-              var $element = $(element);
-              $element.on('click', 'a', function(e) {
-                var li = $(e.target).parent('li');
-                var type = li.data('type');
-                var isSubTab = type === 'sub-tab';
-                var tabLi = isSubTab ? li.parents('li') : li;
+              //var $element = $(element);
+              //$element.on('click', 'a', function(e) {
+              //  var li = $(e.target).parent('li');
+              //  var type = li.data('type');
+              //  var isSubTab = type === 'sub-tab';
+              //  var tabLi = isSubTab ? li.parents('li') : li;
+              //
+              //  var tabId = +tabLi.data('value');
+              //
+              //  var subTabId = +li.data('value');
+              //  handleChange(tabId, isSubTab, subTabId);
+              //});
 
-                var tabId = +tabLi.data('value');
-
+              function handleChange(tabId, isSubTab, subTabId) {
                 var selectedArr = $.grep($scope.tabs, function(item) {
-                  return item.ID === tabId;
+                  return item.name === tabId;
                 });
 
                 if (isSubTab && selectedArr.length) {
                   var selectedSub = $.grep(selectedArr[0].subTabs, function(item) {
-                    return item.name === +li.data('value');
+                    return item.name === subTabId;
                   });
                   if (selectedSub.length) {
                     $scope.selectedTab = selectedSub[0];
@@ -41,7 +46,27 @@ define([
                 } else if (selectedArr.length) {
                   $scope.selectedTab = selectedArr[0];
                 }
-                console.log('dsdd', $scope.selectedTab);
+              }
+
+              $scope.$on('$locationChangeSuccess', function(event,url, oldUrl, state, oldState) {
+                console.log(event, url, oldUrl, state, oldState);
+
+                var paths = $location.path().replace('/','').split('/');
+
+                if (paths[0] === 'en' || paths[0] === 'ua') {
+                  paths.shift();
+                }
+
+                console.log(paths);
+
+                if (paths.length === 1) {
+                  handleChange(paths[0], false);
+                } else {
+                  handleChange(paths[0], true, +paths[1]);
+                }
+
+                console.log();
+
               });
 
             }
@@ -53,10 +78,25 @@ define([
         controller: ['$scope', '$location', '$compile', 'categoryData', '$translate',
           function($scope, $location, $compile, categoryData, $translate) {
 
+            $('.lang').delegate('a', 'click', function(e) {
+              var lang = $(e.target).data('value');
+              $translate.use(lang);
+
+              var href = '' + (lang === 'en' ? 'en/' : '');
+              href += location.pathname.replace('/public/', '')
+                  .replace('en/', '')
+                  .replace('ua/', '');
+              location.href = href;
+            });
+
             //categoryData.categories().success(function (data, status, headers, config) {
             categoryData.data().then(function(values) {
 
               var lang = $translate.use() === 'en' ? 'en/' : '';
+
+              var aLang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
+
+              $('[data-value=' + aLang + ']').addClass('active');
 
               values.pages.data.sort(function(a, b) {
                 return a.menu_order - b.menu_order;

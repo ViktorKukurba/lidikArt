@@ -1,25 +1,25 @@
 <div id="galleries-navigation">
-    <ul>
-        <!--<li ng-repeat="cat in categories">-->
-            <!--<a ng-class="selectedCategory(cat)" href="{{cat.link}}">{{cat.label}}</a>-->
-        <!--</li>-->
-    </ul>
+  <ul>
+    <!--<li ng-repeat="cat in categories">-->
+    <!--<a ng-class="selectedCategory(cat)" href="{{cat.link}}">{{cat.label}}</a>-->
+    <!--</li>-->
+  </ul>
 </div>
 <div id="category-head">
-    <h4>{{category.description}}</h4>
+  <h5>{{category.description}}</h5>
 </div>
 <div class="album-container">
-    <p>
-<a ng-repeat="img in images"
-   class="fancybox-thumb fancybox-buttons" rel="fancybox-thumb fancybox-buttons"
-   title="{{img.title}}"
-   data-fancybox-group="button"
-   href="{{img.big}}">
-    <img src="{{img.small}}" alt=""/>
-    <!--<h5>{{img.title}}</h5>-->
-    <!--<span>{{img.title}}</span>-->
-</a>
-    </p>
+  <div class="col-lg-3 col-md-3 col-xs-6 col-sm-4 image" ng-repeat="img in images">
+    <a class="fancybox-thumb fancybox-buttons"
+       rel="fancybox-thumb fancybox-buttons"
+       title="{{img.title}}"
+       data-fancybox-group="button"
+       href="{{img.big}}">
+      <img id="{{img.ID}}" src="{{img.small}}" alt=""/>
+      <!--<h5>{{img.title}}</h5>-->
+      <!--<span>{{img.title}}</span>-->
+    </a>
+  </div>
 </div>
 
 <!--class="fancybox-button"-->

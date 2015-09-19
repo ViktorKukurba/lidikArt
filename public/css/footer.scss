@@ -1,5 +1,7 @@
 /*** Footer ***/
-$footerColor: #456f7f;
+$footerColor: #2680c9;
+//$footerColor: rgba(80, 187, 229, 1);
+//$footerColor: #456f7f;
 //$footerColor: #02354d;
 //$footerColor: #7a7a7a;
 //$footerColor: #072438;
@@ -15,7 +17,8 @@ $footerColor: #456f7f;
   }
 
   h3 {
-    color: #F94B4B;
+    text-shadow: 5px 5px 5px rgba(50, 50, 50, 0.5);
+//    color: #F94B4B;
   }
 
   .gallery-footer {
@@ -38,7 +41,21 @@ $footerColor: #456f7f;
   }
 
   padding: 0;
-  background: $footerColor;
+//  background: $footerColor;
+
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+10,2680c9+50,7db9e8+90 */
+  background: #7db9e8; /* Old browsers */
+  background: -moz-linear-gradient(left,  #7db9e8 10%, #2680c9 50%, #7db9e8 90%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%,#7db9e8), color-stop(50%,#2680c9), color-stop(90%,#7db9e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #7db9e8 10%,#2680c9 50%,#7db9e8 90%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #7db9e8 10%,#2680c9 50%,#7db9e8 90%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #7db9e8 10%,#2680c9 50%,#7db9e8 90%); /* IE10+ */
+  background: linear-gradient(to right,  #7db9e8 10%,#2680c9 50%,#7db9e8 90%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+
+
+
   text-align: center;
   ul {
     list-style:none;

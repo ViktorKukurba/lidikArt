@@ -3,16 +3,42 @@
   padding: 10px;
   min-height: 340px;
 
+  .about-content {
+    padding: 5px;
+    text-align: justify;
+  }
+
   a {
     float: left;
     margin: 10px;
+    width: 20%;
+//    max-width: 250px;
   }
 
   img {
-    max-width: 300px;
+    border-radius: 50%;
+    width: 80%;
+    height: inherit;
+    &:nth-child(2) {
+      float: right;
+    }
   }
 
   p {
-    padding: 5px;
+    padding: 16px 10px;
+  }
+
+  .fb-like-component {
+    margin: 3em 17.5em;
+  }
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-width: 800px) {
+  .about-description {
+    max-width: 100%;
+    a {
+      max-width: 50%;
+    }
   }
 }

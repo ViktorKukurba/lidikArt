@@ -1,15 +1,22 @@
 //$label-color: #380000;
-$label-color: #456f7f;
+//$label-color: #456f7f;
+$label-color: rgba(80, 187, 229, .5);
+$circle-size: 200px;
 //$label-color: #000000;
 
 .album-container {
   a {
-    margin: 8px;
+    box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
+    margin: 8px auto;
 //    padding: 5px;
-    display: inline-block;
+    display: block;
     position: relative;
 //    border: 2px solid #E74C3C;
 //    border-radius: 2px;
+    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat center;
+    background-size: 25%;
+    height: 158px;
+    width: 225px;
     > span {
       position: absolute;
       background: #456f7f;
@@ -19,6 +26,11 @@ $label-color: #456f7f;
       color: white;
       transition: opacity 1s ease-in-out;
     }
+    img {
+      height: 158px;
+      width: 225px;
+    }
+
   }
 
   a:hover {
@@ -28,6 +40,7 @@ $label-color: #456f7f;
     > span {
       opacity: .7;
     }
+    box-shadow: 15px 15px 15px rgba(50, 50, 50, 0.3);
   }
 
   img {
@@ -43,12 +56,79 @@ $label-color: #456f7f;
     display: block;
     text-align: center;
   }
+  .image {
+    margin-bottom: 2em;
+  }
+}
+
+.gallery-cat:hover {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+
+  z-index: 1005;
+
+  .view-tenth .la-img {
+    //    -webkit-transform: scale(1.2);
+    //    -moz-transform: scale(1.2);
+    //    -o-transform: scale(1.2);
+    //    -ms-transform: scale(1.2);
+    //    transform: scale(1.2);
+
+    //    height: 200px;
+    //    opacity: 0.5;
+    z-index: 1005;
+    box-shadow: 15px 15px 15px rgba(50, 50, 50, 0.3);
+  }
+
+
+//  -webkit-transition: all 0.7s ease-in-out;
+//  -moz-transition: all 0.7s ease-in-out;
+//  -o-transition: all 0.7s ease-in-out;
+//  -ms-transition: all 0.7s ease-in-out;
+//  transition: all 0.7s ease-in-out;
+  //    height: 200px;
+  //    opacity: 0.5;
+}
+.gallery-cat {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+
+
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  //    height: 200px;
+  //    opacity: 0.5;
 }
 
 .view-tenth {
+  padding: 2em 0;
   .la-img {
-    background-size:cover;
-    height: 200px;
+    background-size: cover;
+//    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat 50% 50%;
+//    background-size: 40%;
+    width: $circle-size;
+    height: $circle-size;
+//    border-radius: 50%;
+    margin: auto;
+    position: relative;
+
+    box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
+
+
+
+//    background-image: url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png");
+//    background-repeat: no-repeat;
+////    background-size: contain;
+//    background-color: #DC554F;
 
     -webkit-transform: scaleY(1);
     -moz-transform: scaleY(1);
@@ -65,8 +145,11 @@ $label-color: #456f7f;
 //      border-radius: 5px;
       position: absolute;
       background: $label-color;
+//      background: rgba(27,27,221,.2);
       margin: 10px;
-      padding: 10px;
+
+      padding: 5px;
+      border-radius: 5px;
       color: white;
 
       opacity: 1;
@@ -75,18 +158,8 @@ $label-color: #456f7f;
     }
   }
 
-  .la-img:hover {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -o-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(1.5);
-
-    height: 200px;
-//    opacity: 0.5;
-  }
-
   .product_image img {
+    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat center;
     height: 200px;
     width: auto;
     margin: auto;
@@ -94,13 +167,28 @@ $label-color: #456f7f;
 
   .product_image {
 //    background-image: url("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/s960x960/10521054_1507150276163919_1905897599154833804_o.jpg");
-    background-image: url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #DC554F;
+
 //    background-image: url("../images/loading.gif");
 //    background-color: gainsboro;
-    background-position: center;
+    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat 50% 50%;
+    background-size: 40%;
+//    background-position: center;
+
+    width: 200px;
+//    height: 250px;
+    margin: auto;
+
+  }
+  &.circle {
+    .product_image {
+      border-radius: 50%;
+    }
+    .la-img {
+      border-radius: 50%;
+    }
+    .mask {
+      border-radius: 50%;
+    }
   }
 }
 
@@ -118,70 +206,72 @@ $label-color: #456f7f;
 }
 .view-tenth .mask {
   background-color:$label-color;
-//  border-radius: 10px;
-//  background-color:#380000;
+  font-size: 8px;
+  height: 180px;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  padding: 10px;
+  margin: 10px;
+
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear;
   transition: all 0.5s linear;
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-
-  margin: 10px;
-  height: 180px;
   transform: scale(0.2);
 }
 .view-tenth h2 {
   border-bottom: 1px solid #E9C78C;
   background: transparent;
+  color: #fff;
+  filter: alpha(opacity=0);
+  opacity: 0;
   margin:40px 40px 0px 40px;
+
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -o-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  color: #fff;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear;
   transition: all 0.5s linear;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
+
 }
 .view-tenth h3 {
   color: #fff;
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+//  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+//  filter: alpha(opacity=0);
+//  opacity: 0;
+//  -webkit-transform: scale(0);
+//  -moz-transform: scale(0);
+//  -o-transform: scale(0);
+//  -ms-transform: scale(0);
+//  transform: scale(0);
+//  -webkit-transition: all 0.5s linear;
+//  -moz-transition: all 0.5s linear;
+//  -o-transition: all 0.5s linear;
+//  -ms-transition: all 0.5s linear;
+//  transition: all 0.5s linear;
 }
 .view-tenth.info {
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+//  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+//  filter: alpha(opacity=0);
+//  opacity: 0;
+//  -webkit-transform: scale(0);
+//  -moz-transform: scale(0);
+//  -o-transform: scale(0);
+//  -ms-transform: scale(0);
+//  transform: scale(0);
+//  -webkit-transition: all 0.5s linear;
+//  -moz-transition: all 0.5s linear;
+//  -o-transition: all 0.5s linear;
+//  -ms-transition: all 0.5s linear;
+//  transition: all 0.5s linear;
 }
 .view-tenth:hover img {
   -webkit-transform: scale(10);
@@ -197,16 +287,18 @@ $label-color: #456f7f;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   opacity: 1;
-  transform: scale(0.65);
+//  border-radius: 50%;
+  transform: scale(1.11);
 }
 .view-tenth:hover h2,.view-tenth:hover h3,.view-tenth:hover.info {
+  font-size: 8px;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -o-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
+//  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+//  filter: alpha(opacity=100);
   opacity: 1;
 }
 .view-tenth:hover h5 {
@@ -226,4 +318,19 @@ $label-color: #456f7f;
 
 #galleries-navigation {
   display: none;
+}
+
+.row.grids {
+  .gallery-cat {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gallery-cat {
+    width: 100%;
+  }
+  .image {
+    width: 100%;
+  }
 }

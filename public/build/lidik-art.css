@@ -12,9 +12,7 @@ label.mobile_menu span {
   background-image: url("../images/icons/mobile-menu.svg"); }
 
 .navigation {
-  float: right;
-  margin-top: -1.4em;
-  margin-right: 7%; }
+  float: right; }
 
 .nav {
   /* General Font */
@@ -24,6 +22,7 @@ label.mobile_menu span {
   margin: 0; }
 
 ul.nav {
+  float: left;
   padding: 0;
   list-style: none; }
 
@@ -38,7 +37,7 @@ ul.nav {
 
 /* Link Style */
 .nav > li > a {
-  padding: 35px 20px 36px 20px;
+  padding: 37px 20px 36px 20px;
   display: block;
   color: #000;
   font-size: .85em;
@@ -52,11 +51,11 @@ ul.nav {
   background: none; }
 
 .nav > li > a:hover {
-  background: #456f7f; }
+  background: #2680c9; }
 
 .nav > li:hover > a {
   color: #fff;
-  border-color: #456f7f;
+  border-color: #2680c9;
   /*background:url(../images/menu-arrow-hover.png) no-repeat 51% 66% #dcbc86;*/ }
 
 .nav li > ul li a:hover {
@@ -112,14 +111,14 @@ ul.nav {
 
 .nav > li > ul li:hover {
   color: #FFF;
-  background: #456f7f;
+  background: #2680c9;
   -moz-transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear; }
 
 .nav > li:hover > a {
-  background-color: #456f7f !important; }
+  background-color: #2680c9 !important; }
 
 .nav ul.dropdown2 {
   color: #FFF;
@@ -127,7 +126,7 @@ ul.nav {
 
 .nav ul li:hover > a {
   color: #FFF;
-  background: #456f7f; }
+  background: #2680c9; }
 
 /* Second and third dropdown level */
 .nav > li > ul li ul {
@@ -144,14 +143,14 @@ ul.nav {
 
 .nav > li > ul li ul li:hover {
   color: #FFF;
-  background: #456f7f; }
+  background: #2680c9; }
 
 input#mobile_menu {
   display: none; }
 
 .nav > li > ul li ul li ul {
   color: #FFF;
-  background: #456f7f; }
+  background: #2680c9; }
 
 .nav > li > ul li ul li ul li:hover {
   color: #0572B8; }
@@ -256,6 +255,16 @@ input#mobile_menu {
 @media only screen and (max-width: 800px) {
   .nav {
     display: none; }
+    .nav li a {
+      padding: 20px; }
+    .nav .dropdown2 {
+      position: static;
+      margin: 0 0 0 30px;
+      opacity: 1; }
+      .nav .dropdown2 li {
+        visibility: visible; }
+        .nav .dropdown2 li a {
+          background: #F6F6F6; }
 
   label.mobile_menu span {
     display: block; }
@@ -263,7 +272,8 @@ input#mobile_menu {
   label.mobile_menu {
     position: relative;
     display: block;
-    padding: 30px 45px 26px 20px; }
+    padding: 30px 20px 25px 10px;
+    right: 4em; }
 
   .nav {
     padding: 0; }
@@ -366,13 +376,15 @@ input#mobile_menu {
     -webkit-transition: none;
     -o-transition: none; } }
 .lang {
-  position: absolute;
-  right: 0;
-  padding: 35px; }
+  float: right;
+  padding: 35px 0;
+  margin-left: 2em; }
   .lang a {
     padding-left: 10px;
     opacity: .5;
     cursor: pointer; }
+    .lang a:hover {
+      opacity: 1; }
     .lang a.active {
       opacity: 1; }
 
@@ -391,7 +403,10 @@ input#mobile_menu {
 
 @media all and (max-width: 800px) {
   .lang {
-    padding: 35px 10px; } }
+    padding: 35px 10px;
+    position: absolute;
+    right: 0;
+    top: 0; } }
 /*
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -422,7 +437,6 @@ body a {
 
 .logo h1 {
   font-size: 3em;
-  text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 0;
   font-family: 'Open Sans Condensed', sans-serif; }
@@ -433,6 +447,7 @@ body a {
   text-decoration: none; }
 
 .logo h1 span {
+  text-transform: uppercase;
   font-size: 20px;
   color: #000;
   display: block; }
@@ -1127,14 +1142,7 @@ ul.socials li {
 .reservation_banner {
   background: url(../images/reservation.jpg) no-repeat center top;
   background-size: 100% auto;
-  padding: 2em 0 3em;
-  animation-duration: 20s;
-  animation-name: changepos;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  -webkit-transition-timing-function: linear;
-  /* Safari and Chrome */
-  transition-timing-function: linear; }
+  padding: 2em 0 3em; }
 
 @keyframes changepos {
   from {
@@ -2002,7 +2010,23 @@ p.lidikart {
 /*** Footer ***/
 .footer {
   padding: 0;
-  background: #456f7f;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+10,2680c9+50,7db9e8+90 */
+  background: #7db9e8;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #7db9e8 10%, #2680c9 50%, #7db9e8 90%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #7db9e8), color-stop(50%, #2680c9), color-stop(90%, #7db9e8));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #7db9e8 10%, #2680c9 50%, #7db9e8 90%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #7db9e8 10%, #2680c9 50%, #7db9e8 90%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #7db9e8 10%, #2680c9 50%, #7db9e8 90%);
+  /* IE10+ */
+  background: linear-gradient(to right, #7db9e8 10%, #2680c9 50%, #7db9e8 90%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=1 );
+  /* IE6-9 */
   text-align: center; }
   .footer .container {
     padding: 15px; }
@@ -2010,7 +2034,7 @@ p.lidikart {
       border-left: white 1px solid;
       min-height: 220px; }
   .footer h3 {
-    color: #F94B4B; }
+    text-shadow: 5px 5px 5px rgba(50, 50, 50, 0.5); }
   .footer .gallery-footer {
     text-align: left; }
   .footer .contacts-footer h3 {
@@ -2066,9 +2090,14 @@ p.lidikart {
     min-height: 10em; }
 
 .album-container a {
-  margin: 8px;
-  display: inline-block;
-  position: relative; }
+  box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
+  margin: 8px auto;
+  display: block;
+  position: relative;
+  background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat center;
+  background-size: 25%;
+  height: 158px;
+  width: 225px; }
   .album-container a > span {
     position: absolute;
     background: #456f7f;
@@ -2077,9 +2106,13 @@ p.lidikart {
     top: 0;
     color: white;
     transition: opacity 1s ease-in-out; }
+  .album-container a img {
+    height: 158px;
+    width: 225px; }
 .album-container a:hover {
   transition: all .5s ease-in-out;
-  transform: scale(1.1); }
+  transform: scale(1.1);
+  box-shadow: 15px 15px 15px rgba(50, 50, 50, 0.3); }
   .album-container a:hover > span {
     opacity: .7; }
 .album-container > p {
@@ -2087,46 +2120,77 @@ p.lidikart {
 .album-container span {
   display: block;
   text-align: center; }
+.album-container .image {
+  margin-bottom: 2em; }
 
-.view-tenth .la-img {
-  background-size: cover;
-  height: 200px;
-  -webkit-transform: scaleY(1);
-  -moz-transform: scaleY(1);
-  -o-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  transform: scaleY(1);
+.gallery-cat:hover {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  z-index: 1005; }
+  .gallery-cat:hover .view-tenth .la-img {
+    z-index: 1005;
+    box-shadow: 15px 15px 15px rgba(50, 50, 50, 0.3); }
+
+.gallery-cat {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
   -webkit-transition: all 0.7s ease-in-out;
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   -ms-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out; }
-  .view-tenth .la-img > h5 {
-    position: absolute;
-    background: #456f7f;
-    margin: 10px;
-    padding: 10px;
-    color: white;
-    opacity: 1;
-    transform: scale(1);
-    transition: all .5s ease-in-out; }
-.view-tenth .la-img:hover {
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -o-transform: scale(2);
-  -ms-transform: scale(2);
-  transform: scale(1.5);
-  height: 200px; }
-.view-tenth .product_image img {
-  height: 200px;
-  width: auto;
-  margin: auto; }
-.view-tenth .product_image {
-  background-image: url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #DC554F;
-  background-position: center; }
+
+.view-tenth {
+  padding: 2em 0; }
+  .view-tenth .la-img {
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out; }
+    .view-tenth .la-img > h5 {
+      position: absolute;
+      background: rgba(80, 187, 229, 0.5);
+      margin: 10px;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      opacity: 1;
+      transform: scale(1);
+      transition: all .5s ease-in-out; }
+  .view-tenth .product_image img {
+    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat center;
+    height: 200px;
+    width: auto;
+    margin: auto; }
+  .view-tenth .product_image {
+    background: #DC554F url("http://lidikart.com.ua/wp-content/uploads/2014/05/logogo2.png") no-repeat 50% 50%;
+    background-size: 40%;
+    width: 200px;
+    margin: auto; }
+  .view-tenth.circle .product_image {
+    border-radius: 50%; }
+  .view-tenth.circle .la-img {
+    border-radius: 50%; }
+  .view-tenth.circle .mask {
+    border-radius: 50%; }
 
 .view-tenth img {
   -webkit-transform: scaleY(1);
@@ -2141,68 +2205,42 @@ p.lidikart {
   transition: all 0.7s ease-in-out; }
 
 .view-tenth .mask {
-  background-color: #456f7f;
+  background-color: rgba(80, 187, 229, 0.5);
+  font-size: 8px;
+  height: 180px;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  padding: 10px;
+  margin: 10px;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear;
   transition: all 0.5s linear;
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  margin: 10px;
-  height: 180px;
   transform: scale(0.2); }
 
 .view-tenth h2 {
   border-bottom: 1px solid #E9C78C;
   background: transparent;
+  color: #fff;
+  filter: alpha(opacity=0);
+  opacity: 0;
   margin: 40px 40px 0px 40px;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -o-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  color: #fff;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear;
   transition: all 0.5s linear;
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0; }
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
 
 .view-tenth h3 {
-  color: #fff;
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  transition: all 0.5s linear; }
-
-.view-tenth.info {
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  transition: all 0.5s linear; }
+  color: #fff; }
 
 .view-tenth:hover img {
   -webkit-transform: scale(10);
@@ -2218,16 +2256,15 @@ p.lidikart {
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   opacity: 1;
-  transform: scale(0.65); }
+  transform: scale(1.11); }
 
 .view-tenth:hover h2, .view-tenth:hover h3, .view-tenth:hover.info {
+  font-size: 8px;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -o-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
   opacity: 1; }
 
 .view-tenth:hover h5 {
@@ -2243,6 +2280,15 @@ p.lidikart {
 #galleries-navigation {
   display: none; }
 
+.row.grids .gallery-cat {
+  padding: 0; }
+
+@media screen and (max-width: 500px) {
+  .gallery-cat {
+    width: 100%; }
+
+  .image {
+    width: 100%; } }
 .contacts-container {
   margin: 20px;
   padding: 10px;
@@ -2283,18 +2329,39 @@ p.lidikart {
 .contacts-container a img {
   border-radius: 2px; }
 
+.fb-like-component .fb_iframe_widget span {
+  max-width: 100%; }
+.fb-like-component .fb_iframe_widget iframe {
+  max-width: 100%; }
+
 .about-description {
   margin: 10px;
   padding: 10px;
   min-height: 340px; }
+  .about-description .about-content {
+    padding: 5px;
+    text-align: justify; }
   .about-description a {
     float: left;
-    margin: 10px; }
+    margin: 10px;
+    width: 20%; }
   .about-description img {
-    max-width: 300px; }
+    border-radius: 50%;
+    width: 80%;
+    height: inherit; }
+    .about-description img:nth-child(2) {
+      float: right; }
   .about-description p {
-    padding: 5px; }
+    padding: 16px 10px; }
+  .about-description .fb-like-component {
+    margin: 3em 17.5em; }
 
+/* Portrait and Landscape */
+@media only screen and (max-width: 800px) {
+  .about-description {
+    max-width: 100%; }
+    .about-description a {
+      max-width: 50%; } }
 /* Loader #1 by Sam Lillicrap
    http://www.samueljwebdesign.co.uk
    http://codepen.io/samueljweb/pen/LbGxi

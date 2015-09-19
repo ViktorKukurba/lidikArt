@@ -8,7 +8,6 @@ define([
         return {
             link: function (scope, element) {
                 scope.$on("ajax-start", function () {
-                    console.log($(element));
                     $(element).css('opacity', 1);
                     setTimeout(function() {
                         $(element).show();
