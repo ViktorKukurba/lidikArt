@@ -1,0 +1,80 @@
+<div class="row grids text-center home-content">
+    <div class="title"><a href="/">LidikArt</a><span></span></div>
+    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-xs-12 col-sm-6" ng-repeat="block in homeBlocks">
+        <div class="row section">
+                <img class="alignnone size-full wp-image-492" src="{{block.image}}" alt="lidikAva" width="300" height="300">
+                <div class="items-list">
+                    <ul>
+                        <li ng-repeat="item in block.items">
+                            <a translate="{{item.name}}" download href="{{item.link}}"></a>
+                        </li>
+                    </ul>
+                </div>
+    </div>
+</div>
+
+    <div class="col-lg-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-md-10 col-xs-12 col-sm-10 shops">
+        <header>
+            <h4 translate="pages.home.shops.title"></h4>
+        </header>
+        <a class="col-lg-4 col-md-4 col-xs-6 col-sm-4 shop-item {{shop.name}}" target="_blank" ng-class="$index == 0 ? 'col-lg-offset-0' : ''" ng-repeat="shop in shops" href="{{shop.link}}">
+            <img src="{{shop.image}}"/>
+            <header>
+                <span translate="pages.home.shops.{{shop.name}}"></span>
+            </header>
+        </a>
+    </div>
+
+    <!--<div ng-repeat="shop in shops" class="col-lg-5 col-lg-offset-1 col-md-6 col-xs-12 col-sm-6 shutterstock">-->
+        <!--<header>-->
+            <!--<a href="{{shop.link}}" target="_blank">-->
+                <!--<img class="alignnone size-full wp-image-492" src="{{shutterstock.image}}" alt="shutterstock" width="300" height="100">-->
+            <!--</a>-->
+        <!--</header>-->
+        <!--<div id="slick">-->
+            <!--<img ng-repeat="item in shop.items" src="{{item.image}}"/>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col-lg-5 col-lg-offset-1 col-md-3 col-xs-6 col-sm-4">-->
+        <!--<img class="alignnone size-medium wp-image-513" src="/images/logo2.jpg" alt="lidikart" width="300" height="281">-->
+
+        <!--<div class="items-list">-->
+            <!--<ul>-->
+                <!--<li>Art Production</li>-->
+                <!--<li>Contacts</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="title"><a href="/">LidikArt</a><span></span></div>-->
+    <!--<ul class="home-list">-->
+        <!--<li class="col-lg-5 col-lg-offset-{{ +!($index%2) }} col-md-3 col-xs-6 col-sm-4" ng-repeat="item in list">-->
+            <!--<a href="{{item.link}}">-->
+                <!--<div class="section-cover" ng-if="item.image" style="background-image: url({{item.image}})">-->
+                    <!--<h4 translate="{{item.name}}"></h4>-->
+                    <!--<span translate="{{item.desc}}"></span>-->
+                <!--</div>-->
+                <!--<div ng-if="!item.image">-->
+                    <!--<h4 translate="{{item.name}}"></h4>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<h3>-->
+                <!--<a href="gallery/production" translate="pages.production.name"></a>-->
+            <!--</h3>-->
+            <!--<span translate="pages.production.desc"></span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<h3>-->
+                <!--<a href="about" translate="pages.about.name"></a>-->
+            <!--</h3>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<h3>-->
+                <!--<a href="contacts" translate="pages.contacts.name"></a>-->
+            <!--</h3>-->
+        <!--</li>-->
+    <!--</ul>-->
+</div>
+

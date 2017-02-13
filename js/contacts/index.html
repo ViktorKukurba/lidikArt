@@ -1,0 +1,32 @@
+<div class="contacts-container">
+  <div class="contact-items col-xs-12">
+  <!--<div class="contact-items col-lg-6 col-lg-offset-0 col-md-6 col-xs-12 col-sm-6">-->
+    <div class="contact-info">
+      <p translate="pages.contacts.message"></p>
+
+      <p>
+        <a href="mailto:{{contact.email}}" target="_top" class="mail-contact">E-mail: {{contact.email}}</a>
+      </p>
+
+      <!--<p>-->
+        <!--<a class="phone-contact">Mobile:<span>{{contact.mobile}}</span></a>-->
+      <!--</p>-->
+    </div>
+    <div class="social-info">
+      <p><span translate="pages.contacts.social"></span></p>
+       <a href="{{contact.fb}}" >Facebook<span class="fb-contact"></span></a>
+       <a href="{{contact.instagram}}">Instagram<span class="instagram-contact"></span></a>
+       <a href="{{contact.twitter}}">Twitter<span class="twitter-contact"></span></a>
+       <a href="{{contact.vk}}">Vkontakte<span class="vk-contact"></span></a>
+    </div>
+    <div class="shops-info">
+      <p><span translate="pages.contacts.shops"></span></p>
+      <a ng-repeat="shop in shops" href="{{shop.link}}" title="{{shop.title}}" >{{shop.title}}<img src="{{shop.image}}"/></a>
+    </div>
+  </div>
+  <!--<div class="contact-text col-lg-5 col-lg-offset-1 col-md-6 col-xs-12 col-sm-6">-->
+    <!--<div class="about-message">-->
+      <!--<p translate="shortInfo"></p>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>

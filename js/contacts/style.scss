@@ -1,0 +1,166 @@
+.contacts-container {
+  margin: 16px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: $mainFont;
+
+  .contact-items {
+    padding: 15px 0;
+    text-align: center;
+
+    p {
+      vertical-align: middle;
+      height: 2em;
+      a {
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        cursor: pointer;
+//        height: 2em;
+        padding-left: 2em;
+        position: relative;
+        top: .5em;
+//        width: 2em;
+
+        &.phone-contact {
+          margin-left: .3em;
+          padding-left: 1.7em;
+        }
+      }
+    }
+
+    .social-info {
+      padding: 20px 0;
+      border-bottom: 1px black solid;
+      a {
+        margin: 10px;
+        span {
+          background-size: contain;
+          width: 28px;
+          height: 28px;
+          display: inline-block;
+          margin-left: 5px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .contact-info {
+      border-bottom: 1px black solid;
+      padding: 0 0 20px 0;
+      p {
+        display: inline-block;
+      }
+      a {
+        font-family: $defaultFont;
+      }
+    }
+
+    .shops-info {
+      padding: 20px 0;
+      a {
+        display: inline-block;
+        padding: 0 4px;
+      }
+      img {
+        width: 50px;
+        padding: 10px;
+      }
+
+    }
+  }
+
+  .contact-text {
+    padding: 15px 0;
+    text-align: justify;
+  }
+
+  .fb-contact {
+    background: url(../images/social/facebook.svg);
+//    background: url(../images/social/contact-fb.svg);
+  }
+
+  .phone-contact {
+    background: url(../images/icons/phone.svg);
+//    background: url(../images/icons/contact-phone.svg);
+  }
+
+  .mail-contact {
+    background: url(../images/icons/mail.svg);
+//    background: url(../images/icons/contact-mail.svg);
+  }
+
+  .vk-contact {
+    background: url(../images/social/vk.svg);
+  }
+
+  .twitter-contact {
+    background: url(../images/social/twitter.svg);
+  }
+
+  .instagram-contact {
+    background: url(../images/social/instagram.svg);
+  }
+}
+
+.contacts-container a img {
+  border-radius: 2px;
+}
+
+.fb-like-component {
+  .fb_iframe_widget {
+    span {
+      max-width: 100%;
+    }
+
+    iframe {
+      max-width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: 420px) {
+  .contacts-container {
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+
+    .contact-items p {
+      height: auto;
+    }
+
+    .social-info {
+      a span {
+        width: 25px;
+        height: 25px;
+      }
+
+      p {
+        padding-bottom: 6px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  .contacts-container {
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+
+    .contact-items p {
+      height: auto;
+    }
+
+    .social-info {
+      a span {
+        width: 25px;
+        height: 25px;
+      }
+
+      p {
+        padding-bottom: 6px;
+      }
+    }
+  }
+}

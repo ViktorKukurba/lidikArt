@@ -1,0 +1,78 @@
+<!-- Header -->
+<navigation></navigation>
+
+<div class='shareaholic-canvas' data-app='share_buttons' data-app-id="xxxxx" data-title='Page Title' data-link='http://www.domain.com/home.html'
+     data-image='http://lidikart.com.ua/wp-content/uploads/2016/01/DSC_0020_mini.jpg' data-summary='Description of the page you are sharing'></div>
+
+
+
+<!-- Ends Header -->
+
+<div class="main">
+  <div raw-ajax-busy-indicator="" class="ajax-busy-indicator"></div>
+  <div class="container" ui-view></div>
+</div>
+
+<div class="footer">
+  <div class="container" ng-controller="FooterCtrl">
+    <div class="gallery-footer col-md-4 col-xs-12 col-sm-4">
+      <!--<div class="col-md-6 col-xs-12 col-sm-6">-->
+      <!--<h4><a href="gallery/art" translate="pages.gallery.name"></a></h4>-->
+      <!--<ul>-->
+        <!--<li ng-repeat="album in art">-->
+          <!--<a href="gallery/art/{{album.ID}}" class="ng-binding">{{album.name}}</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+        <!--</div>-->
+      <!--<div class="col-md-6 col-xs-12 col-sm-6">-->
+        <h4><a href="gallery" translate="pages.gallery.name"></a></h4>
+      <h4><a href="production" translate="pages.production.name"></a></h4>
+      <ul>
+        <li ng-repeat="product in production">
+          <a href="production/{{product.id}}" class="ng-binding">{{product.name}}</a>
+        </li>
+      </ul>
+        <!--</div>-->
+    </div>
+    <!--<div class="contacts-footer col-md-6 col-xs-6 col-sm-6">-->
+      <div class="col-md-4 col-xs-12 col-sm-4 contacts-footer">
+      <h4><a href="contacts" translate="pages.contacts.name"></a></h4>
+      <ul>
+        <li>
+          <a href="mailto:lidikart22@gmail.com" target="_top">
+            <span class="mail-ico"></span>
+            <span class="contact-info">
+              lidikart22@gmail.com
+            </span>
+          </a>
+        </li>
+        <!--<li>-->
+          <!--<span class="phone-ico"></span>-->
+          <!--<span class="contact-info">+380961721752</span>-->
+        <!--</li>-->
+      </ul>
+        </div>
+      <div class="col-md-4 col-xs-12 col-sm-4 social-footer">
+      <h4 translate="social.title"></h4>
+      <ul class="social">
+        <li><a href="https://vk.com/lidikart" target="_blank"><div class="vk"></div></a></li>
+        <li><a href="https://twitter.com/Lllidik" target="_blank"><div class="twitter"></div></a></li>
+        <li><a href="https://www.facebook.com/LidikArt" target="_blank"><div class="facebook"></div></a></li>
+        <li><a href="https://instagram.com/lidikart" target="_blank"><div class="instagram"></div></a></li>
+      </ul>
+        <!--<span translate="social.info"></span>-->
+        </div>
+    <div class="copy_right">
+      <p>&copy; 2015 All Rights Reseverd Designed by <a href="#">LidikART</a> </p>
+    </div>
+    </div>
+    <!--<div class="about-footer col-md-6 col-xs-12 col-sm-4">-->
+      <!--<h3><a href="about" translate="pages.about.name"></a></h3>-->
+      <!--<div class="about-message">-->
+          <!--<p translate="shortInfo"></p>-->
+      <!--</div>-->
+      <!---->
+    <!--</div>-->
+    <div class="clearfix"></div>
+  </div>
+</div>

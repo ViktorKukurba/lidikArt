@@ -1,0 +1,50 @@
+$mainFont: 'Comfortaa', 'Open Sans', sans-serif;
+//$mainFont: 'Papyrus', 'Open Sans', sans-serif;
+$defaultFont: 'Comfortaa', 'Open Sans', sans-serif;
+
+@font-face {
+  font-family: 'Papyrus-Regular';
+  src: url('../fonts/papyrus-regular/Papyrus-Regular.eot');
+  src: url('../fonts/papyrus-regular/Papyrus-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/papyrus-regular/Papyrus-Regular.woff') format('woff'),
+  url('../fonts/papyrus-regular/Papyrus-Regular.ttf') format('truetype'),
+  url('../fonts/papyrus-regular/Papyrus-Regular.svg#Papyrus-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Papyrus';
+  src: url('../fonts/fonts/RezXstxs.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ComicRelief';
+  src: url('../fonts/comic-relief/ComicRelief.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('../fonts/Comfortaa/Comfortaa-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Devroye';
+  src: url('../fonts/Devroye/DEVROYUN.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kurale';
+  src: url('../fonts/Kurale/Kurale-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

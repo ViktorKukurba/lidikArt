@@ -1,0 +1,43 @@
+{
+  "name": "lidikart",
+  "version": "0.0.1",
+  "homepage": "http://lidikart.com.ua",
+  "authors": [
+    "Viktor Kukurba <viktor.kukurba@gmail.com>"
+  ],
+  "description": "LidikArt UI",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.17",
+    "angular": ">=1.4.6",
+    "jquery": "~2.1.4",
+    "jquery-mousewheel": "~3.1.12",
+    "fancybox": "~2.1.5",
+    "wow": "~1.1.2",
+    "angular-route": ">=1.4.6",
+    "angular-ui-router": ">=0.2.13",
+    "angular-sanitize": ">=1.4.6",
+    "angular-translate": ">=2.8.0",
+    "angular-translate-loader-url": ">=2.8.0",
+    "angular-translate-loader-static-files": ">=2.8.0",
+    "angular-easyfb": ">=1.4.1",
+    "slick-carousel": ">=1.6.0",
+    "jquery-zoom": ">=1.7.18"
+  },
+  "resolutions": {
+    "angular": ">=1.4.6",
+    "angular-route": ">=1.4.6",
+    "angular-sanitize": ">=1.4.6",
+    "angular-translate": ">=2.8.0",
+    "angular-translate-loader-url": ">=2.8.0",
+    "angular-translate-loader-static-files": ">=2.8.0"
+  }
+}

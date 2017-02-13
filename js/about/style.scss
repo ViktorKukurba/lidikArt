@@ -1,0 +1,100 @@
+.about-description {
+  margin: 10px;
+  padding: 10px;
+  min-height: 340px;
+
+  .about-content {
+    padding: 5px;
+    text-align: justify;
+
+    a {
+      width: auto;
+      float: none;
+      margin: 0;
+      color: #003cb3;
+
+      &.image {
+        float: right;
+        margin: 10px;
+        width: 20%;
+        &:nth-child(1) {
+          margin: 10px 20% 0 0;
+        }
+      }
+    }
+
+  }
+
+  .resume-strong {
+    font-size: large;
+    font-weight: bolder;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 80%;
+    height: inherit;
+    &:nth-child(2) {
+      float: right;
+    }
+  }
+
+  p {
+    padding: 16px 10px;
+    line-height: 1.8em;
+  }
+
+  .fb-like-component {
+    margin: 3em 17.5em;
+  }
+
+  .pdf-link {
+    float: right;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+
+    &:hover>span:nth-child(1) {
+      text-decoration: underline;
+    }
+
+    span:nth-child(1) {
+      position: relative;
+      bottom: 15px;
+    }
+
+    span:nth-child(2) {
+      background: url(../images/icons/pdf.svg);
+      width: 39px;
+      height: 39px;
+      display: inline-block;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-width: 800px) {
+  .about-description {
+    max-width: 100%;
+    a {
+      max-width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .about-description {
+    p {
+      padding: 0;
+      a {
+        width: 40%;
+        margin: 0 10px 0 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

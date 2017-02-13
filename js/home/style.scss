@@ -1,0 +1,234 @@
+.home-page {
+  .footer {
+//    visibility: hidden;
+    display:none;
+  }
+
+  .main_title {
+    visibility: hidden;
+//    display:none;
+  }
+  .container {
+    .title {
+      font-size: 3em;
+      padding-bottom: 1em;
+    }
+  }
+  navigation {
+//    opacity: 1;
+    top: -90px;
+  }
+  .main {
+    top: -90px;
+  }
+}
+
+.home-content {
+  img {
+    border-radius: 50%;
+    width: 40%;
+    height: inherit;
+    margin: 10px;
+//    float: left;
+//    display: inline-block;
+  }
+  >div {
+    &:nth-child(3) ul {
+//      margin-top: -40px;
+    }
+    &:nth-child(2) ul {
+//      margin-top: -60px;
+      li:nth-child(4) {
+        padding: 0;
+      }
+    }
+  }
+
+  .section {
+    position: relative;
+    margin: 10px;
+    text-align: left;
+  }
+
+  >.ng-scope:nth-child(3) {
+    text-align: left;
+  }
+
+  .items-list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    display: inline-block;
+    text-align: left;
+//    position: relative;
+//    height: 183px;
+    ul {
+//      position: absolute;
+//      top: 50%;
+      list-style-type: none;
+//      left: -100px;
+      padding: 0;
+      li {
+        padding: 10px 0;
+//        width: 150px;
+      }
+    }
+  }
+
+//  .shutterstock {
+//    overflow: hidden;
+//    height: 200px;
+//    padding-top: 2em;
+//    header {
+//      padding: 10px;
+//    }
+//    img {
+//      border-radius: 0;
+//      float: none;
+//      text-align: left;
+//    }
+//  }
+
+  #slick img {
+    height: 150px;
+    width: 101px;
+
+  }
+
+  #slick {
+    overflow: hidden;
+  }
+
+  .shutter-item {
+    max-height: 200px;
+    text-align: left;
+  }
+
+  .shops {
+    padding-top: 7em;
+    text-align: center;
+    >header {
+      padding-bottom: 1em;
+    }
+    .shop-item {
+      display: inline-block;
+      &.behance {
+        img {
+          max-height: 15px;
+        }
+      }
+      img {
+        width: auto;
+        max-width: 85%;
+        border-radius: 0;
+        float: none;
+        max-height: 20px;
+      }
+      header {
+        margin-top: 10px;
+      }
+    }
+  }
+
+
+
+}
+
+.pdf {
+  background: url(../images/icons/pdf.svg);
+  width: 39px;
+  height: 39px;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.pdf-text {
+  position: relative;
+  bottom: 15px;
+}
+
+.home-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    padding: 2em;
+
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: white;
+      }
+      h4 {
+        background: rgba(80, 187, 229, .8);
+        padding: .5em;
+        top: 1em;
+        position: relative;
+      }
+
+      div {
+        -webkit-filter: grayscale(50%);
+        transition: 1s;
+        &:hover {
+          -webkit-filter: grayscale(0);
+        }
+      }
+      .section-cover {
+        height: 15em;
+        background-size: cover;
+
+        span {
+          background: rgba(80, 187, 229, .8);
+          padding: .5em;
+          position: relative;
+          top: 7em;
+          display: inherit;
+          min-height: 4em;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  > .ng-scope:nth-child(3) {
+    text-align: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .home-page.loaded {
+    navigation {
+      top: -5.7em;
+    }
+    .main {
+      padding: 0 15px;
+    }
+
+    .home-content {
+      .section {
+        text-align: left;
+        img {
+          margin-left: 15%;
+        }
+      }
+
+      .shops {
+        padding-top: 3em;
+        .shop-item {
+          min-height: 80px;
+          img {
+            max-width: 100%;
+            margin: 0;
+          }
+          header {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

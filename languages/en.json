@@ -1,0 +1,45 @@
+﻿{
+  "title" : "another world",
+  "pages" : {
+    "gallery" : {
+      "name" : "Gallery",
+      "desc" : "created paintings and collages, works of art Lidia Matvienko"
+    },
+    "contacts": {
+      "name" : "Contacts",
+      "message": "For cooperation and order products please write here",
+      "social": "Find us in social networks"
+    },
+    "about" : {
+      "name" : "Resume"
+    },
+    "production" : {
+      "name": "Art Production",
+      "desc": "the original art products, created as part of LidikArt project, based creative studio artist"
+    },
+    "statement": {
+      "name": "Artistic Statement"
+    },
+    "resume": {
+      "name" : "Resume",
+      "action" : "Download"
+    },
+    "home": {
+      "shops": {
+        "title": "Visit LidikArt on platforms",
+        "shutterstock": "my illustrations",
+        "etsy": "art production",
+        "saatchiart": "artworks",
+        "fineartamerica": "prints + products",
+        "behance": "projects"
+      }
+    }
+  },
+  "social" : {
+    "title": "Join us",
+    "info": "Follow the latest news on social networks!"
+  },
+  "shortInfo" : "LidikART presents two areas of work and each of them can be found here on the site. First direction - created paintings and collages, works of art Lidia Matvienko. The second trend - the original art products, created as part of LidikArt project, based creative studio artist. We are open for collaboration.",
+  "loading": "Loading...",
+  "shortContacts": "For cooperation and order products please write <a href='en/contacts'>here</a>"
+}

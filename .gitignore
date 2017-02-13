@@ -1,0 +1,12 @@
+
+/.idea
+bower_components/
+public/bower_components/
+cgi-bin/
+.sass-cache/
+node_modules/
+wp-content/
+wp-includes/
+wp-admin/
+public/build/
+public/db

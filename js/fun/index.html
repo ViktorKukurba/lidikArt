@@ -1,0 +1,14 @@
+<div class="album-container">
+  <div class="col-lg-3 col-md-3 col-xs-6 col-sm-4 image" ng-repeat="img in images">
+    <a class="fancybox-thumb fancybox-buttons"
+       rel="fancybox-thumb fancybox-buttons"
+       title="{{img.title}}"
+       data-fancybox-group="button"
+       href="{{img.big}}"
+       data-etsy="{{img.etsy}}">
+      <img id="{{img.ID}}" src="{{img.small}}" alt=""/>
+      <!--<h5>{{img.title}}</h5>-->
+      <!--<span>{{img.title}}</span>-->
+    </a>
+  </div>
+</div>

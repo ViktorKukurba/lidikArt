@@ -1,0 +1,41 @@
+<div class="header_bottom">
+    <div class="container">
+        <div class="logo">
+
+                <a href="{{lang}}">
+                    <h1>LidikART
+                        <span translate="title"></span>
+                    </h1>
+                </a>
+            <div class="logo-image"></div>
+
+
+        </div>
+        <div class="navigation">
+            <label class="mobile_menu" for="mobile_menu">
+                <span></span>
+            </label>
+            <input id="mobile_menu" type="checkbox">
+            <ul class="nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <li data-type="tab" ng-repeat="tab in tabs" data-value="{{tab.ID}}" ng-class="tabClass(tab)"  tab="tab">
+                    <a href="{{tab.link}}">{{tab.title.rendered}}</a>
+                    <ul class="dropdown2">
+                        <li data-type="sub-tab" ng-repeat="subTab in tab.subTabs" data-value="{{subTab.name}}" >
+                            <a href="{{subTab.link}}">{{subTab.title}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <div class="clearfix"></div>
+            </ul>
+            <div class="shadow"></div>
+        </div>
+    </div>
+    <div class="lang">
+        <a data-value="ua">UA</a>
+        <a data-value="en">EN</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="reservation_banner">
+    <div class="main_title">{{selectedTab.title.rendered || selectedTab.title}}</div>
+</div>
