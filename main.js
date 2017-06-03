@@ -95,19 +95,14 @@ require([
   'footer-controller',
   'jquery-zoom'
 ], function(angular, app) {
-  window.globalConfig = {
-      path :'/wp-content/themes/lidik-art/'
-  };
-
   app.constant('pageCategory', {
     'art': 10,
     'production': 11
   }).config(function ($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider, ezfbProvider) {
     $stateProvider.state('app', {
       abstract: true,
-      //url: '?',
       url: '{lang:(?:/[^/]+)?}',
-      templateUrl: window.globalConfig.path + 'js/index.html',
+      templateUrl: require.toUrl('index.html'),
       controller: function($scope, $stateParams, $translate) {
         var lang = $stateParams.lang === '/en' ? 'en' : 'ua';
         if ($translate.use() !== lang) {

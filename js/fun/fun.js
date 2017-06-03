@@ -9,7 +9,7 @@ define([
       .config(['$stateProvider',
         function($stateProvider) {
           $stateProvider.state('app.fun', {
-            templateUrl: window.globalConfig.path + '/js/fun/index.html',
+            templateUrl: require.toUrl('/js/fun/index.html'),
             url: '/fun',
             controller: function($scope, $stateParams, categoryPosts, shopsService, categoryData, fancyboxService) {
               $scope.images = [];
@@ -18,7 +18,6 @@ define([
                   return item.ID;
                 });
                 categoryPosts.getAllPostsByCategories(ids).then(function(data, status, headers, config) {
-                  console.log('getAllPostsByCategories', data);
                   renderAllPosts(data);
                 });
               });
@@ -46,12 +45,9 @@ define([
                 });
 
                 //$scope.images = (etsyItems.concat(behanceItems).concat(shutterstockItems));
-                console.log('shopsService', behanceItems.concat(shutterstockItems));
                 $scope.images = $scope.images.concat(behanceItems.concat(shutterstockItems));
 
                 fancyboxService();
-
-                //console.log('shutterstock', data.shutterstock.data);
               });
 
               function renderAllPosts(data) {

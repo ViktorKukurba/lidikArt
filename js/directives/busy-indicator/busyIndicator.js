@@ -21,7 +21,7 @@ define([
                     },500);
                 });
             },
-            templateUrl: window.globalConfig.path + 'js/directives/busy-indicator/index.html'
+            templateUrl: require.toUrl('directives/busy-indicator/index.html')
         };
     });
 

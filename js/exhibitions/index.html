@@ -1,0 +1,19 @@
+<div class="row grids exhibitions text-center">
+    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6 exhibition" ng-repeat="exhibition in exhibitions">
+        <div class="view view-tenth">
+            <a href="{{exhibition.link}}">
+                <div class="inner_content clearfix">
+                    <h5>{{exhibition.name}}</h5>
+                    <div class="exhibition-image">
+                        <!--<img src="{{tab.image}}" class="img-responsive" alt=""/>-->
+                        <!--<div class="label-product">-->
+                        <!--<span class="new">{{tab.name}}</span> </div>-->
+
+                        <div class="la-img" data-image="{{exhibition.img}}"></div>
+                    </div>
+                    <!--<span>{{exhibition.description}}</span>-->
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

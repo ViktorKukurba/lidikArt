@@ -2,72 +2,112 @@ define([
   'angular',
   'services/shops-service',
   'services/fancybox-service',
-  'gallery/gallery',
-  'fancybox-thumbs',
-  'fancybox-buttons'
+  'gallery/gallery'
 ], function(angular) {
   angular.module('lidikArt.gallery', ['ezfb'])
       .config(function($stateProvider) {
-        $stateProvider.state('app.album', {
-          templateUrl: window.globalConfig.path + 'js/gallery/album.html',
-          url: '/production/{album}',
-          //url: '/gallery/{type}/{album}',
-          controller: function($scope, $stateParams, categoryPosts, fancyboxService, translator) {
-            categoryPosts.getCategoryData($stateParams.album).
-                then(function(data, status, headers, config) {
-                  renderData(data);
-                });
-
-            function renderData(data, status, headers, config) {
-              $scope.images = data.posts.data.filter(function(item) {
-                return !!item.better_featured_image;
+        var galleryData;
+        var categories = [];
+        function loadPosts(categoryPosts, categoryData) {
+          return categoryData.pagesCategories().then(function(response) {
+            var pages = response.pages;
+            var categories = pages.data.filter(function(page) {
+              return page.slug === 'gallery';
+            })[0].categories;
+            var ids = categories.art.map(function(category) {
+              return category.id;
+            });
+            return categoryPosts.getPostsByCategories(ids).then(function(data, status, headers, config) {
+              return  {
+                posts: data,
+                categories: categories
+              };
+            });
+          });
+        }
+        function galleryController($scope, $stateParams, categoryPosts, categoryData, fancyRender) {
+          if (!galleryData) {
+            loadPosts(categoryPosts, categoryData).then(function(response) {
+              galleryData = response;
+              categories = galleryData.categories.art.filter(function(item) {
+                  return item.slug.indexOf('-no-show') === -1;
               }).map(function(item) {
-                item.title = $('<textarea />').html(item.title.rendered).text();
-                item.small = item.better_featured_image.media_details.sizes.medium.source_url.replace('https', 'http');
-                item.big = item.better_featured_image.source_url.replace('https', 'http');
+                item.link =  $stateParams.lang + '/series/' + item.slug;
                 return item;
               });
+              categories.unshift({
+                link: $stateParams.lang + '/',
+                name: $stateParams.lang ? 'All' : 'Усе'
+              });
+              $scope.categories = categories;
+              setCategory();
 
-              data.category.data.description =
-                  translator.translate(data.category.data.description);
+              fancyRender($scope, galleryData.posts.data.filter(function (item) {
+                  return !!item.better_featured_image &&
+                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
+              }));
+            });
+          } else {
+              $scope.categories = categories;
+              setCategory();
+              fancyRender($scope, galleryData.posts.data.filter(function (item) {
+                  return !!item.better_featured_image &&
+                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
+              }));
+          }
+          function setCategory() {
+              if ($stateParams.name) {
+                  $scope.category = categories.filter(function (item) {
+                      return item.slug === $stateParams.name;
+                  })[0];
+              } else {
+                  $scope.category = '';
+              }
+          }
+        }
 
-              $scope.category = data.category.data;
-              fancyboxService();
+        $stateProvider.state('app.gallery', {
+          abstract: true,
+          template: '<ui-view></ui-view>',
+          url: '',
+          controller: function($state) {
+            if (!$state.params.name) {
+              var name = $state.current.name;
+              var params = $state.params;
+              $state.go('app.gallery.default').then(function() {
+                if (params.lang == '/en') {
+                  params.lang = 'en';
+                }
+                $state.go(name, params);
+              });
             }
           }
         });
 
-        $stateProvider.state('app.gallery', {
-          templateUrl: window.globalConfig.path + 'js/gallery/album.html',
-          url: '/gallery',
-          //url: '/gallery/{type}/{album}',
-          controller: function($scope, $stateParams, categoryPosts, categoryData, fancyboxService, ezfb) {
-            categoryData.pages().then(function(pages) {
-              var ids = pages.data.filter(function(page) {
-                return page.slug === 'gallery';
-              })[0].categories;
-              categoryPosts.getPostsByCategories(ids).then(function(data, status, headers, config) {
-                renderAllPosts(data.data);
-              });
+        $stateProvider.state('app.gallery.default', {
+          url: '/',
+          templateUrl: require.toUrl('gallery/album.html'),
+          controller: galleryController
+        });
 
-            });
+        $stateProvider.state('app.gallery.series', {
+          url: '/series/:name',
+          // template: '',
+          templateUrl: require.toUrl('gallery/album.html'),
+          controller: galleryController
+        });
 
-            function renderAllPosts(data) {
-              $scope.images = data.filter(function(item) {
-                return !!item.better_featured_image;
-              }).map(function(item) {
-                item.title = $('<textarea />').html(item.title.rendered).text();
-                item.small = item.better_featured_image.media_details.sizes.medium.source_url.replace('https', 'http');
-                item.big = item.better_featured_image.source_url.replace('https', 'http');
-                return item;
-              });
-              fancyboxService();
-            }
-          }
+        $stateProvider.state('app.gallery.series.picture', {
+          url: '/{id:pic-[0-9]{1,}}'
+        });
+
+        $stateProvider.state('app.gallery.default.picture', {
+          url: '{id:pic-[0-9]{1,}}',
+          controller: function($stateParams) { }
         });
 
         $stateProvider.state('app.shops', {
-          templateUrl: window.globalConfig.path + '/gallery/album.html',
+          templateUrl: require.toUrl('gallery/album.html'),
           url: '/shops',
           controller: function($scope, $stateParams, shopsService, fancyboxService) {
             shopsService.shops().then(function(data) {

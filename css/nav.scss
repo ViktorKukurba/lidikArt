@@ -533,6 +533,11 @@ input#mobile_menu { display: none; }
   visibility: hidden;
   position: relative;
 }
+
+.header_bottom .container.bordered {
+	border-bottom: black solid 1px;
+}
+
 .lang {
   visibility: hidden;
 }

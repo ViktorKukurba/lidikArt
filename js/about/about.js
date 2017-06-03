@@ -7,7 +7,7 @@ define([
     .config(['$stateProvider',
       function ($stateProvider) {
         var about = {
-          templateUrl: window.globalConfig.path + 'js/about/index.html',
+          templateUrl: require.toUrl('about/index.html'),
           url: '/about',
           controller: function ($scope, lidikInfo, $sce, $translate) {
             $scope.fbHref = location.href;
@@ -16,11 +16,12 @@ define([
               var aboutPage = data.data.filter(function(page) {
                 return page.slug === 'about';
               })[0];
-
               $scope.title = aboutPage.title;
+              $scope.image = aboutPage.better_featured_image.media_details.sizes.thumbnail.source_url.
+                replace('https', 'http');
               $scope.content = $sce.trustAsHtml(aboutPage.content.rendered); //;
               $scope.resume = {
-                link: window.globalConfig.path + '/documents/' + $translate.use() + '-resume.pdf',
+                link: require.toUrl('../documents/' + $translate.use() + '-resume.pdf'),
                 name: 'pages.resume.action'
               };
             });

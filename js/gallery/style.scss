@@ -13,7 +13,7 @@ $maskImageUa: "../images/lidikart-ua.png";
 .album-container {
   a {
     box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
-    margin: 8px auto;
+    margin: .5em auto;
 //    padding: 5px;
     display: block;
     position: relative;
@@ -427,7 +427,48 @@ $maskImageUa: "../images/lidikart-ua.png";
 }
 
 #galleries-navigation {
-  display: none;
+  &.fixed {
+    padding-right: 30px;
+    position: fixed;
+    top: 0;
+    width: 85%;
+  }
+  background: #F6F6F6;
+  z-index: 111;
+
+  h3 {
+    padding-top: .5em;
+    text-align: center;
+  }
+
+  ul {
+    display: table;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    li {
+      display: table-cell;
+      padding: .5em;
+      font-weight: 800;
+      text-align: center;
+      text-align-last: end;
+      a {
+        color: #888;
+        font-weight: 500;
+      }
+      a.selected {
+        color: black;
+        //color: rgba(130, 40, 80, 0.8);
+      }
+
+      a:hover {
+        color: black;
+        //color: rgba(130, 40, 80, 0.8);
+      }
+    }
+  }
 }
 
 .row.grids {
@@ -438,6 +479,19 @@ $maskImageUa: "../images/lidikart-ua.png";
 
 #fancybox-thumbs {
   max-height: 79px;
+}
+
+.fancybox-caption .facebook-block {
+  pointer-events: all;
+  padding: 0 10px;
+}
+
+.fancybox-caption > div {
+  display: inline-block;
+}
+
+#fb-root .fb_dialog {
+  z-index: 111111;
 }
 
 @media screen and (max-width: 500px) {

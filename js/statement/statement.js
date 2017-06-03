@@ -9,7 +9,7 @@ define([
         function ($stateProvider) {
           $stateProvider
               .state('app.statement', {
-                templateUrl: window.globalConfig.path + 'js/statement/index.html',
+                templateUrl: require.toUrl('statement/index.html'),
                 url: '/statement',
                 controller: function ($scope, lidikInfo, $sce) {
                   lidikInfo.then(function (data) {

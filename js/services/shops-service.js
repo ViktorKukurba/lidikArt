@@ -28,7 +28,7 @@ define([
 
     var etsyData = $.ajax({
       type: 'GET',
-      url: window.globalConfig.path + '/index.php?json_route=/etsy',
+      url: require.toUrl('../index.php?json_route=/etsy'),
       dataType: 'json',
       success: function(data) {
         console.log('Success! etsy', data);
@@ -40,7 +40,7 @@ define([
 
     var behanceData = $.ajax({
       type: 'GET',
-      url: window.globalConfig.path + '/index.php?json_route=/behance',
+      url: require.toUrl('../index.php?json_route=/behance'),
       dataType: 'json'
     });
 

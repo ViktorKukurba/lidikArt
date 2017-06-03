@@ -17,13 +17,11 @@ require.config({
     'angular-easyfb': '../bower_components/angular-easyfb/build/angular-easyfb.min',
     'angular-route': '../bower_components/angular-route/angular-route.min',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
-    'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize.min',
+    'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
     'angular-translate': '../bower_components/angular-translate/angular-translate.min',
     'angular-translate-loader': '../bower_components/angular-translate-loader-url/angular-translate-loader-url.min',
     'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
-    fancybox: '../bower_components/fancybox/source/jquery.fancybox',
-    'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
-    'fancybox-thumbs': '../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs',
+    fancybox: '../bower_components/fancybox3/dist/jquery.fancybox',
     jquery: '../bower_components/jquery/dist/jquery.min',
     'jquery-zoom': '../bower_components/jquery-zoom/jquery.zoom.min',
     'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',
@@ -62,12 +60,12 @@ require.config({
     'angular-translate-loader-static': {
       deps: ['angular-translate']
     },
-    'fancybox-thumbs': {
-      deps: ['fancybox']
-    },
-    'fancybox-buttons': {
-      deps: ['fancybox']
-    },
+    //'fancybox-thumbs': {
+    //  deps: ['fancybox']
+    //},
+    //'fancybox-buttons': {
+    //  deps: ['fancybox']
+    //},
     'jquery-zoom': {
       deps: ['jquery']
     }
@@ -89,6 +87,7 @@ require([
   'statement/statement',
   'gallery/gallery',
   'gallery/album',
+  'exhibitions/exhibitions',
   'angular-translate',
   'angular-translate-loader-static',
   'directives/navigation/navigation',
@@ -105,7 +104,7 @@ require([
       abstract: true,
       //url: '?',
       url: '{lang:(?:/[^/]+)?}',
-      templateUrl: window.globalConfig.path + 'js/index.html',
+      templateUrl: require.toUrl('index.html'),
       controller: function($scope, $stateParams, $translate, $rootScope) {
         var lang = ($stateParams.lang === '/en' || $stateParams.lang === 'en') ?
             'en' : 'ua';
@@ -121,14 +120,17 @@ require([
             replace(/\//g, '');
 
         var $body = $(document.body).
-            addClass((state || 'home') + '-page');
+            addClass((state || 'gallery') + '-page');
 
         $scope.$on('$stateChangeStart',
-            function(event, toState, toParams, fromState, fromParams) {
+            function(event, toState, toParams, fromState) {
               $body.
                   removeClass(fromState.name.replace('app.', '') + '-page').
                   addClass(toState.name.replace('app.', '')+ '-page');
+              setTimeout(contentMinHeight, 1e1);
             });
+
+        setTimeout(contentMinHeight, 2e3);
 
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){
@@ -140,9 +142,17 @@ require([
               // transitionTo() promise will be rejected with
               // a 'transition prevented' error
             });
-
       }
     });
+
+    function contentMinHeight() {
+      var bannerHeight = $('.reservation_banner').length ? $('.reservation_banner').outerHeight() : 0;
+      $('.main').css('min-height',
+          $(window).height() -
+          $('.footer').outerHeight(true) -
+          $('.header_bottom').height() -
+          bannerHeight);
+    }
 
     var lang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
 
@@ -151,9 +161,21 @@ require([
     $translateProvider.preferredLanguage(lang);
 
     $translateProvider.useStaticFilesLoader({
-      prefix: window.globalConfig.path + '/languages/',
+      prefix: require.toUrl('../languages/'),
       suffix: '.json'
     });
+
+    window.onscroll = function(e) {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop,
+          nav = document.getElementById('galleries-navigation'),
+          top = $('navigation .header_bottom').height();
+
+      if (pageY >= top) {
+        $(nav).addClass('fixed');
+      } else {
+        $(nav).removeClass('fixed');
+      }
+    };
 
     setTimeout(function() {
       $('head meta[property="og:description"]').
@@ -164,7 +186,6 @@ require([
       enabled: true,
       requireBase: false
     });
-
     $urlRouterProvider.otherwise((lang === 'en' ? lang : '') + '/');
 
     ezfbProvider.setLocale('ua_UA');
