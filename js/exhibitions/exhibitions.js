@@ -1,10 +1,11 @@
 define([
     'angular',
-    'services/fancybox-service'
+    'services/fancybox-service',
+  'services/utils-service'
 ], function(angular) {
-    angular.module('lidikArt.exhibitions', ['ui.router', 'ngSanitize'])
-        .config(['$stateProvider',
-            function ($stateProvider) {
+    angular.module('lidikArt.exhibitions', ['ui.router', 'ngSanitize', 'services'])
+        .config(['stateManagerProvider',
+            function (stateManagerProvider) {
               function ExhibitionController($scope, $stateParams, categoryPosts, fancyRender, translator) {
                 categoryPosts.getCategoryData($stateParams.album).then(function(data, status, headers, config) {
                   data.category.data.description = translator.translate(data.category.data.description);
@@ -29,31 +30,40 @@ define([
                 });
               }
 
-              $stateProvider.state('app.exhibitions', {
+              var exhibition = {
+                name: 'app.exhibitions',
                 url: '/exhibitions',
                 template: '<ui-view/>',
                 abstract: true,
                 controller: ExhibitionsController
-              });
+              };
 
-              $stateProvider.state('app.exhibitions.default', {
+              var exhibitionDefault = {
+                name: 'app.exhibitions.default',
                 templateUrl: require.toUrl('exhibitions/index.html'),
                 url: '',
                 controller: function(galleryInit) {
                   galleryInit('.exhibition-image .la-img');
                 }
-              });
+              };
 
-              $stateProvider.state('app.exhibitions.view', {
+              var exhibitionView = {
+                name: 'app.exhibitions.view',
                 templateUrl: require.toUrl('exhibitions/exhibition.html'),
                 url: '/{album}',
                 controller: ExhibitionController
-              });
+              };
 
-              $stateProvider.state('app.exhibitions.view.picture', {
+              var exhibitionViewPicture = {
+                name: 'app.exhibitions.view.picture',
                 url: '/{id:pic-[0-9]{1,}}'
-              });
+              };
 
-
+              stateManagerProvider.register(
+                  exhibition,
+                  exhibitionDefault,
+                  exhibitionView,
+                  exhibitionViewPicture
+              );
             }]);
 });

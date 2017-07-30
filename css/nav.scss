@@ -28,7 +28,7 @@ navigation {
 }
 
 .navigation{
-	float:right;
+	//float:right;
 //	margin-top: -1.4em;
 //  	margin-right: 7%;
 }
@@ -339,7 +339,7 @@ input#mobile_menu { display: none; }
 		  padding: 0;
 		  position: absolute;
 		  overflow: hidden;
-		  left: 48%;
+		  //left: 48%;
 		  z-index: 10;
 		  background-color: #F6F6F6;
 		}
@@ -426,7 +426,9 @@ input#mobile_menu { display: none; }
 
 		#mobile_menu:checked + .nav {
 			display: block;
-		  position: absolute;
+			position: relative;
+			width: 100%;
+		  //position: absolute;
 		}
 
 	  #mobile_menu + .shadow {
@@ -434,10 +436,10 @@ input#mobile_menu { display: none; }
 	  }
 
 	  #mobile_menu:checked + .shadow {
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
+		//display: block;
+		//position: absolute;
+		//width: 100%;
+		//height: 100%;
 	  }
 
 //		label.mobile_menu:after {

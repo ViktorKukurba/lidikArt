@@ -2,7 +2,6 @@ define([
   'angular'
 ], function(angular) {
   'use strict';
-  // var SERVICE_URL = 'http://lidikart.local/wp-json/wp/v2/';
   // var SERVICE_URL = '//lidikart.com.ua/wp-json/wp/v2/';
   var SERVICE_URL = '/wp-json/wp/v2/';
 

@@ -2,10 +2,11 @@ define([
   'angular',
   'services/shops-service',
   'services/fancybox-service',
+  'services/utils-service',
   'gallery/gallery'
 ], function(angular) {
-  angular.module('lidikArt.gallery', ['ezfb'])
-      .config(function($stateProvider) {
+  angular.module('lidikArt.gallery', ['ezfb', 'services'])
+      .config(function(stateManagerProvider) {
         var galleryData;
         var categories = [];
         function loadPosts(categoryPosts, categoryData) {
@@ -25,19 +26,20 @@ define([
             });
           });
         }
-        function galleryController($scope, $stateParams, categoryPosts, categoryData, fancyRender) {
+        function galleryController($scope, $stateParams, $translate, categoryPosts, categoryData, fancyRender) {
           if (!galleryData) {
             loadPosts(categoryPosts, categoryData).then(function(response) {
               galleryData = response;
+              var lang = $translate.use() === 'ua' ? '' : $translate.use();
               categories = galleryData.categories.art.filter(function(item) {
                   return item.slug.indexOf('-no-show') === -1;
               }).map(function(item) {
-                item.link =  $stateParams.lang + '/series/' + item.slug;
+                item.link =  lang + '/series/' + item.slug;
                 return item;
               });
               categories.unshift({
-                link: $stateParams.lang + '/',
-                name: $stateParams.lang ? 'All' : 'Усе'
+                link: lang + '/',
+                name: lang ? 'All' : 'Усе'
               });
               $scope.categories = categories;
               setCategory();
@@ -66,47 +68,46 @@ define([
           }
         }
 
-        $stateProvider.state('app.gallery', {
+        var gallery = {
+          name: 'app.gallery',
           abstract: true,
           template: '<ui-view></ui-view>',
-          url: '',
-          controller: function($state) {
-            if (!$state.params.name) {
-              var name = $state.current.name;
-              var params = $state.params;
-              $state.go('app.gallery.default').then(function() {
-                if (params.lang == '/en') {
-                  params.lang = 'en';
-                }
-                $state.go(name, params);
-              });
-            }
-          }
-        });
+          url: ''
+        };
 
-        $stateProvider.state('app.gallery.default', {
+        var defaultGallery = {
+          name: 'app.gallery.default',
           url: '/',
           templateUrl: require.toUrl('gallery/album.html'),
           controller: galleryController
-        });
+        };
 
-        $stateProvider.state('app.gallery.series', {
+        var galleryDefaultPicture = {
+          name: 'app.gallery.default.picture',
+          url: '{id:pic-[0-9]{1,}}'
+        };
+
+        var gallerySeries = {
+          name: 'app.gallery.series',
           url: '/series/:name',
-          // template: '',
           templateUrl: require.toUrl('gallery/album.html'),
           controller: galleryController
-        });
+        };
 
-        $stateProvider.state('app.gallery.series.picture', {
+        var gallerySeriesPicture = {
+          name: 'app.gallery.series.picture',
           url: '/{id:pic-[0-9]{1,}}'
-        });
+        };
 
-        $stateProvider.state('app.gallery.default.picture', {
-          url: '{id:pic-[0-9]{1,}}',
-          controller: function($stateParams) { }
-        });
+        stateManagerProvider.register(
+            gallery,
+            defaultGallery,
+            galleryDefaultPicture,
+            gallerySeries,
+            gallerySeriesPicture);
 
-        $stateProvider.state('app.shops', {
+        stateManagerProvider.register({
+          name: 'app.shops',
           templateUrl: require.toUrl('gallery/album.html'),
           url: '/shops',
           controller: function($scope, $stateParams, shopsService, fancyboxService) {

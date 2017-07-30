@@ -1,12 +1,14 @@
 define([
   'angular',
-  'services/lidikInfo-service'
+  'services/lidikInfo-service',
+  'services/utils-service'
 ], function(angular) {
   'use strict';
-  angular.module('lidikArt.about', ['ui.router', 'ngSanitize'])
-    .config(['$stateProvider',
-      function ($stateProvider) {
+  angular.module('lidikArt.about', ['ui.router', 'ngSanitize', 'services'])
+    .config(['stateManagerProvider',
+      function (stateManagerProvider) {
         var about = {
+          name: 'app.about',
           templateUrl: require.toUrl('about/index.html'),
           url: '/about',
           controller: function ($scope, lidikInfo, $sce, $translate) {
@@ -27,11 +29,6 @@ define([
             });
           }
         };
-
-        var enAbout = Object.create(about);
-        enAbout.url = '/en/about';
-
-        $stateProvider.state('app.about', about);
-        $stateProvider.state('app.enAbout', enAbout);
+        stateManagerProvider.register(about);
       }]);
 });

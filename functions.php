@@ -11,7 +11,7 @@ function my_scripts() {
 	);
 	add_filter('script_loader_tag', 'add_attribute_to_script', 10, 2);
 	function add_attribute_to_script($tag, $handle) {
-		$format = ' data-main="%s/js/main.js" src';
+		$format = ' data-main="%s/build/main.js" src';
     	$dataAttr = sprintf($format, get_template_directory_uri());
 		return str_replace( ' src', $dataAttr, $tag );
 	}

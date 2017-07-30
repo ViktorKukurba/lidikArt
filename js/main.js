@@ -100,50 +100,58 @@ require([
 
   app.config(function ($stateProvider, $urlRouterProvider, $translateProvider,
                        $locationProvider, ezfbProvider) {
+
     $stateProvider.state('app', {
       abstract: true,
-      //url: '?',
-      url: '{lang:(?:/[^/]+)?}',
+      url: '',
       templateUrl: require.toUrl('index.html'),
-      controller: function($scope, $stateParams, $translate, $rootScope) {
-        var lang = ($stateParams.lang === '/en' || $stateParams.lang === 'en') ?
-            'en' : 'ua';
-        if ($translate.use() !== lang) {
-          $translate.use(lang);
-        }
-
-        document.body.className = lang;
-        $('[data-value=' + lang + ']').addClass('active');
-
-        var state = location.pathname.replace('en', '').
-            replace('ua', '').
-            replace(/\//g, '');
-
-        var $body = $(document.body).
-            addClass((state || 'gallery') + '-page');
-
-        $scope.$on('$stateChangeStart',
-            function(event, toState, toParams, fromState) {
-              $body.
-                  removeClass(fromState.name.replace('app.', '') + '-page').
-                  addClass(toState.name.replace('app.', '')+ '-page');
-              setTimeout(contentMinHeight, 1e1);
-            });
-
-        setTimeout(contentMinHeight, 2e3);
-
-        $rootScope.$on('$stateChangeStart',
-            function(event, toState, toParams, fromState, fromParams){
-              if (toState.name == fromState.name &&
-                  toState.url == fromState.url &&
-                  JSON.stringify(toParams) == JSON.stringify(fromParams)) {
-                event.preventDefault();
-              }
-              // transitionTo() promise will be rejected with
-              // a 'transition prevented' error
-            });
-      }
+      controller: appController
+    }).state('app.en', {
+      abstract: true,
+      url: '/en',
+      template: '<ui-view></ui-view>'
     });
+
+    function appController($scope, $stateParams, $translate, $rootScope) {
+      lang = location.pathname.indexOf('/en') === 0 ? 'en' : 'ua';
+
+      if ($translate.use() !== lang) {
+        $translate.use(lang);
+      }
+
+      if ($stateParams.lang == '/en') {
+        $stateParams.lang = 'en';
+      }
+
+      document.body.className = lang;
+      $('[data-value=' + lang + ']').addClass('active');
+
+      var state = location.pathname.replace('en', '').
+      replace('ua', '').
+      replace(/\//g, '');
+
+      var $body = $(document.body).
+      addClass((state || 'gallery') + '-page');
+
+      $scope.$on('$stateChangeStart',
+          function(event, toState, toParams, fromState) {
+            $body.
+            removeClass(fromState.name.replace('app.', '') + '-page').
+            addClass(toState.name.replace('app.', '')+ '-page');
+            setTimeout(contentMinHeight, 1e1);
+          });
+
+      setTimeout(contentMinHeight, 2e3);
+
+      $rootScope.$on('$stateChangeStart',
+          function(event, toState, toParams, fromState, fromParams){
+            if (toState.name == fromState.name &&
+                toState.url == fromState.url &&
+                JSON.stringify(toParams) == JSON.stringify(fromParams)) {
+              event.preventDefault();
+            }
+          });
+    }
 
     function contentMinHeight() {
       var bannerHeight = $('.reservation_banner').length ? $('.reservation_banner').outerHeight() : 0;
@@ -184,11 +192,11 @@ require([
 
     $locationProvider.html5Mode({
       enabled: true,
-      requireBase: false
+      requireBase: true
     });
     $urlRouterProvider.otherwise((lang === 'en' ? lang : '') + '/');
 
-    ezfbProvider.setLocale('ua_UA');
+    // ezfbProvider.setLocale('ua_UA');
   });
   app.config(function (ezfbProvider) {
     ezfbProvider.setInitParams({

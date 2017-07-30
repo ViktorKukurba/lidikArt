@@ -84,15 +84,9 @@ define([
                     $scope.lang = lang;
                     var href = '' + (lang === 'en' ? '/en' : '');
                     href += location.pathname.replace('en/', '').replace('ua/', '');
-                    //$state.go($state.current.name, {lang: href});
-                    //$state.transitionTo($state.current.name, {lang: href});
                     if (location.pathname !== href) {
                       location.href = href;
                     }
-                    //$location.url(href);
-                    //$location.replace();
-                    //window.history.pushState(null,'any', $location.absUrl());
-                    //history.pushState(null, "lang", href);
                 });
             }
 

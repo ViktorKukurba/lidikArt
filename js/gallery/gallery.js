@@ -4,39 +4,48 @@ define([
   'angular-translate',
   'angular-translate-loader-static',
   'angular-easyfb',
-  'services/fancybox-service'
+  'services/fancybox-service',
+  'services/utils-service'
 ], function(angular) {
   'use strict';
-  angular.module('lidikArt.production', ['ezfb'])
-    .config(['$stateProvider',
-      function ($stateProvider) {
-        $stateProvider.
-        state('app.production', {
+  angular.module('lidikArt.production', ['ezfb', 'services'])
+    .config(['stateManagerProvider',
+      function (stateManagerProvider) {
+        var production = {
+          name: 'app.production',
           url: '/production',
           template: '<ui-view/>',
           abstract: true,
           controller: ProductionController
-        });
+        };
 
-        $stateProvider.
-            state('app.production.default', {
-            templateUrl: require.toUrl('gallery/index.html'),
-            url: '',
-            controller: function(galleryInit) {
-                galleryInit('.gallery-cat .la-img');
-            }
-          });
+        var productionDefault = {
+          name: 'app.production.default',
+          templateUrl: require.toUrl('gallery/index.html'),
+          url: '',
+          controller: function(galleryInit) {
+            galleryInit('.gallery-cat .la-img');
+          }
+        };
 
-        $stateProvider.state('app.production.album', {
+        var productionAlbum = {
+          name: 'app.production.album',
           templateUrl: require.toUrl('gallery/album.html'),
           url: '/{album}',
           controller: ProductionAlbumController
-        });
+        };
 
-        $stateProvider.state('app.production.album.picture', {
+        var productionAlbumPicture = {
+          name: 'app.production.album.picture',
           templateUrl: require.toUrl('gallery/album.html'),
           url: '/{id:pic-[0-9]{1,}}'
-        });
+        };
+
+        stateManagerProvider.register(
+            production,
+            productionDefault,
+            productionAlbum,
+            productionAlbumPicture);
 
         function ProductionAlbumController($scope, $stateParams, categoryPosts, fancyRender, translator) {
             categoryPosts.getCategoryData($stateParams.album).then(function (data, status, headers, config) {
@@ -48,7 +57,6 @@ define([
         }
 
         function ProductionController($scope, categoryData, $translate, galleryInit) {
-            console.log('ProductionController');
           var lang = $translate.use() === 'en' ? 'en/' : '';
           categoryData.pagesCategories().then(function(response) {
             var categories = response.pages.data.filter(function(page) {
