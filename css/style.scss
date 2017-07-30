@@ -37,8 +37,8 @@ body a {
 }
 
 #shadow.show {
-  visibility: visible;
-  opacity: .2;
+  //visibility: visible;
+  //opacity: .2;
 
 }
 
@@ -130,8 +130,6 @@ body a {
   height: 20px;
   bottom: 1px;
 }
-
-
 
 @keyframes falling {
   from {
@@ -1621,25 +1619,13 @@ ul.dc_pagination li a {
 }
 }
 
-#galleries-navigation ul {
-    text-align: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-}
-
-#galleries-navigation li {
-    display: inline;
-    padding: 10px;
-    font-weight: 800;
-}
-
 a.active {
     color: #E74C3C;
 }
 
 #category-head {
-    padding: 10px;
+  padding: 10px 15px;
+  text-align: justify;
 }
 
 .img-responsive {

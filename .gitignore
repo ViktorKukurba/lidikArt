@@ -10,3 +10,4 @@ wp-includes/
 wp-admin/
 public/build/
 public/db
+build/

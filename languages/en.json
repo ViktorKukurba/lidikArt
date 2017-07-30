@@ -8,7 +8,8 @@
     "contacts": {
       "name" : "Contacts",
       "message": "For cooperation and order products please write here",
-      "social": "Find us in social networks"
+      "social": "Find us in social networks",
+      "shops": "Visit me"
     },
     "about" : {
       "name" : "Resume"

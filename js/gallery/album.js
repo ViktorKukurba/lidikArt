@@ -2,72 +2,113 @@ define([
   'angular',
   'services/shops-service',
   'services/fancybox-service',
-  'gallery/gallery',
-  'fancybox-thumbs',
-  'fancybox-buttons'
+  'services/utils-service',
+  'gallery/gallery'
 ], function(angular) {
-  angular.module('lidikArt.gallery', ['ezfb'])
-      .config(function($stateProvider) {
-        $stateProvider.state('app.album', {
-          templateUrl: window.globalConfig.path + 'js/gallery/album.html',
-          url: '/production/{album}',
-          //url: '/gallery/{type}/{album}',
-          controller: function($scope, $stateParams, categoryPosts, fancyboxService, translator) {
-            categoryPosts.getCategoryData($stateParams.album).
-                then(function(data, status, headers, config) {
-                  renderData(data);
-                });
-
-            function renderData(data, status, headers, config) {
-              $scope.images = data.posts.data.filter(function(item) {
-                return !!item.better_featured_image;
-              }).map(function(item) {
-                item.title = $('<textarea />').html(item.title.rendered).text();
-                item.small = item.better_featured_image.media_details.sizes.medium.source_url.replace('https', 'http');
-                item.big = item.better_featured_image.source_url.replace('https', 'http');
-                return item;
-              });
-
-              data.category.data.description =
-                  translator.translate(data.category.data.description);
-
-              $scope.category = data.category.data;
-              fancyboxService();
-            }
-          }
-        });
-
-        $stateProvider.state('app.gallery', {
-          templateUrl: window.globalConfig.path + 'js/gallery/album.html',
-          url: '/gallery',
-          //url: '/gallery/{type}/{album}',
-          controller: function($scope, $stateParams, categoryPosts, categoryData, fancyboxService, ezfb) {
-            categoryData.pages().then(function(pages) {
-              var ids = pages.data.filter(function(page) {
-                return page.slug === 'gallery';
-              })[0].categories;
-              categoryPosts.getPostsByCategories(ids).then(function(data, status, headers, config) {
-                renderAllPosts(data.data);
-              });
-
+  angular.module('lidikArt.gallery', ['ezfb', 'services'])
+      .config(function(stateManagerProvider) {
+        var galleryData;
+        var categories = [];
+        function loadPosts(categoryPosts, categoryData) {
+          return categoryData.pagesCategories().then(function(response) {
+            var pages = response.pages;
+            var categories = pages.data.filter(function(page) {
+              return page.slug === 'gallery';
+            })[0].categories;
+            var ids = categories.art.map(function(category) {
+              return category.id;
             });
-
-            function renderAllPosts(data) {
-              $scope.images = data.filter(function(item) {
-                return !!item.better_featured_image;
+            return categoryPosts.getPostsByCategories(ids).then(function(data, status, headers, config) {
+              return  {
+                posts: data,
+                categories: categories
+              };
+            });
+          });
+        }
+        function galleryController($scope, $stateParams, $translate, categoryPosts, categoryData, fancyRender) {
+          if (!galleryData) {
+            loadPosts(categoryPosts, categoryData).then(function(response) {
+              galleryData = response;
+              var lang = $translate.use() === 'ua' ? '' : $translate.use();
+              categories = galleryData.categories.art.filter(function(item) {
+                  return item.slug.indexOf('-no-show') === -1;
               }).map(function(item) {
-                item.title = $('<textarea />').html(item.title.rendered).text();
-                item.small = item.better_featured_image.media_details.sizes.medium.source_url.replace('https', 'http');
-                item.big = item.better_featured_image.source_url.replace('https', 'http');
+                item.link =  lang + '/series/' + item.slug;
                 return item;
               });
-              fancyboxService();
-            }
-          }
-        });
+              categories.unshift({
+                link: lang + '/',
+                name: lang ? 'All' : 'Усе'
+              });
+              $scope.categories = categories;
+              setCategory();
 
-        $stateProvider.state('app.shops', {
-          templateUrl: window.globalConfig.path + '/gallery/album.html',
+              fancyRender($scope, galleryData.posts.data.filter(function (item) {
+                  return !!item.better_featured_image &&
+                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
+              }));
+            });
+          } else {
+              $scope.categories = categories;
+              setCategory();
+              fancyRender($scope, galleryData.posts.data.filter(function (item) {
+                  return !!item.better_featured_image &&
+                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
+              }));
+          }
+          function setCategory() {
+              if ($stateParams.name) {
+                  $scope.category = categories.filter(function (item) {
+                      return item.slug === $stateParams.name;
+                  })[0];
+              } else {
+                  $scope.category = '';
+              }
+          }
+        }
+
+        var gallery = {
+          name: 'app.gallery',
+          abstract: true,
+          template: '<ui-view></ui-view>',
+          url: ''
+        };
+
+        var defaultGallery = {
+          name: 'app.gallery.default',
+          url: '/',
+          templateUrl: require.toUrl('gallery/album.html'),
+          controller: galleryController
+        };
+
+        var galleryDefaultPicture = {
+          name: 'app.gallery.default.picture',
+          url: '{id:pic-[0-9]{1,}}'
+        };
+
+        var gallerySeries = {
+          name: 'app.gallery.series',
+          url: '/series/:name',
+          templateUrl: require.toUrl('gallery/album.html'),
+          controller: galleryController
+        };
+
+        var gallerySeriesPicture = {
+          name: 'app.gallery.series.picture',
+          url: '/{id:pic-[0-9]{1,}}'
+        };
+
+        stateManagerProvider.register(
+            gallery,
+            defaultGallery,
+            galleryDefaultPicture,
+            gallerySeries,
+            gallerySeriesPicture);
+
+        stateManagerProvider.register({
+          name: 'app.shops',
+          templateUrl: require.toUrl('gallery/album.html'),
           url: '/shops',
           controller: function($scope, $stateParams, shopsService, fancyboxService) {
             shopsService.shops().then(function(data) {

@@ -69,8 +69,9 @@ body a {
   transition: opacity 0.5s linear; }
 
 #shadow.show {
-  visibility: visible;
-  opacity: .2; }
+  /*visibility: visible;*/
+  /*opacity: .2;*/
+}
 
 .snowflakes {
   height: 100%;

@@ -1,13 +1,15 @@
 define([
   'angular',
-  'services/lidikInfo-service'
+  'services/lidikInfo-service',
+  'services/utils-service'
 ], function(angular) {
   'use strict';
-  angular.module('lidikArt.about', ['ui.router', 'ngSanitize'])
-    .config(['$stateProvider',
-      function ($stateProvider) {
+  angular.module('lidikArt.about', ['ui.router', 'ngSanitize', 'services'])
+    .config(['stateManagerProvider',
+      function (stateManagerProvider) {
         var about = {
-          templateUrl: window.globalConfig.path + 'js/about/index.html',
+          name: 'app.about',
+          templateUrl: require.toUrl('about/index.html'),
           url: '/about',
           controller: function ($scope, lidikInfo, $sce, $translate) {
             $scope.fbHref = location.href;
@@ -16,21 +18,17 @@ define([
               var aboutPage = data.data.filter(function(page) {
                 return page.slug === 'about';
               })[0];
-
               $scope.title = aboutPage.title;
+              $scope.image = aboutPage.better_featured_image.media_details.sizes.thumbnail.source_url.
+                replace('https', 'http');
               $scope.content = $sce.trustAsHtml(aboutPage.content.rendered); //;
               $scope.resume = {
-                link: window.globalConfig.path + '/documents/' + $translate.use() + '-resume.pdf',
+                link: require.toUrl('../documents/' + $translate.use() + '-resume.pdf'),
                 name: 'pages.resume.action'
               };
             });
           }
         };
-
-        var enAbout = Object.create(about);
-        enAbout.url = '/en/about';
-
-        $stateProvider.state('app.about', about);
-        $stateProvider.state('app.enAbout', enAbout);
+        stateManagerProvider.register(about);
       }]);
 });

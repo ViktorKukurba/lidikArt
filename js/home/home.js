@@ -11,12 +11,11 @@ define([
     .config(['$stateProvider',
       function ($stateProvider) {
         $stateProvider.state('app.home', {
-          templateUrl: window.globalConfig.path + 'js/home/index.html',
-          url: '/',
+          templateUrl: require.toUrl('home/index.html'),
+          url: '/home',
           controller: function ($scope, $translate) {
-            console.log('app.home');
             var lang = $translate.use() === 'en' ? 'en/' : '';
-            var path = window.globalConfig.path;
+            var path = require.toUrl('../');
             $scope.homeBlocks = [
               {
                 image: path + 'images/lidikAva.jpg',

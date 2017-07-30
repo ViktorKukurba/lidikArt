@@ -16,28 +16,21 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs": "~2.1.17",
-    "angular": ">=1.4.6",
-    "jquery": "~2.1.4",
-    "jquery-mousewheel": "~3.1.12",
-    "fancybox": "~2.1.5",
+    "requirejs": "*",
+    "angular": "*",
+    "jquery": "*",
+    "jquery-mousewheel": "*",
+    "fancybox": "*",
     "wow": "~1.1.2",
-    "angular-route": ">=1.4.6",
-    "angular-ui-router": ">=0.2.13",
-    "angular-sanitize": ">=1.4.6",
-    "angular-translate": ">=2.8.0",
-    "angular-translate-loader-url": ">=2.8.0",
-    "angular-translate-loader-static-files": ">=2.8.0",
-    "angular-easyfb": ">=1.4.1",
-    "slick-carousel": ">=1.6.0",
-    "jquery-zoom": ">=1.7.18"
-  },
-  "resolutions": {
-    "angular": ">=1.4.6",
-    "angular-route": ">=1.4.6",
-    "angular-sanitize": ">=1.4.6",
-    "angular-translate": ">=2.8.0",
-    "angular-translate-loader-url": ">=2.8.0",
-    "angular-translate-loader-static-files": ">=2.8.0"
+    "angular-route": "*",
+    "angular-ui-router": "*",
+    "angular-sanitize": "*",
+    "angular-translate": "*",
+    "angular-translate-loader-url": "*",
+    "angular-translate-loader-static-files": "*",
+    "angular-easyfb": "*",
+    "slick-carousel": "*",
+    "jquery-zoom": "*",
+    "bootstrap": ">=4.0.0-alpha.6"
   }
 }

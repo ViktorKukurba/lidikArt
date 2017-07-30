@@ -4,7 +4,6 @@
   min-height: 340px;
 
   .about-content {
-    padding: 5px;
     text-align: justify;
 
     a {
@@ -32,15 +31,19 @@
 
   img {
     border-radius: 50%;
-    width: 80%;
+    float: right;
+    max-height: 10em;
+    margin-top: 1em;
+    position: absolute;
     height: inherit;
+    left: 30em;
     &:nth-child(2) {
       float: right;
     }
   }
 
   p {
-    padding: 16px 10px;
+    padding: 1em;
     line-height: 1.8em;
   }
 
@@ -92,7 +95,7 @@
         width: 40%;
         margin: 0 10px 0 0;
         img {
-          width: 100%;
+          position: static;
         }
       }
     }

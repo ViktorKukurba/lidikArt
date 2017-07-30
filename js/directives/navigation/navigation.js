@@ -5,7 +5,7 @@ define([
   return angular.module('navigation', [])
     .directive('navigation', function($timeout, $location) {
         var defaultTab = {
-          title: 'LidikArt'
+          title: 'gallery'
         };
 
         function handleChange($scope, tabId, isSubTab, subTabId) {
@@ -13,7 +13,7 @@ define([
             return item.slug === tabId;
           });
 
-          if (isSubTab && selectedArr.length) {
+          if (isSubTab && selectedArr.length && selectedArr[0].subTabs) {
             var selectedSub = $.grep(selectedArr[0].subTabs, function(item) {
               return item.name == subTabId;
             });
@@ -31,7 +31,7 @@ define([
           if (mobileMenu) {
             mobileMenu.checked = false;
           }
-
+          $scope.displayBanner = $.inArray($scope.selectedTab.slug, ['statement', 'contacts', 'about']) != -1;
           $('#shadow')[mobileMenu.checked? 'show': 'hide']();
         }
 
@@ -68,7 +68,7 @@ define([
             }
           };
         },
-        templateUrl: window.globalConfig.path + 'js/directives/navigation/index.html',
+        templateUrl: require.toUrl('directives/navigation/index.html'),
         restrict: 'AE',
         scope: true,
         controller: ['$scope', '$location', '$compile', 'categoryData', '$translate', '$state',
@@ -79,40 +79,40 @@ define([
                 on('click', 'a', langChange_);
 
             function langChange_(e) {
-              var lang = $(e.target).data('value');
-              $translate.use(lang).then(function() {
-                $scope.lang = lang;
-                var href = '' + (lang === 'en' ? 'en' : '');
-                href += location.pathname.replace('en/', '').replace('ua/', '');
-                //$state.go($state.current.name, {lang: href});
-                //$state.transitionTo($state.current.name, {lang: href});
-                location.href = href;
-                //$location.url(href);
-                //$location.replace();
-                //window.history.pushState(null,'any', $location.absUrl());
-                //history.pushState(null, "lang", href);
-              });
+                var lang = $(e.target).data('value');
+                $translate.use(lang).then(function () {
+                    $scope.lang = lang;
+                    var href = '' + (lang === 'en' ? '/en' : '');
+                    href += location.pathname.replace('en/', '').replace('ua/', '');
+                    if (location.pathname !== href) {
+                      location.href = href;
+                    }
+                });
             }
-
-            console.log('nav-controller');
 
             categoryData.pagesCategories().then(function(data) {
               var pages = data.pagesCategories;
               var lang = $translate.use() === 'en' ? 'en/' : '';
               $scope.lang = lang;
+              function categoryMapper_(page) {
+                return function(category) {
+                  return {
+                    link: lang + page.slug + '/' + category.id,
+                    title: $('<textarea />').html(category.name).text(),
+                    name: category.id
+                  };
+                };
+              }
               var aLang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
               $('[data-value=' + aLang + ']').addClass('active');
               pages.forEach(function(page) {
-                page.link = lang + page.slug;
-                if (page.slug != 'gallery' && page.categories.length) {
-
-                  page.subTabs = page.categories.map(function (category) {
-                    return {
-                      link: lang + page.slug + '/' + category.id,
-                      title: $('<textarea />').html(category.name).text(),
-                      name: category.id
-                    };
-                  });
+                page.link = page.slug === 'gallery' ? lang : (lang + page.slug);
+                if (page.slug != 'gallery' && Object.keys(page.categories).length) {
+                  for (var cat in page.categories) {
+                    if (page.categories.hasOwnProperty(cat)) {
+                      page.subTabs = page.categories[cat].map(categoryMapper_(page));
+                    }
+                  }
                 }
               });
 
@@ -127,7 +127,7 @@ define([
                   }
                 }
 
-                if ($scope.selectedTab == tab) {
+                if ($scope.selectedTab == tab || $scope.selectedTab.title == tab.slug) {
                   tabClass += ' active';
                 }
 

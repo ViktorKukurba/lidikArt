@@ -230,7 +230,8 @@ $footerColor2: rgba(130, 40, 80, .7);
 
     .container>div {
       padding-left:10px;
-      padding-right:10px
+      padding-right:10px;
+      margin-bottom: .5em;
     }
 
     .mail-ico {
@@ -243,7 +244,7 @@ $footerColor2: rgba(130, 40, 80, .7);
       height: 25px;
     }
 
-    .contact-info {
+    .contacts-footer .contact-info {
       line-height: 25px;
       &:first-child {
         font-size: 9px;
@@ -251,11 +252,11 @@ $footerColor2: rgba(130, 40, 80, .7);
     }
 
     .mail-ico +span {
-      font-size: 9px;
+      font-size: 14px;
     }
 
     .social li {
-      width: 40%;
+      width: 24%;
     }
     .copy_right {
       font-size: 0.8em;

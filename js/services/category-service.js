@@ -2,36 +2,20 @@ define([
   'angular'
 ], function(angular) {
   'use strict';
-//lidikArt.SERVICE_URL = 'http://localhost/lidik/public_html/';
+  // var SERVICE_URL = '//lidikart.com.ua/wp-json/wp/v2/';
   var SERVICE_URL = '/wp-json/wp/v2/';
-  //var SERVICE_URL = 'public/index.php';
 
   angular.module('lidikArt').factory('categoryData', ['$http', '$translate', '$q', function ($http, $translate, $q) {
     var url = SERVICE_URL + 'categories';
-    //var url = SERVICE_URL + '?json_route=/taxonomies/category/terms';
     var pagesUrl = SERVICE_URL + 'pages';
-    //var pagesUrl = SERVICE_URL + '?json_route=/pages';
-
-    var artOrder = {
-      'fairy-land': 1,
-      'nation-bloom': 2,
-      'ukrainian-nymphs': 3,
-      'sleep-dreams': 4,
-      'war-is-the-suicide': 5,
-      'subconscious': 6
-    };
-
-    var productOrder = {
-      'eco-bags': 1,
-      'exclusive-kitchen-boards': 2,
-      'interior-decoration': 3,
-      'fabric-painting-prints': 4
-
-    };
 
     return {
       categories: function() {
-        return $http.get(url + '?lang=' + $translate.use() + "&per_page=100").then(function (response, status, headers, config) {
+        return $http({
+          method: 'get',
+          url: url + '?lang=' + $translate.use() + "&per_page=100",
+          cache: true
+        }).then(function (response, status, headers, config) {
           var data = {};
           response.data.forEach(function(category) {
             var parent = category.parent;
@@ -40,15 +24,6 @@ define([
               data[parent].push(category);
             }
           });
-
-          //data.art.sort(function(a, b) {
-          //  return  artOrder[a.slug] - artOrder[b.slug];
-          //});
-          //
-          //data.production.sort(function(a, b) {
-          //  return  productOrder[a.slug] - productOrder[b.slug];
-          //});
-
           response.groupedData = data;
           return response;
         });
@@ -73,7 +48,7 @@ define([
           var data = {};
           response.data.forEach(function(category) {
             var parent = category.parent;
-            if (category.parent) {
+            if (parent) {
               data[parent.slug] = data[parent.slug] || [];
               data[parent.slug].push(category);
             }
@@ -90,9 +65,23 @@ define([
           var categories = response.categories.data;
           pages.forEach(function(page) {
             var ids = page.categories;
-            page.categories = categories.filter(function(category) {
-              return $.inArray(category.id, ids) != -1;
+            page.categories = {};
+
+            categories.filter(function(category) {
+              return $.inArray(category.id, ids) !== -1;
+            }).forEach(function(category) {
+              var parentId = category.parent;
+              if (parentId) {
+                var parent = categories.filter(function(category) {
+                  return category.id === parentId;
+                })[0];
+                page.categories[parent.slug] = page.categories[parent.slug] || [];
+                page.categories[parent.slug].push(category);
+              }
             });
+            // page.categories = categories.filter(function(category) {
+            //   return $.inArray(category.id, ids) != -1;
+            // });
           });
           response.pagesCategories = pages;
           return response;
@@ -101,9 +90,7 @@ define([
     };
   }]).factory('categoryPosts', ['$http', '$translate', '$q', function ($http, $translate, $q) {
     var url = SERVICE_URL + 'posts?per_page=100&categories=';
-    //var url = SERVICE_URL + '?json_route=/posts&filter[cat]=';
     var termURL = SERVICE_URL + 'categories/';
-    //var termURL = SERVICE_URL + '?json_route=/taxonomies/category/terms/';
     return {
       getPosts: function (categoryId) {
         return $http.get(url + categoryId + '?lang=' + $translate.use());

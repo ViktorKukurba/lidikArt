@@ -1,14 +1,12 @@
 <div class="header_bottom">
-    <div class="container">
+    <div class="container" ng-class="{'bordered': !displayBanner}">
         <div class="logo">
-
                 <a href="{{lang}}">
                     <h1>LidikART
                         <span translate="title"></span>
                     </h1>
                 </a>
             <div class="logo-image"></div>
-
 
         </div>
         <div class="navigation">
@@ -36,6 +34,6 @@
     </div>
     <div class="clearfix"></div>
 </div>
-<div class="reservation_banner">
+<div ng-if="displayBanner" class="reservation_banner">
     <div class="main_title">{{selectedTab.title.rendered || selectedTab.title}}</div>
 </div>
