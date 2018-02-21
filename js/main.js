@@ -11,14 +11,16 @@
  *
  */
 require.config({
-  baseUrl: '/wp-content/themes/lidik-art/js',
+  // baseUrl: '/lidik-art/js/',
+  baseUrl: '/js/',
+  // baseUrl: '/wp-content/themes/lidik-art/js',
   paths: {
     angular: '../bower_components/angular/angular.min',
     'angular-easyfb': '../bower_components/angular-easyfb/build/angular-easyfb.min',
     'angular-route': '../bower_components/angular-route/angular-route.min',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
     'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
-    'angular-translate': '../bower_components/angular-translate/angular-translate.min',
+    'angular-translate': '../bower_components/angular-translate/angular-translate',
     'angular-translate-loader': '../bower_components/angular-translate-loader-url/angular-translate-loader-url.min',
     'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
     fancybox: '../bower_components/fancybox3/dist/jquery.fancybox',
@@ -88,6 +90,7 @@ require([
   'gallery/gallery',
   'gallery/album',
   'exhibitions/exhibitions',
+  'decor/decor',
   'angular-translate',
   'angular-translate-loader-static',
   'directives/navigation/navigation',

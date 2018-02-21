@@ -2,8 +2,8 @@ define([
   'angular'
 ], function(angular) {
   'use strict';
-  // var SERVICE_URL = '//lidikart.com.ua/wp-json/wp/v2/';
-  var SERVICE_URL = '/wp-json/wp/v2/';
+  var SERVICE_URL = '//lidikart.com.ua/wp-json/wp/v2/';
+  // var SERVICE_URL = '/wp-json/wp/v2/';
 
   angular.module('lidikArt').factory('categoryData', ['$http', '$translate', '$q', function ($http, $translate, $q) {
     var url = SERVICE_URL + 'categories';

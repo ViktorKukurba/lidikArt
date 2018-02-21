@@ -8,8 +8,14 @@ define([
             function (stateManagerProvider) {
               function ExhibitionController($scope, $stateParams, categoryPosts, fancyRender, translator) {
                 categoryPosts.getCategoryData($stateParams.album).then(function(data, status, headers, config) {
-                  data.category.data.description = translator.translate(data.category.data.description);
-                  $scope.exhibition = data.category.data;
+                  var categoryData = data.category.data;
+                  categoryData.description = translator.translate(categoryData.description);
+                  $scope.exhibition = categoryData;
+                  if (categoryData.acf && categoryData.acf.additional_information) {
+                    // $scope.articleBlock = categoryData.acf.additional_information;
+                    $scope.articleBlock = translator.translate(categoryData.acf.additional_information);
+                  }
+
                   fancyRender($scope, data.posts.data.reverse());
                   $scope.firstImages = $scope.images.filter(function(item, index) { return index < 6;  });
                   $scope.bottomImages = $scope.images.filter(function(item, index) { return index >= 6;  });

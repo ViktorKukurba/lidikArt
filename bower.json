@@ -32,5 +32,8 @@
     "slick-carousel": "*",
     "jquery-zoom": "*",
     "bootstrap": ">=4.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.16.0"
   }
 }

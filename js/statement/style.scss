@@ -9,3 +9,9 @@
     line-height: 1.8em;
   }
 }
+
+@media all and (max-width: 480px) {
+  .statement-content {
+    margin: 0;
+  }
+}

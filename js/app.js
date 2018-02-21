@@ -11,6 +11,7 @@ define([
     'lidikArt.about',
     'lidikArt.statement',
     'lidikArt.exhibitions',
+    'lidikArt.decor',
     'ui.router',
     'ngSanitize',
     'rawAjaxBusyIndicator',

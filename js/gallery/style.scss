@@ -11,7 +11,7 @@ $maskImageUa: "../images/lidikart-ua.png";
 //$label-color: #000000;
 
 .album-container {
-  a {
+  a:not(.text-link) {
     box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
     margin: .5em auto;
 //    padding: 5px;
@@ -43,7 +43,7 @@ $maskImageUa: "../images/lidikart-ua.png";
 
   }
 
-  a:hover {
+  a:not(.text-link):hover {
     transition: all .5s ease-in-out;
 
     transform: scale(1.1);
@@ -500,5 +500,9 @@ $maskImageUa: "../images/lidikart-ua.png";
   }
   .image {
     width: 100%;
+  }
+
+  #galleries-navigation {
+    overflow-x: scroll;
   }
 }

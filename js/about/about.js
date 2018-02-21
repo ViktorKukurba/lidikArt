@@ -19,8 +19,7 @@ define([
                 return page.slug === 'about';
               })[0];
               $scope.title = aboutPage.title;
-              $scope.image = aboutPage.better_featured_image.media_details.sizes.thumbnail.source_url.
-                replace('https', 'http');
+              $scope.image = aboutPage.better_featured_image.media_details.sizes.thumbnail.source_url;
               $scope.content = $sce.trustAsHtml(aboutPage.content.rendered); //;
               $scope.resume = {
                 link: require.toUrl('../documents/' + $translate.use() + '-resume.pdf'),

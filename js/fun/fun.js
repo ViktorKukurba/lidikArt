@@ -55,8 +55,8 @@ define([
                   return !!(item.featured_image && item.featured_image.attachment_meta);
                 }).map(function(item) {
                   if (item.featured_image.attachment_meta) {
-                    item.small = item.featured_image.attachment_meta.sizes['post-thumb'].url.replace('https', 'http');
-                    item.big = item.featured_image.source.replace('https', 'http');
+                    item.small = item.featured_image.attachment_meta.sizes['post-thumb'].url;
+                    item.big = item.featured_image.source;
                     return item;
                   }
                 }));

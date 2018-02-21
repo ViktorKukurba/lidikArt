@@ -2,7 +2,8 @@ define([
   'angular'
 ], function(angular) {
   'use strict';
-  var SERVICE_URL = '/wp-json/wp/v2/';
+  // var SERVICE_URL = '/wp-json/wp/v2/';
+  var SERVICE_URL = '//lidikart.com.ua/wp-json/wp/v2/';
   angular.module('lidikArt').factory('lidikInfo', ['$http', '$translate', function ($http, $translate) {
     var url = SERVICE_URL + 'pages?lang=' + $translate.use();
     return $http.get(url);

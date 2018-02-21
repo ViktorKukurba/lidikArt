@@ -91,7 +91,9 @@ define([
             }
 
             categoryData.pagesCategories().then(function(data) {
-              var pages = data.pagesCategories;
+              var pages = data.pagesCategories.filter(function(page) {
+                return page.slug !== 'production';
+              });
               var lang = $translate.use() === 'en' ? 'en/' : '';
               $scope.lang = lang;
               function categoryMapper_(page) {
@@ -105,9 +107,12 @@ define([
               }
               var aLang = location.pathname.indexOf('/en') !== -1 ? 'en' : 'ua';
               $('[data-value=' + aLang + ']').addClass('active');
+              // console.log('pages', pages.filter(function(page) {
+              //   return page.slug !== 'production';
+              // }));
               pages.forEach(function(page) {
                 page.link = page.slug === 'gallery' ? lang : (lang + page.slug);
-                if (page.slug != 'gallery' && Object.keys(page.categories).length) {
+                if (page.slug != 'gallery' && Object.keys(page.categories).length > 1) {
                   for (var cat in page.categories) {
                     if (page.categories.hasOwnProperty(cat)) {
                       page.subTabs = page.categories[cat].map(categoryMapper_(page));

@@ -146,8 +146,8 @@ define([
                 return !!item.better_featured_image;
             }).map(function (item) {
                 item.title = $('<textarea />').html(item.title.rendered).text();
-                item.small = item.better_featured_image.media_details.sizes.medium.source_url.replace('https', 'http');
-                item.big = (item.better_featured_image.media_details.sizes[size] || item.better_featured_image).source_url.replace('https', 'http');
+                item.small = item.better_featured_image.media_details.sizes.medium.source_url;
+                item.big = (item.better_featured_image.media_details.sizes[size] || item.better_featured_image).source_url;
                 return item;
             });
             fancyboxService();

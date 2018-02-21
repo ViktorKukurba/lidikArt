@@ -44,6 +44,10 @@
   }
 }
 
+.italic {
+  font-style: italic;
+}
+
 .exhibition {
   display: flex;
   .exhibition-image {
@@ -72,5 +76,11 @@
   .view-tenth .la-img {
     box-shadow: none;
     //box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.5);
+  }
+}
+
+@media all and (max-width: 480px) {
+  .exhibitions {
+    display: block;
   }
 }

@@ -376,6 +376,7 @@ input#mobile_menu { display: none; }
 
 		.nav > li {
 			background: none;
+			border-bottom: 1px solid $liActive;
 		}
 
 		.nav li ul {
@@ -556,8 +557,8 @@ input#mobile_menu { display: none; }
   top: 0;
 }
   .nav {
-	border-left: $liActive 1px solid;
-	border-bottom: $liActive 1px solid;
+	//border-left: $liActive 1px solid;
+	//border-bottom: $liActive 1px solid;
 	> li.active {
 	  background: none;
 	}
@@ -569,7 +570,8 @@ input#mobile_menu { display: none; }
   	width : 100%
   }
   label.mobile_menu {
-	margin-right:50%;
+	margin-right:15%;
+	//margin-right:50%;
 	padding-top:25px;
   }
 
