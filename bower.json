@@ -20,7 +20,6 @@
     "angular": "*",
     "jquery": "*",
     "jquery-mousewheel": "*",
-    "fancybox": "*",
     "wow": "~1.1.2",
     "angular-route": "*",
     "angular-ui-router": "*",

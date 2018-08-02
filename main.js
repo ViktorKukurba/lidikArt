@@ -21,7 +21,7 @@ require.config({
     'angular-translate': '../bower_components/angular-translate/angular-translate.min',
     'angular-translate-loader': '../bower_components/angular-translate-loader-url/angular-translate-loader-url.min',
     'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
-    fancybox: '../bower_components/fancybox/source/jquery.fancybox',
+    fancybox: '../node_modules/@fancyapps/fancybox/dist/jquery.fancybox',
     'fancybox-buttons': '../bower_components/fancybox/source/helpers/jquery.fancybox-buttons',
     'fancybox-thumbs': '../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs',
     jquery: '../bower_components/jquery/dist/jquery.min',

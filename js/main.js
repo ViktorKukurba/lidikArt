@@ -23,7 +23,7 @@ require.config({
     'angular-translate': '../bower_components/angular-translate/angular-translate',
     'angular-translate-loader': '../bower_components/angular-translate-loader-url/angular-translate-loader-url.min',
     'angular-translate-loader-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
-    fancybox: '../bower_components/fancybox/dist/jquery.fancybox',
+    fancybox: '../node_modules/@fancyapps/fancybox/dist/jquery.fancybox',
     jquery: '../bower_components/jquery/dist/jquery.min',
     'jquery-zoom': '../bower_components/jquery-zoom/jquery.zoom.min',
     'jquery-mousewheel': '../bower_components/jquery-mousewheel/jquery.mousewheel.min',

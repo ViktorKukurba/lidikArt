@@ -1,6 +1,8 @@
 define([
   'angular',
-  'fancybox'], function(angular) {
+  'fancybox'], function(angular, fancybox) {
+    $.fancybox.defaults.history = true;
+    $.fancybox.defaults.hash = false;
     angular.module('lidikArt').factory('fancyboxService',
         ['translator', '$location', 'ezfb', function (translator, $location, ezfb) {
             return function (opt_config) {
@@ -34,8 +36,7 @@ define([
                     openEffect: 'elastic',
                     closeEffect: 'elastic',
                     thumbs: {
-                        showOnStart: true, // Display thumbnails on opening
-                        hideOnClosing: true   // Hide thumbnail grid when closing animation starts
+                        autoStart: true, // Display thumbnails on opening
                     },
                     touch: true,
                     slideShow: true,
@@ -63,13 +64,14 @@ define([
                             $(document.body).off('swipeleft', $.fancybox.next);
                             $(document.body).off('swiperight', $.fancybox.prev);
                         }
-                    }
+                    },
+                    history: true
                 };
 
                 setTimeout(function () {
                     $.fancybox.getInstance();
                     var fancyAlbum = $('.fancybox-thumb').fancybox($.extend(defaultConfig, opt_config));
-                    $.fancybox.triggerFromUrl(null, $.fancybox.getInstance(), opt_config.hash);
+                    $.fancybox.triggerFromUrl();
                 }, 1e2);
             };
         }]).factory('galleryInit', [function () {
