@@ -17,7 +17,7 @@ $stick_length: 30px;
 $stick_distance: -8px;
 //Changes distance between sticks (will need editing after 30px)
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,700);
 
 html {
 //  background-color: #DC554F;
@@ -39,7 +39,6 @@ html {
 }
 
 .busy-animation {
-
   width: $stick_length*6;
   padding-top: 2em;
   margin: auto;

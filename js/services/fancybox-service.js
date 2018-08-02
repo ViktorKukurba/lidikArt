@@ -145,8 +145,12 @@ define([
         return function ($scope, data, status, headers, config) {
             var size = 'img-' + getSize();
             $scope.images = data.filter(function (item) {
-                return !!item.better_featured_image;
+                return !!item.better_featured_image || item.format === 'video';
             }).map(function (item) {
+                if (item.format === 'video') {
+                    item.thumb = "http://img.youtube.com/vi/" + extractVideoID(item.acf.url) + "/mqdefault.jpg";
+                    return item;
+                }
                 item.title = $('<textarea />').html(item.title.rendered).text();
                 item.small = item.better_featured_image.media_details.sizes.medium.source_url;
                 item.big = (item.better_featured_image.media_details.sizes[size] || item.better_featured_image).source_url;
@@ -155,4 +159,13 @@ define([
             fancyboxService();
         };
     }]);
+    function extractVideoID(url){
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        if ( match && match[7].length == 11 ){
+          return match[7];
+        } else {
+          console.log("Invalid URL.");
+        }
+      }
 });

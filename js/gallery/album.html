@@ -14,7 +14,15 @@
 </div>
 <div class="album-container">
   <div class="col-lg-3 col-md-3 col-xs-6 col-sm-4 image" ng-repeat="img in images track by $index">
-    <a data-fancybox="gallery" class="fancybox-thumb fancybox-buttons"
+    <a ng-if="img.format === 'video'" href={{img.acf.url}}
+       data-fancybox="gallery" class="fancybox-thumb fancybox-buttons youtube-video"
+       rel="fancybox-thumb fancybox-buttons"
+       title="{{img.title}}"
+       data-pic-id="pic-{{img.id}}"
+       data-fancybox-group="button">
+      <img src="{{img.thumb}}" />
+    </a>
+    <a ng-if="img.format === 'standard'" data-fancybox="gallery" class="fancybox-thumb fancybox-buttons"
        rel="fancybox-thumb fancybox-buttons"
        title="{{img.title}}"
        data-fancybox-group="button"
@@ -25,9 +33,6 @@
       <!--<h5>{{img.title}}</h5>-->
       <!--<span>{{img.title}}</span>-->
     </a>
-    <!-- <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
-      YouTube video
-  </a> -->
   </div>
 </div>
 <!--<ui-view></ui-view>-->

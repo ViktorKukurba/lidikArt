@@ -3,7 +3,7 @@
 function my_scripts() {
 	$styles = array(
 		'/css/bootstrap.css',
-		'/bower_components/fancybox/dist/jquery.fancybox.css',
+		'/node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
 		'/bower_components/slick-carousel/slick/slick-theme.css',
 		'/bower_components/slick-carousel/slick/slick.css',
 		'/fonts/css/font-awesome.min.css',
@@ -63,6 +63,7 @@ add_filter('image_size_names_choose', 'display_image_sizes');
 remove_filter('template_redirect', 'redirect_canonical');
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
 add_theme_support('post-thumbnails');
+add_theme_support( 'post-formats', array( 'video' ) );
 
 /**
  * Customizer additions.

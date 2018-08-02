@@ -27,6 +27,15 @@ define([
           });
         }
         function galleryController($scope, $stateParams, $translate, categoryPosts, categoryData, fancyRender) {
+          function renderGallery() {
+            $scope.categories = categories;
+            setCategory();
+            fancyRender($scope, galleryData.posts.data.filter(function (item) {
+              return (!!item.better_featured_image || item.format === 'video') &&
+                  (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
+            }));
+          }
+          
           if (!galleryData) {
             loadPosts(categoryPosts, categoryData).then(function(response) {
               galleryData = response;
@@ -41,21 +50,10 @@ define([
                 link: lang + '/',
                 name: lang ? 'All' : 'Усе'
               });
-              $scope.categories = categories;
-              setCategory();
-
-              fancyRender($scope, galleryData.posts.data.filter(function (item) {
-                  return !!item.better_featured_image &&
-                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
-              }));
+              renderGallery();
             });
           } else {
-              $scope.categories = categories;
-              setCategory();
-              fancyRender($scope, galleryData.posts.data.filter(function (item) {
-                  return !!item.better_featured_image &&
-                      (!$scope.category || $.inArray($scope.category.id, item.categories) != -1);
-              }));
+              renderGallery();
           }
           function setCategory() {
               if ($stateParams.name) {
