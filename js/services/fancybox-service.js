@@ -148,7 +148,7 @@ define([
                 return !!item.better_featured_image || item.format === 'video';
             }).map(function (item) {
                 if (item.format === 'video') {
-                    item.thumb = "http://img.youtube.com/vi/" + extractVideoID(item.acf.url) + "/mqdefault.jpg";
+                    item.thumb = "https://img.youtube.com/vi/" + extractVideoID(item.acf.url) + "/mqdefault.jpg";
                     return item;
                 }
                 item.title = $('<textarea />').html(item.title.rendered).text();
