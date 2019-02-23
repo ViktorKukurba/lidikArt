@@ -11,8 +11,8 @@
  *
  */
 require.config({
-  // baseUrl: '/lidik-art/js/',
-  baseUrl: '/js/',
+  baseUrl: '/lidikArt/js/',
+  // baseUrl: '/js/',
   // baseUrl: '/wp-content/themes/lidik-art/js',
   paths: {
     angular: '../bower_components/angular/angular.min',

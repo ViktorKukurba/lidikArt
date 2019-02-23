@@ -18,6 +18,7 @@ define([
             var ids = categories.art.map(function(category) {
               return category.id;
             });
+            
             return categoryPosts.getPostsByCategories(ids).then(function(data, status, headers, config) {
               return  {
                 posts: data,
@@ -46,6 +47,7 @@ define([
                 item.link =  lang + '/series/' + item.slug;
                 return item;
               });
+              console.log('categories', categories);
               categories.unshift({
                 link: lang + '/',
                 name: lang ? 'All' : 'Усе'
