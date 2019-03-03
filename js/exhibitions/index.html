@@ -1,0 +1,14 @@
+<div class="row grids exhibitions text-center">
+    <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 exhibition" ng-repeat="exhibition in exhibitions">
+        <div class="view view-tenth">
+            <a href="{{exhibition.link}}">
+                <div class="inner_content clearfix">
+                    <h5>{{exhibition.name}}</h5>
+                    <div class="exhibition-image">
+                        <div class="la-img" data-image="{{exhibition.img}}"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

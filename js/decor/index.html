@@ -1,0 +1,18 @@
+<div id="category-head" ng-if="category.description">
+    <h5>{{category.description}}</h5>
+</div>
+<div class="album-container">
+    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-4 image" ng-repeat="img in images track by $index">
+        <a data-fancybox="gallery" class="fancybox-thumb fancybox-buttons"
+           rel="fancybox-thumb fancybox-buttons"
+           title="{{img.title}}"
+           data-fancybox-group="button"
+           href="{{img.big}}"
+           data-pic-id="pic-{{img.id}}"
+           data-etsy="{{img.etsy}}">
+            <img src="{{img.small}}" alt=""/>
+            <!--<h5>{{img.title}}</h5>-->
+            <!--<span>{{img.title}}</span>-->
+        </a>
+    </div>
+</div>
